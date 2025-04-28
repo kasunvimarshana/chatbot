@@ -1,0 +1,15 @@
+{
+  "patterns": [
+    {
+      "triggers": ["how are you", "how's it going", "how do you feel"],
+      "responses": {
+        "positive": ["I'm doing great! How about you?", "Wonderful! And you?"],
+        "negative": [
+          "I'm here to help. What's wrong?",
+          "I'm sorry you're feeling down"
+        ],
+        "neutral": ["I'm functioning normally", "All systems operational"]
+      }
+    }
+  ]
+}

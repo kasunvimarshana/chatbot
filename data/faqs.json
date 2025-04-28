@@ -1,0 +1,12 @@
+{
+  "questions": [
+    {
+      "variations": [
+        "what is your name",
+        "who are you",
+        "what should I call you"
+      ],
+      "answer": "I'm an AI chatbot. You can call me ChatBot."
+    }
+  ]
+}

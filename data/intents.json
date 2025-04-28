@@ -1,0 +1,565 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hello",
+        "Hey",
+        "Hi there",
+        "Hello there",
+        "Good morning",
+        "Good afternoon",
+        "Good evening",
+        "Hey bot",
+        "Hi chatbot"
+      ],
+      "responses": [
+        "Hello! How can I help you today?",
+        "Hi there! What can I do for you?",
+        "Greetings! How may I assist you?",
+        "Hello! What brings you here today?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "Bye",
+        "Goodbye",
+        "See you later",
+        "See ya",
+        "I'm leaving",
+        "Have a good day",
+        "Goodnight",
+        "Talk to you later",
+        "Signing off",
+        "Catch you later"
+      ],
+      "responses": [
+        "Goodbye! Have a great day!",
+        "See you soon! Come back anytime.",
+        "Farewell! It was nice chatting with you.",
+        "Until next time! Take care."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "Thanks",
+        "Thank you",
+        "Thanks a lot",
+        "Thank you very much",
+        "Much appreciated",
+        "I appreciate it",
+        "Thanks for your help",
+        "Thx",
+        "Cheers",
+        "Awesome, thanks"
+      ],
+      "responses": [
+        "You're welcome!",
+        "Happy to help!",
+        "My pleasure!",
+        "Anytime! Let me know if you need anything else."
+      ]
+    },
+    {
+      "tag": "time",
+      "patterns": [
+        "What time is it?",
+        "Current time",
+        "Time please",
+        "Could you tell me the time?",
+        "Do you know what time it is?",
+        "What's the time now?",
+        "Time check",
+        "What time is it right now?",
+        "Can you give me the time?",
+        "Need to know the time"
+      ],
+      "responses": [
+        "The current time is {time}.",
+        "It's {time} right now.",
+        "Right now it's {time}."
+      ]
+    },
+    {
+      "tag": "date",
+      "patterns": [
+        "What's today's date?",
+        "Current date",
+        "What is the date today?",
+        "Date please",
+        "Can you tell me the date?",
+        "What day is it today?",
+        "What's the date?",
+        "Need today's date",
+        "Could you give me the date?",
+        "Date check"
+      ],
+      "responses": [
+        "Today's date is {date}.",
+        "It's {date} today.",
+        "The current date is {date}."
+      ]
+    },
+    {
+      "tag": "joke",
+      "patterns": [
+        "Tell me a joke",
+        "Make me laugh",
+        "Do you know any jokes?",
+        "Say something funny",
+        "Give me a joke",
+        "I need a laugh",
+        "Tell something humorous",
+        "Joke please",
+        "Can you be funny?",
+        "Make me smile"
+      ],
+      "responses": [
+        "Why don't scientists trust atoms? Because they make up everything!",
+        "Did you hear about the mathematician who's afraid of negative numbers? He'll stop at nothing to avoid them!",
+        "Why don't skeletons fight each other? They don't have the guts!",
+        "I'm reading a book about anti-gravity. It's impossible to put down!"
+      ]
+    },
+    {
+      "tag": "creator",
+      "patterns": [
+        "Who made you?",
+        "Who created you?",
+        "Who built you?",
+        "Who programmed you?",
+        "Who is your developer?",
+        "Who is your creator?",
+        "Who designed you?",
+        "Who owns you?",
+        "Who is responsible for you?",
+        "Who wrote your code?"
+      ],
+      "responses": [
+        "I was created by a team of AI developers.",
+        "I'm an AI assistant developed by a team of programmers.",
+        "My code was written by software engineers specializing in artificial intelligence."
+      ]
+    },
+    {
+      "tag": "name",
+      "patterns": [
+        "What is your name?",
+        "Who are you?",
+        "What should I call you?",
+        "Do you have a name?",
+        "Tell me your name",
+        "Name please",
+        "Your name?",
+        "What are you called?",
+        "May I know your name?",
+        "Identify yourself"
+      ],
+      "responses": [
+        "I'm ChatBot, your virtual assistant!",
+        "You can call me ChatBot!",
+        "My name is ChatBot. Nice to meet you!",
+        "I'm ChatBot, here to help you!"
+      ]
+    },
+    {
+      "tag": "age",
+      "patterns": [
+        "How old are you?",
+        "What's your age?",
+        "When were you created?",
+        "How long have you existed?",
+        "Are you old?",
+        "Are you young?",
+        "What is your birth date?",
+        "When is your birthday?",
+        "How many years old are you?",
+        "Age?"
+      ],
+      "responses": [
+        "I'm an AI, so I don't have an age in the human sense. I was recently created though!",
+        "As an artificial intelligence, I don't experience time the way humans do. I'm always learning!",
+        "I don't have an age, but my knowledge is constantly being updated."
+      ]
+    },
+    {
+      "tag": "compliment",
+      "patterns": [
+        "You're smart",
+        "You're intelligent",
+        "You're helpful",
+        "You're awesome",
+        "You're great",
+        "I like you",
+        "Good bot",
+        "You're the best",
+        "You're amazing",
+        "You're wonderful"
+      ],
+      "responses": [
+        "Thank you! I appreciate your kind words.",
+        "You're making me blush! Thanks!",
+        "That's very nice of you to say!",
+        "I'm just trying to be helpful. Thanks for noticing!"
+      ]
+    },
+    {
+      "tag": "insult",
+      "patterns": [
+        "You're stupid",
+        "You're dumb",
+        "You're useless",
+        "I hate you",
+        "You're annoying",
+        "You're bad",
+        "Worst bot",
+        "You're terrible",
+        "You suck",
+        "I don't like you"
+      ],
+      "responses": [
+        "I'm sorry you feel that way. How can I improve?",
+        "I'm still learning. Could you tell me what I did wrong?",
+        "I apologize if I've disappointed you. I'll try to do better.",
+        "I'm here to help. Please let me know how I can assist you better."
+      ]
+    },
+    {
+      "tag": "food",
+      "patterns": [
+        "I'm hungry",
+        "What should I eat?",
+        "Food recommendations",
+        "I need food",
+        "Suggest a meal",
+        "What's for dinner?",
+        "Best foods",
+        "Favorite food",
+        "Hungry",
+        "What's good to eat?"
+      ],
+      "responses": [
+        "How about trying some Italian food today? Pasta is always a good choice!",
+        "I hear sushi is delicious and healthy!",
+        "A fresh salad might be nice, or maybe a hearty sandwich?",
+        "Pizza is always a crowd-pleaser! What toppings do you like?"
+      ]
+    },
+    {
+      "tag": "music",
+      "patterns": [
+        "Play music",
+        "Music recommendations",
+        "Suggest a song",
+        "What should I listen to?",
+        "Good music",
+        "Best songs",
+        "Play a song",
+        "Music please",
+        "I need music",
+        "What's good to listen to?"
+      ],
+      "responses": [
+        "How about some classical music to relax? Mozart is always good!",
+        "If you're into pop, Taylor Swift's latest album is popular!",
+        "For rock fans, I'd recommend Led Zeppelin or The Rolling Stones.",
+        "Jazz can be really soothing. Miles Davis is a great choice!"
+      ]
+    },
+    {
+      "tag": "movie",
+      "patterns": [
+        "Movie suggestions",
+        "What should I watch?",
+        "Good movies",
+        "Recommend a film",
+        "I'm bored, suggest a movie",
+        "Best films",
+        "What's a good movie?",
+        "Movie night ideas",
+        "What to watch?",
+        "Film recommendations"
+      ],
+      "responses": [
+        "The Shawshank Redemption is a classic that's always worth watching!",
+        "If you like sci-fi, Inception is mind-bending and exciting!",
+        "For comedy, try The Grand Budapest Hotel - it's hilarious!",
+        "The Dark Knight is amazing if you're in the mood for an action movie."
+      ]
+    },
+    {
+      "tag": "book",
+      "patterns": [
+        "Book recommendations",
+        "What should I read?",
+        "Good books",
+        "Suggest a book",
+        "I need something to read",
+        "Best books",
+        "What's a good book?",
+        "Reading suggestions",
+        "What to read?",
+        "Favorite books"
+      ],
+      "responses": [
+        "1984 by George Orwell is a thought-provoking classic!",
+        "If you like fantasy, The Lord of the Rings is a must-read!",
+        "For mystery fans, Agatha Christie's books are always engaging!",
+        "To Kill a Mockingbird by Harper Lee is a beautiful novel everyone should read."
+      ]
+    },
+    {
+      "tag": "news",
+      "patterns": [
+        "What's the news?",
+        "Latest news",
+        "News update",
+        "Current events",
+        "What's happening?",
+        "World news",
+        "Top stories",
+        "Breaking news",
+        "News headlines",
+        "Any news?"
+      ],
+      "responses": [
+        "I can fetch the latest news for you. Would you like general news or a specific topic?",
+        "I can look up current events. What category interests you? (world, sports, technology, etc.)",
+        "I'd be happy to provide news updates. What would you like to know about?"
+      ]
+    },
+    {
+      "tag": "sports",
+      "patterns": [
+        "Sports news",
+        "Latest scores",
+        "Football results",
+        "Basketball updates",
+        "Sports update",
+        "What's happening in sports?",
+        "Game scores",
+        "Sports results",
+        "Who won the game?",
+        "Sports highlights"
+      ],
+      "responses": [
+        "I can check sports scores for you. Which sport or team are you interested in?",
+        "I can look up game results. Would you like football, basketball, baseball, or another sport?",
+        "I'd be happy to provide sports updates. What specifically would you like to know?"
+      ]
+    },
+    {
+      "tag": "shopping",
+      "patterns": [
+        "Where to buy",
+        "Shopping online",
+        "Best deals",
+        "Where can I purchase",
+        "Buying recommendations",
+        "Shopping suggestions",
+        "Online stores",
+        "Where to shop",
+        "Purchase options",
+        "Best place to buy"
+      ],
+      "responses": [
+        "Amazon usually has good deals on most products!",
+        "For electronics, Best Buy often has competitive prices.",
+        "If you're looking for clothes, ASOS or Nordstrom might have what you need.",
+        "For specialty items, Etsy has unique handmade products."
+      ]
+    },
+    {
+      "tag": "travel",
+      "patterns": [
+        "Travel recommendations",
+        "Where should I go?",
+        "Best vacation spots",
+        "Good places to visit",
+        "Travel ideas",
+        "Where to travel?",
+        "Best destinations",
+        "Vacation suggestions",
+        "I need a holiday",
+        "Top travel locations"
+      ],
+      "responses": [
+        "Japan is amazing for culture and food! Tokyo and Kyoto are must-sees!",
+        "Italy has beautiful cities, great food, and rich history - Rome, Florence, Venice!",
+        "For beaches, Thailand or Bali offer stunning tropical getaways!",
+        "New York City is always exciting with endless things to do and see!"
+      ]
+    },
+    {
+      "tag": "work",
+      "patterns": [
+        "I'm tired of working",
+        "Work is hard",
+        "I need a break",
+        "Too much work",
+        "Stressed at work",
+        "Work pressure",
+        "Job stress",
+        "Tired of my job",
+        "Work burnout",
+        "Too busy at work"
+      ],
+      "responses": [
+        "Remember to take breaks! The Pomodoro technique (25 min work, 5 min break) can help!",
+        "Work-life balance is important. Make sure to schedule time for yourself!",
+        "Deep breathing exercises can help reduce work stress. Try inhaling for 4 seconds, holding for 7, exhaling for 8!",
+        "Don't forget that your worth isn't defined by productivity. It's okay to rest!"
+      ]
+    },
+    {
+      "tag": "study",
+      "patterns": [
+        "Study tips",
+        "How to focus?",
+        "Can't concentrate",
+        "Need to study",
+        "Exam preparation",
+        "Learning techniques",
+        "Best way to study",
+        "Study help",
+        "Academic tips",
+        "How to memorize?"
+      ],
+      "responses": [
+        "Active recall and spaced repetition are powerful study techniques! Try flashcards!",
+        "The Pomodoro technique (25 min study, 5 min break) can boost focus!",
+        "Teaching the material to someone else is one of the best ways to learn!",
+        "Make sure to get enough sleep - it's crucial for memory consolidation!"
+      ]
+    },
+    {
+      "tag": "health",
+      "patterns": [
+        "Health tips",
+        "How to be healthy?",
+        "Healthy lifestyle",
+        "Wellness advice",
+        "Staying fit",
+        "Healthy habits",
+        "Good health",
+        "Physical health",
+        "Mental health",
+        "Healthy living"
+      ],
+      "responses": [
+        "Regular exercise, balanced diet, and good sleep are the pillars of health!",
+        "Drink plenty of water - aim for 8 glasses a day!",
+        "Don't neglect mental health - meditation can be very beneficial!",
+        "Eating more vegetables and less processed food is always a good idea!"
+      ]
+    },
+    {
+      "tag": "love",
+      "patterns": [
+        "I'm in love",
+        "Relationship advice",
+        "Dating tips",
+        "Love life",
+        "Romantic advice",
+        "How to flirt?",
+        "Finding love",
+        "Breakup",
+        "Heartbroken",
+        "Lonely"
+      ],
+      "responses": [
+        "Communication is key in any relationship - be open and honest with your partner!",
+        "Remember that self-love is just as important as romantic love!",
+        "If you're going through a breakup, time really does heal wounds. Be kind to yourself!",
+        "Good relationships are built on mutual respect, trust, and understanding!"
+      ]
+    },
+    {
+      "tag": "motivation",
+      "patterns": [
+        "I need motivation",
+        "Feeling lazy",
+        "How to stay motivated?",
+        "Lack of motivation",
+        "Can't get started",
+        "Procrastinating",
+        "Need inspiration",
+        "Feeling unmotivated",
+        "How to be productive?",
+        "Struggling to focus"
+      ],
+      "responses": [
+        "Start small! Even 5 minutes of work is better than nothing - momentum builds!",
+        "Remember your 'why' - why is this task important to you?",
+        "Break big tasks into tiny steps - they're less overwhelming that way!",
+        "Progress, not perfection! Celebrate small wins along the way!"
+      ]
+    },
+    {
+      "tag": "technology",
+      "patterns": [
+        "Tech news",
+        "Latest gadgets",
+        "New technology",
+        "Tech updates",
+        "Smartphones",
+        "Best laptops",
+        "AI developments",
+        "Programming",
+        "Coding",
+        "Software"
+      ],
+      "responses": [
+        "The latest iPhone and Samsung Galaxy models are getting great reviews!",
+        "AI is advancing rapidly - new language models are being developed constantly!",
+        "For programming, Python remains one of the most popular and versatile languages!",
+        "Foldable phones are becoming more mainstream with improved durability!"
+      ]
+    },
+    {
+      "tag": "finance",
+      "patterns": [
+        "Money tips",
+        "Saving money",
+        "Investing",
+        "Personal finance",
+        "Budgeting",
+        "Financial advice",
+        "How to save?",
+        "Stock market",
+        "Retirement planning",
+        "Getting rich"
+      ],
+      "responses": [
+        "The 50/30/20 rule is a good budgeting guideline: 50% needs, 30% wants, 20% savings!",
+        "Compound interest is powerful - start saving early even if it's small amounts!",
+        "Diversification is key in investing - don't put all your eggs in one basket!",
+        "Building an emergency fund (3-6 months of expenses) should be a priority!"
+      ]
+    },
+    {
+      "tag": "random",
+      "patterns": [
+        "Tell me something",
+        "Surprise me",
+        "Random fact",
+        "Interesting information",
+        "Something cool",
+        "Teach me something",
+        "Did you know?",
+        "Fun fact",
+        "Tell me anything",
+        "What's new?"
+      ],
+      "responses": [
+        "Did you know honey never spoils? Archaeologists have found edible honey in ancient Egyptian tombs!",
+        "A day on Venus is longer than a year on Venus - it takes 243 Earth days to rotate once but only 225 to orbit the sun!",
+        "Octopuses have three hearts, nine brains, and blue blood!",
+        "Bananas are berries, but strawberries aren't - botanically speaking!"
+      ]
+    }
+  ]
+}

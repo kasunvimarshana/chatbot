@@ -1,0 +1,7 @@
+# Python-related
+__pycache__/
+.venv/
+*.venv
+
+# VSCode
+.vscode/
