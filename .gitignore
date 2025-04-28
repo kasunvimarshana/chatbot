@@ -1,5 +1,6 @@
-# Python-related
+# 🐍 Python-related
 __pycache__/
+**/__pycache__/
 .venv/
 *.venv
 

@@ -7,6 +7,14 @@
         "what should I call you"
       ],
       "answer": "I'm an AI chatbot. You can call me ChatBot."
+    },
+    {
+      "variations": [
+        "what can you do",
+        "what are your capabilities",
+        "how can you help"
+      ],
+      "answer": "I can chat with you, answer questions, and help with various topics. Ask me anything!"
     }
   ]
 }
