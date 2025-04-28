@@ -6,3 +6,5 @@ __pycache__/
 
 # VSCode
 .vscode/
+
+data/user_profiles/
