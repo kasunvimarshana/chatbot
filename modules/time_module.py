@@ -62,12 +62,12 @@ class TimeModule(BaseModule):
         time_format = self.config["time_formats"].get(format_key, "%I:%M %p")
         tz = pytz.timezone(self.timezone)
         return datetime.now(tz).strftime(time_format)
-
+    
     def extract_timezone(self, text: str) -> Optional[str]:
         """Extract timezone from text if specified"""
         # Improved regex to more accurately find timezone mentions
         tz_match = re.search(
-            r'(?:in|at)\s+((?:(?:the\s+)?\w+(?:\s+\w+)*)(?=\s|$|\.|,)', 
+            r'(?:in|at)\s+((?:(?:the\s+)?\w+(?:\s+\w+)*))(?=\s|$|\.|,)', 
             text.lower()
         )
         

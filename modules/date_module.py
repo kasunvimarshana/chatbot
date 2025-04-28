@@ -67,7 +67,7 @@ class DateModule(BaseModule):
         """Extract timezone from text if specified"""
         # Improved regex to more accurately find timezone mentions
         tz_match = re.search(
-            r'(?:in|at)\s+((?:(?:the\s+)?\w+(?:\s+\w+)*)(?=\s|$|\.|,)', 
+            r'(?:in|at)\s+((?:(?:the\s+)?\w+(?:\s+\w+)*))(?=\s|$|\.|,)', 
             text.lower()
         )
         

@@ -1,40 +1,58 @@
 {
-    "default_timezone": "UTC",
-    "date_formats": {
-        "standard": "%Y-%m-%d",
-        "us": "%m/%d/%Y",
-        "european": "%d/%m/%Y",
-        "verbose": "%A, %B %d, %Y"
-    },
-    "timezone_aliases": {
-        "london": "Europe/London",
-        "paris": "Europe/Paris",
-        "tokyo": "Asia/Tokyo",
-        "new york": "America/New_York",
-        "la": "America/Los_Angeles",
-        "chicago": "America/Chicago"
-    },
-    "date_patterns": [
-        "date( today)?",
-        "what date is it",
-        "current date",
-        "what's the date",
-        "what day is it",
-        "today's date",
-        "what is today's date"
+  "default_timezone": "UTC",
+  "date_formats": {
+    "standard": "%Y-%m-%d",
+    "us": "%m/%d/%Y",
+    "european": "%d/%m/%Y",
+    "verbose": "%A, %B %d, %Y",
+    "iso": "%Y-%m-%d",
+    "compact": "%Y%m%d",
+    "natural": "%b %d, %Y"
+  },
+  "timezone_aliases": {
+    "colombo": "Asia/Colombo",
+    "sri lanka": "Asia/Colombo",
+    "kolkata": "Asia/Kolkata",
+    "india": "Asia/Kolkata",
+    "singapore": "Asia/Singapore",
+    "hong kong": "Asia/Hong_Kong",
+    "beijing": "Asia/Shanghai",
+    "shanghai": "Asia/Shanghai",
+    "london": "Europe/London",
+    "paris": "Europe/Paris",
+    "tokyo": "Asia/Tokyo",
+    "new york": "America/New_York",
+    "ny": "America/New_York",
+    "la": "America/Los_Angeles",
+    "los angeles": "America/Los_Angeles",
+    "chicago": "America/Chicago",
+    "pst": "America/Los_Angeles",
+    "est": "America/New_York",
+    "gmt": "Europe/London",
+    "utc": "UTC"
+  },
+  "date_patterns": [
+    "(?i)(what('?s| is) the )?date( today)?( in \\w+( \\w+)*)?",
+    "(?i)(current|today('?s)?|what) date( is it)?",
+    "(?i)what day is it( today)?",
+    "(?i)(tell me|give me) (the )?date",
+    "(?i)could you tell me (what('?s| is) )?today('?s)? date",
+    "(?i)day of (the )?month"
+  ],
+  "response_templates": {
+    "date": [
+      "Today's date in {tz} is {date}",
+      "It's {date} in {tz} today",
+      "The current date in {tz} is {date}",
+      "Today is {date} in {tz}",
+      "According to my calendar, it's {date} in {tz}",
+      "In {tz}, the date is {date}"
     ],
-    "response_templates": {
-        "date": [
-            "Today's date in {tz} is {date}",
-            "It's {date} in {tz} today",
-            "The current date in {tz} is {date}",
-            "Today is {date} in {tz}",
-            "According to my calendar, it's {date} in {tz}"
-        ],
-        "timezone_errors": [
-            "I don't recognize the timezone '{tz}'. Try 'EST' or 'London'.",
-            "Sorry, I don't know the timezone '{tz}'.",
-            "Timezone '{tz}' not found in my database."
-        ]
-    }
+    "timezone_errors": [
+      "I don't recognize the timezone '{tz}'. Try 'EST' or 'London'.",
+      "Sorry, I don't know the timezone '{tz}'. I know major cities like New York, London, or Tokyo.",
+      "Timezone '{tz}' not found. Try one of these: {suggestions}",
+      "I can't find '{tz}' in my database. Available timezones include: {suggestions}"
+    ]
+  }
 }
