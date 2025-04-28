@@ -37,3 +37,4 @@ class SentimentAnalyzer:
         except Exception as e:
             print(f"Sentiment analysis error: {str(e)}")
             return "neutral"
+        

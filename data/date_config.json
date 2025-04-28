@@ -1,0 +1,40 @@
+{
+    "default_timezone": "UTC",
+    "date_formats": {
+        "standard": "%Y-%m-%d",
+        "us": "%m/%d/%Y",
+        "european": "%d/%m/%Y",
+        "verbose": "%A, %B %d, %Y"
+    },
+    "timezone_aliases": {
+        "london": "Europe/London",
+        "paris": "Europe/Paris",
+        "tokyo": "Asia/Tokyo",
+        "new york": "America/New_York",
+        "la": "America/Los_Angeles",
+        "chicago": "America/Chicago"
+    },
+    "date_patterns": [
+        "date( today)?",
+        "what date is it",
+        "current date",
+        "what's the date",
+        "what day is it",
+        "today's date",
+        "what is today's date"
+    ],
+    "response_templates": {
+        "date": [
+            "Today's date in {tz} is {date}",
+            "It's {date} in {tz} today",
+            "The current date in {tz} is {date}",
+            "Today is {date} in {tz}",
+            "According to my calendar, it's {date} in {tz}"
+        ],
+        "timezone_errors": [
+            "I don't recognize the timezone '{tz}'. Try 'EST' or 'London'.",
+            "Sorry, I don't know the timezone '{tz}'.",
+            "Timezone '{tz}' not found in my database."
+        ]
+    }
+}

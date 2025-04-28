@@ -1,4 +1,3 @@
-# app.py
 from chatbot import Chatbot
 import argparse
 

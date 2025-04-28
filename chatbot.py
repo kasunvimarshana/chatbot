@@ -4,9 +4,12 @@ import numpy as np
 from pathlib import Path
 from datetime import datetime
 import pickle
+from typing import Optional
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.sequence import pad_sequences
-from modules.sentiment import SentimentAnalyzer
+from modules.sentiment_module import SentimentAnalyzer
+from modules.time_module import TimeModule
+from modules.date_module import DateModule
 from config import (
     MAX_LEN, CONFIDENCE_THRESHOLD, MODEL_PATH, 
     TOKENIZER_PATH, LABEL_ENCODER_PATH, USER_PROFILE_DIR, DATA_DIR
@@ -19,6 +22,8 @@ class Chatbot:
         self.current_user = None
         self.conversation_history = []
         self.sentiment_analyzer = SentimentAnalyzer()
+        self.time_module = TimeModule()
+        self.date_module = DateModule()
         self.load_components()
         
     def load_components(self):
@@ -88,6 +93,20 @@ class Chatbot:
             if intent_data.get("tag") == intent:
                 return random.choice(intent_data.get("responses", []))
         return None
+    
+    def handle_special_modules(self, user_input):
+        """Handle date and time queries using dedicated modules"""
+        # Try time module first
+        time_response = self.time_module.process(user_input)
+        if time_response:
+            return time_response
+            
+        # Try date module if time module didn't handle it
+        date_response = self.date_module.process(user_input)
+        if date_response:
+            return date_response
+            
+        return None
 
     def log_conversation(self, user_input, response):
         """Record conversation history"""
@@ -137,6 +156,13 @@ class Chatbot:
         
         # Track conversation
         self.log_conversation(user_input, "")
+
+        # Try special modules (date/time) first
+        module_response = self.handle_special_modules(user_input)
+        if module_response:
+            response = self.personalize_response(module_response)
+            self.conversation_history[-1]["bot"] = response
+            return response
         
         # Try small talk first
         small_talk_response = self.handle_small_talk(user_input)

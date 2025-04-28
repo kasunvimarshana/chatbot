@@ -1,0 +1,977 @@
+chatbot/
+│
+├── data/
+│   ├── intents.json          # Main training data
+│   ├── small_talk.json       # Casual conversation patterns
+│   ├── faqs.json             # Knowledge base
+│   └── model.h5              # Saved model
+│
+├── modules/
+│   └── sentiment.py          # Sentiment analysis
+│
+├── chatbot.py                # Enhanced main chatbot class
+├── train.py                  # Training script
+└── app.py                    # Application interface
+
+// requirements.txt
+tensorflow==2.15.0
+numpy==1.26.4
+scikit-learn==1.4.0
+transformers==4.36.2
+keras==2.15.0
+
+// data\small_talk.json
+{
+  "patterns": [
+    {
+      "triggers": ["how are you", "how's it going", "how do you feel"],
+      "responses": {
+        "positive": ["I'm doing great! How about you?", "Wonderful! And you?"],
+        "negative": ["I'm here to help. What's wrong?", "I'm sorry you're feeling down"],
+        "neutral": ["I'm functioning normally", "All systems operational"]
+      }
+    },
+    {
+      "triggers": ["what's up", "what's new", "what are you doing"],
+      "responses": {
+        "positive": ["Just helping people like you!", "Having a great day! You?"],
+        "negative": ["Trying to help people feel better", "Working through some issues"],
+        "neutral": ["Processing data and learning", "Having interesting conversations"]
+      }
+    }
+  ]
+}
+
+// data\faqs.json
+{
+  "questions": [
+    {
+      "variations": [
+        "what is your name",
+        "who are you",
+        "what should I call you"
+      ],
+      "answer": "I'm an AI chatbot. You can call me ChatBot."
+    },
+    {
+      "variations": [
+        "what can you do",
+        "what are your capabilities",
+        "how can you help"
+      ],
+      "answer": "I can chat with you, answer questions, and help with various topics. Ask me anything!"
+    }
+  ]
+}
+
+// data\intents.json
+[
+    {
+        "tag": "greeting",
+        "patterns": ["hi", "hello", "hey", "good morning", "good afternoon"],
+        "responses": ["Hello!", "Hi there!", "Greetings!"],
+        "context": ""
+    },
+    {
+        "tag": "goodbye",
+        "patterns": ["bye", "goodbye", "see you", "take care"],
+        "responses": ["Goodbye!", "See you soon!", "Have a nice day!"],
+        "context": ""
+    }
+]
+
+// modules\sentiment.py
+from transformers import pipeline
+from config import DATA_DIR
+import json
+
+class SentimentAnalyzer:
+    def __init__(self):
+        self.analyzer = pipeline("sentiment-analysis")
+        self.sentiment_map = self._load_sentiment_map()
+    
+    def _load_sentiment_map(self):
+        try:
+            with open(DATA_DIR / "sentiment_map.json") as f:
+                return json.load(f)
+        except:
+            return {
+                "positive": ["great", "wonderful", "happy"],
+                "negative": ["sad", "angry", "frustrated"],
+                "neutral": ["okay", "fine", "alright"]
+            }
+    
+    def analyze_sentiment(self, text):
+        """Enhanced sentiment analysis with custom mapping"""
+        try:
+            # First check for keywords
+            text_lower = text.lower()
+            for sentiment, keywords in self.sentiment_map.items():
+                if any(keyword in text_lower for keyword in keywords):
+                    return sentiment
+            
+            # Fall back to model analysis
+            result = self.analyzer(text)[0]
+            if result['label'] == 'POSITIVE' and result['score'] > 0.7:
+                return "positive"
+            elif result['label'] == 'NEGATIVE' and result['score'] > 0.7:
+                return "negative"
+            return "neutral"
+        except Exception as e:
+            print(f"Sentiment analysis error: {str(e)}")
+            return "neutral"
+
+// config.py
+# config.py
+import os
+from pathlib import Path
+
+BASE_DIR = Path(__file__).parent
+DATA_DIR = BASE_DIR / "data"
+
+MAX_LEN = 20
+CONFIDENCE_THRESHOLD = 0.6
+MODEL_PATH = DATA_DIR / "model.h5"
+TOKENIZER_PATH = DATA_DIR / "tokenizer.pickle"
+LABEL_ENCODER_PATH = DATA_DIR / "label_encoder.pickle"
+USER_PROFILE_DIR = DATA_DIR / "user_profiles"
+
+# Create directories if they don't exist
+os.makedirs(USER_PROFILE_DIR, exist_ok=True)
+os.makedirs(DATA_DIR, exist_ok=True)
+
+// train.py
+import json
+import pickle
+import numpy as np
+from pathlib import Path
+from tensorflow.keras.preprocessing.text import Tokenizer
+from tensorflow.keras.preprocessing.sequence import pad_sequences
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Embedding, GlobalAveragePooling1D
+from tensorflow.keras.optimizers import Adam
+from sklearn.preprocessing import LabelEncoder
+from config import MAX_LEN, MODEL_PATH, TOKENIZER_PATH, LABEL_ENCODER_PATH, DATA_DIR
+
+class ChatTrainer:
+    def __init__(self):
+        self.tokenizer = Tokenizer(oov_token="<OOV>")
+        self.label_encoder = LabelEncoder()
+        self.max_len = MAX_LEN
+        
+    def load_all_data(self):
+        """Combine data from all sources for training"""
+        with open(DATA_DIR / "intents.json") as f:
+            intents = json.load(f)
+        
+        with open(DATA_DIR / "small_talk.json") as f:
+            small_talk = json.load(f)
+        
+        training_sentences = []
+        training_labels = []
+        
+        # Add main intents
+        for intent in intents:
+            for pattern in intent["patterns"]:
+                training_sentences.append(pattern)
+                training_labels.append(intent["tag"])
+        
+        # Add small talk patterns
+        for item in small_talk["patterns"]:
+            for trigger in item["triggers"]:
+                training_sentences.append(trigger)
+                training_labels.append("small_talk")
+        
+        return training_sentences, training_labels
+    
+    def train_model(self, epochs=200):
+        sentences, labels = self.load_all_data()
+        
+        # Encode labels
+        self.label_encoder.fit(labels)
+        encoded_labels = self.label_encoder.transform(labels)
+        
+        # Tokenize text
+        self.tokenizer.fit_on_texts(sentences)
+        sequences = self.tokenizer.texts_to_sequences(sentences)
+        padded_sequences = pad_sequences(sequences, maxlen=self.max_len, padding='post', truncating='post')
+        
+        # Model architecture
+        vocab_size = len(self.tokenizer.word_index) + 1
+        num_classes = len(self.label_encoder.classes_)
+        
+        model = Sequential([
+            Embedding(vocab_size, 16, input_length=self.max_len),
+            GlobalAveragePooling1D(),
+            Dense(16, activation='relu'),
+            Dense(num_classes, activation='softmax')
+        ])
+        
+        model.compile(
+            optimizer=Adam(learning_rate=0.01),
+            loss='sparse_categorical_crossentropy',
+            metrics=['accuracy']
+        )
+        
+        # Train
+        history = model.fit(
+            padded_sequences,
+            encoded_labels,
+            epochs=epochs,
+            validation_split=0.2,
+            verbose=1
+        )
+        
+        # Save artifacts
+        model.save(MODEL_PATH)
+        with open(TOKENIZER_PATH, "wb") as handle:
+            pickle.dump(self.tokenizer, handle, protocol=pickle.HIGHEST_PROTOCOL)
+        with open(LABEL_ENCODER_PATH, "wb") as handle:
+            pickle.dump(self.label_encoder, handle, protocol=pickle.HIGHEST_PROTOCOL)
+        
+        return history
+
+if __name__ == "__main__":
+    trainer = ChatTrainer()
+    history = trainer.train_model(epochs=200)
+    print("Training completed successfully!")
+    print(f"Model saved to {MODEL_PATH}")
+
+// chatbot.py
+import json
+import random
+import numpy as np
+from pathlib import Path
+from datetime import datetime
+import pickle
+from tensorflow.keras.models import load_model
+from tensorflow.keras.preprocessing.sequence import pad_sequences
+from modules.sentiment import SentimentAnalyzer
+from config import (
+    MAX_LEN, CONFIDENCE_THRESHOLD, MODEL_PATH, 
+    TOKENIZER_PATH, LABEL_ENCODER_PATH, USER_PROFILE_DIR, DATA_DIR
+)
+
+class Chatbot:
+    def __init__(self, model_path=MODEL_PATH):
+        self.model_path = model_path
+        self.context = {}
+        self.current_user = None
+        self.conversation_history = []
+        self.sentiment_analyzer = SentimentAnalyzer()
+        self.load_components()
+        
+    def load_components(self):
+        """Load all necessary components"""
+        try:
+            # Load ML model and preprocessing
+            self.model = load_model(self.model_path)
+            with open(TOKENIZER_PATH, "rb") as handle:
+                self.tokenizer = pickle.load(handle)
+            with open(LABEL_ENCODER_PATH, "rb") as handle:
+                self.label_encoder = pickle.load(handle)
+            
+            # Load knowledge bases
+            self.intents = self.load_json(DATA_DIR / "intents.json")
+            self.small_talk = self.load_json(DATA_DIR / "small_talk.json")
+            self.faqs = self.load_json(DATA_DIR / "faqs.json")
+            
+        except Exception as e:
+            raise RuntimeError(f"Initialization error: {str(e)}")
+
+    def load_json(self, path):
+        """Helper to load JSON files"""
+        try:
+            with open(path) as file:
+                return json.load(file)
+        except Exception as e:
+            print(f"Error loading {path}: {str(e)}")
+            return []
+
+    def preprocess_input(self, text):
+        """Prepare user input for prediction"""
+        sequence = self.tokenizer.texts_to_sequences([text])
+        return pad_sequences(sequence, maxlen=MAX_LEN, padding='post', truncating='post')
+
+    def predict_intent(self, text):
+        """Predict intent with confidence score"""
+        preprocessed = self.preprocess_input(text)
+        prediction = self.model.predict(preprocessed, verbose=0)
+        predicted_idx = np.argmax(prediction)
+        intent = self.label_encoder.classes_[predicted_idx]
+        confidence = float(np.max(prediction))
+        return intent, confidence
+
+    def handle_small_talk(self, user_input):
+        """Handle casual conversation with sentiment"""
+        sentiment = self.sentiment_analyzer.analyze_sentiment(user_input)
+        
+        for item in self.small_talk.get("patterns", []):
+            for pattern in item.get("triggers", []):
+                if pattern.lower() in user_input.lower():
+                    responses = item["responses"].get(sentiment, item["responses"].get("neutral", []))
+                    if responses:
+                        return random.choice(responses)
+        return None
+
+    def handle_faq(self, user_input):
+        """Answer from knowledge base"""
+        for item in self.faqs.get("questions", []):
+            for question in item.get("variations", []):
+                if question.lower() in user_input.lower():
+                    return item["answer"]
+        return None
+
+    def get_intent_response(self, intent):
+        """Get response for specific intent"""
+        for intent_data in self.intents:
+            if intent_data.get("tag") == intent:
+                return random.choice(intent_data.get("responses", []))
+        return None
+
+    def log_conversation(self, user_input, response):
+        """Record conversation history"""
+        self.conversation_history.append({
+            "timestamp": datetime.now().isoformat(),
+            "user": user_input,
+            "bot": response,
+            "user_id": self.current_user or "anonymous"
+        })
+
+    def load_user_profile(self, user_id):
+        """Load user profile from storage"""
+        try:
+            path = USER_PROFILE_DIR / f"{user_id}.json"
+            if path.exists():
+                with open(path) as f:
+                    return json.load(f)
+        except Exception as e:
+            print(f"Error loading profile: {str(e)}")
+        return None
+
+    def save_user_profile(self, user_id, data):
+        """Save user profile"""
+        try:
+            path = USER_PROFILE_DIR / f"{user_id}.json"
+            with open(path, 'w') as f:
+                json.dump(data, f, indent=2)
+            return True
+        except Exception as e:
+            print(f"Error saving profile: {str(e)}")
+            return False
+
+    def personalize_response(self, response):
+        """Add personalization if user is known"""
+        if not self.current_user:
+            return response
+        
+        profile = self.load_user_profile(self.current_user)
+        if profile and profile.get("name"):
+            return response + f", {profile['name']}"
+        return response
+
+    def process_user_input(self, user_input):
+        """Main processing pipeline"""
+        if not user_input.strip():
+            return "Please type something so I can respond."
+        
+        # Track conversation
+        self.log_conversation(user_input, "")
+        
+        # Try small talk first
+        small_talk_response = self.handle_small_talk(user_input)
+        if small_talk_response:
+            response = self.personalize_response(small_talk_response)
+            self.conversation_history[-1]["bot"] = response
+            return response
+        
+        # Check FAQ knowledge base
+        faq_response = self.handle_faq(user_input)
+        if faq_response:
+            response = self.personalize_response(faq_response)
+            self.conversation_history[-1]["bot"] = response
+            return response
+        
+        # Use ML model as fallback
+        intent, confidence = self.predict_intent(user_input)
+        if confidence > CONFIDENCE_THRESHOLD:
+            intent_response = self.get_intent_response(intent)
+            if intent_response:
+                response = self.personalize_response(intent_response)
+                self.conversation_history[-1]["bot"] = response
+                return response
+        
+        # Final fallback with sentiment consideration
+        sentiment = self.sentiment_analyzer.analyze_sentiment(user_input)
+        fallbacks = {
+            "positive": [
+                "That sounds great! Can you tell me more?",
+                "Wonderful! What else would you like to discuss?"
+            ],
+            "negative": [
+                "I'm sorry you're feeling this way. How can I help?",
+                "That sounds difficult. Would you like to talk about it?"
+            ],
+            "neutral": [
+                "I'm not sure I understand. Could you rephrase?",
+                "That's interesting. Tell me more.",
+                "I'm still learning. Could you ask something else?"
+            ]
+        }
+        response = random.choice(fallbacks.get(sentiment, fallbacks["neutral"]))
+        self.conversation_history[-1]["bot"] = response
+        return response
+
+    def chat_loop(self):
+        """Interactive chat interface"""
+        print("Enhanced Chatbot initialized. Type 'quit' to exit.")
+        
+        # User identification
+        while not self.current_user:
+            user_id = input("Enter your name or ID to continue: ").strip()
+            if user_id.lower() == 'quit':
+                return
+            if user_id:
+                self.current_user = user_id
+                profile = self.load_user_profile(user_id)
+                if not profile:
+                    print("Welcome new user! Let me get to know you.")
+                    name = input("What should I call you? ").strip()
+                    if name.lower() == 'quit':
+                        return
+                    self.save_user_profile(user_id, {
+                        "name": name, 
+                        "created": datetime.now().isoformat(),
+                        "preferences": {}
+                    })
+        
+        # Main chat loop
+        while True:
+            try:
+                user_input = input("You: ")
+                if user_input.lower() == 'quit':
+                    print("Goodbye! It was nice chatting with you.")
+                    break
+                
+                response = self.process_user_input(user_input)
+                print(f"Bot: {response}")
+                
+            except KeyboardInterrupt:
+                print("\nGoodbye!")
+                break
+            except Exception as e:
+                print(f"Error: {str(e)}")
+                continue
+
+// app.py
+from chatbot import Chatbot
+import argparse
+
+def main():
+    """Entry point for chatbot interaction."""
+    parser = argparse.ArgumentParser(description="Enhanced Chatbot")
+    parser.add_argument('--train', action='store_true', help='Train the model before chatting')
+    args = parser.parse_args()
+
+    if args.train:
+        from train import ChatTrainer
+        print("Training model...")
+        trainer = ChatTrainer()
+        trainer.train_model(epochs=200)
+        print("Training completed!")
+
+    print("Starting chatbot...")
+    bot = Chatbot()
+    bot.chat_loop()
+
+if __name__ == "__main__":
+    main()
+
+=========================================================================
+// modules\base_module.py
+import json
+import logging
+from pathlib import Path
+from typing import Dict, Any, Optional
+from abc import ABC, abstractmethod
+from config import DATA_DIR
+
+class BaseModule(ABC):
+    """Abstract base class for all chatbot modules"""
+    
+    def __init__(self, config_file: str, module_name: str):
+        self.module_name = module_name
+        self.logger = logging.getLogger(f"chatbot.{module_name}")
+        self.config = self._load_config(config_file)
+        self._validate_config()
+        
+    def _load_config(self, config_file: str) -> Dict[str, Any]:
+        """Load module configuration from JSON file"""
+        try:
+            config_path = DATA_DIR / config_file
+            with open(config_path) as f:
+                self.logger.info(f"Loading config from {config_path}")
+                return json.load(f)
+        except Exception as e:
+            self.logger.error(f"Failed to load config: {str(e)}")
+            raise RuntimeError(f"Could not load {self.module_name} config")
+
+    @abstractmethod
+    def _validate_config(self) -> None:
+        """Validate module configuration"""
+        pass
+
+    @abstractmethod
+    def can_handle(self, input_text: str) -> bool:
+        """Check if module can handle the input"""
+        pass
+
+    @abstractmethod
+    def process(self, input_text: str) -> Optional[str]:
+        """Process input and return response"""
+        pass
+
+// modules\time_module.py
+from datetime import datetime
+import pytz
+import re
+import random
+from typing import Dict, Optional
+from .base_module import BaseModule
+from config import DATA_DIR
+
+class TimeModule(BaseModule):
+    """Customizable time handling module"""
+    
+    def __init__(self, config_file: str = "time_config.json"):
+        super().__init__(config_file, "time_module")
+        self.timezone = self.config.get("default_timezone", "UTC")
+        self._init_timezone_aliases()
+        self._init_response_templates()
+
+    def _validate_config(self) -> None:
+        """Validate time module configuration"""
+        required_keys = ["time_formats", "timezone_aliases", "response_templates"]
+        for key in required_keys:
+            if key not in self.config:
+                raise ValueError(f"Missing required config key: {key}")
+
+    def _init_timezone_aliases(self) -> None:
+        """Initialize timezone aliases"""
+        self.timezone_aliases = self.config["timezone_aliases"]
+        try:
+            pytz.timezone(self.timezone)  # Validate default timezone
+        except pytz.exceptions.UnknownTimeZoneError:
+            self.logger.warning(f"Invalid default timezone: {self.timezone}")
+            self.timezone = "UTC"
+
+    def _init_response_templates(self) -> None:
+        """Initialize response templates"""
+        self.response_templates = self.config["response_templates"].get("time", [])
+        if not self.response_templates:
+            self.response_templates = ["The current time in {tz} is {time}"]
+
+    def can_handle(self, input_text: str) -> bool:
+        """Check if input is a time query"""
+        patterns = self.config.get("time_patterns", [])
+        return any(re.search(pattern, input_text.lower()) for pattern in patterns)
+
+    def set_timezone(self, timezone: str) -> bool:
+        """Set the active timezone"""
+        normalized_tz = timezone.lower()
+        if normalized_tz in self.timezone_aliases:
+            timezone = self.timezone_aliases[normalized_tz]
+        
+        try:
+            pytz.timezone(timezone)
+            self.timezone = timezone
+            self.logger.info(f"Timezone set to {timezone}")
+            return True
+        except pytz.exceptions.UnknownTimeZoneError:
+            self.logger.warning(f"Unknown timezone: {timezone}")
+            return False
+
+    def get_current_time(self, format_key: str = "12h") -> str:
+        """Get formatted current time"""
+        time_format = self.config["time_formats"].get(format_key, "%I:%M %p")
+        tz = pytz.timezone(self.timezone)
+        return datetime.now(tz).strftime(time_format)
+
+    def extract_timezone(self, text: str) -> Optional[str]:
+        """Extract timezone from text if specified"""
+        tz_match = re.search(r'(?:in|at) (\w+(?: \w+)?)', text.lower())
+        return tz_match.group(1) if tz_match else None
+
+    def process(self, input_text: str) -> Optional[str]:
+        """Process time request and generate response"""
+        if not self.can_handle(input_text):
+            return None
+
+        requested_tz = self.extract_timezone(input_text) or self.timezone
+        
+        if not self.set_timezone(requested_tz):
+            error_responses = self.config["response_templates"].get("timezone_errors", [])
+            return random.choice(error_responses).format(tz=requested_tz) if error_responses else None
+
+        current_time = self.get_current_time()
+        return random.choice(self.response_templates).format(
+            tz=requested_tz,
+            time=current_time
+        )
+
+// modules\date_module.py
+from datetime import datetime
+import pytz
+import re
+import random
+from typing import Dict, Optional
+from .base_module import BaseModule
+from config import DATA_DIR
+
+class DateModule(BaseModule):
+    """Customizable date handling module"""
+    
+    def __init__(self, config_file: str = "date_config.json"):
+        super().__init__(config_file, "date_module")
+        self.timezone = self.config.get("default_timezone", "UTC")
+        self._init_timezone_aliases()
+        self._init_response_templates()
+
+    def _validate_config(self) -> None:
+        """Validate date module configuration"""
+        required_keys = ["date_formats", "timezone_aliases", "response_templates"]
+        for key in required_keys:
+            if key not in self.config:
+                raise ValueError(f"Missing required config key: {key}")
+
+    def _init_timezone_aliases(self) -> None:
+        """Initialize timezone aliases"""
+        self.timezone_aliases = self.config["timezone_aliases"]
+        try:
+            pytz.timezone(self.timezone)  # Validate default timezone
+        except pytz.exceptions.UnknownTimeZoneError:
+            self.logger.warning(f"Invalid default timezone: {self.timezone}")
+            self.timezone = "UTC"
+
+    def _init_response_templates(self) -> None:
+        """Initialize response templates"""
+        self.response_templates = self.config["response_templates"].get("date", [])
+        if not self.response_templates:
+            self.response_templates = ["Today's date in {tz} is {date}"]
+
+    def can_handle(self, input_text: str) -> bool:
+        """Check if input is a date query"""
+        patterns = self.config.get("date_patterns", [])
+        return any(re.search(pattern, input_text.lower()) for pattern in patterns)
+
+    def set_timezone(self, timezone: str) -> bool:
+        """Set the active timezone"""
+        normalized_tz = timezone.lower()
+        if normalized_tz in self.timezone_aliases:
+            timezone = self.timezone_aliases[normalized_tz]
+        
+        try:
+            pytz.timezone(timezone)
+            self.timezone = timezone
+            self.logger.info(f"Timezone set to {timezone}")
+            return True
+        except pytz.exceptions.UnknownTimeZoneError:
+            self.logger.warning(f"Unknown timezone: {timezone}")
+            return False
+
+    def get_current_date(self, format_key: str = "verbose") -> str:
+        """Get formatted current date"""
+        date_format = self.config["date_formats"].get(format_key, "%A, %B %d, %Y")
+        tz = pytz.timezone(self.timezone)
+        return datetime.now(tz).strftime(date_format)
+
+    def extract_timezone(self, text: str) -> Optional[str]:
+        """Extract timezone from text if specified"""
+        tz_match = re.search(r'(?:in|at) (\w+(?: \w+)?)', text.lower())
+        return tz_match.group(1) if tz_match else None
+
+    def process(self, input_text: str) -> Optional[str]:
+        """Process date request and generate response"""
+        if not self.can_handle(input_text):
+            return None
+
+        requested_tz = self.extract_timezone(input_text) or self.timezone
+        
+        if not self.set_timezone(requested_tz):
+            error_responses = self.config["response_templates"].get("timezone_errors", [])
+            return random.choice(error_responses).format(tz=requested_tz) if error_responses else None
+
+        current_date = self.get_current_date()
+        return random.choice(self.response_templates).format(
+            tz=requested_tz,
+            date=current_date
+        )
+
+// modules\sentiment_module.py
+from transformers import pipeline
+from config import DATA_DIR
+import json
+
+class SentimentAnalyzer:
+    def __init__(self):
+        self.analyzer = pipeline("sentiment-analysis")
+        self.sentiment_map = self._load_sentiment_map()
+    
+    def _load_sentiment_map(self):
+        try:
+            with open(DATA_DIR / "sentiment_map.json") as f:
+                return json.load(f)
+        except:
+            return {
+                "positive": ["great", "wonderful", "happy"],
+                "negative": ["sad", "angry", "frustrated"],
+                "neutral": ["okay", "fine", "alright"]
+            }
+    
+    def analyze_sentiment(self, text):
+        """Enhanced sentiment analysis with custom mapping"""
+        try:
+            # First check for keywords
+            text_lower = text.lower()
+            for sentiment, keywords in self.sentiment_map.items():
+                if any(keyword in text_lower for keyword in keywords):
+                    return sentiment
+            
+            # Fall back to model analysis
+            result = self.analyzer(text)[0]
+            if result['label'] == 'POSITIVE' and result['score'] > 0.7:
+                return "positive"
+            elif result['label'] == 'NEGATIVE' and result['score'] > 0.7:
+                return "negative"
+            return "neutral"
+        except Exception as e:
+            print(f"Sentiment analysis error: {str(e)}")
+            return "neutral"
+        
+
+// chatbot.py
+import json
+import random
+import numpy as np
+from pathlib import Path
+from datetime import datetime
+import pickle
+from tensorflow.keras.models import load_model
+from tensorflow.keras.preprocessing.sequence import pad_sequences
+from modules.sentiment_module import SentimentAnalyzer
+from config import (
+    MAX_LEN, CONFIDENCE_THRESHOLD, MODEL_PATH, 
+    TOKENIZER_PATH, LABEL_ENCODER_PATH, USER_PROFILE_DIR, DATA_DIR
+)
+from typing import Optional
+
+class Chatbot:
+    def __init__(self, model_path=MODEL_PATH):
+        self.model_path = model_path
+        self.context = {}
+        self.current_user = None
+        self.conversation_history = []
+        self.sentiment_analyzer = SentimentAnalyzer()
+        self.load_components()
+        
+    def load_components(self):
+        """Load all necessary components"""
+        try:
+            # Load ML model and preprocessing
+            self.model = load_model(self.model_path)
+            with open(TOKENIZER_PATH, "rb") as handle:
+                self.tokenizer = pickle.load(handle)
+            with open(LABEL_ENCODER_PATH, "rb") as handle:
+                self.label_encoder = pickle.load(handle)
+            
+            # Load knowledge bases
+            self.intents = self.load_json(DATA_DIR / "intents.json")
+            self.small_talk = self.load_json(DATA_DIR / "small_talk.json")
+            self.faqs = self.load_json(DATA_DIR / "faqs.json")
+            
+        except Exception as e:
+            raise RuntimeError(f"Initialization error: {str(e)}")
+
+    def load_json(self, path):
+        """Helper to load JSON files"""
+        try:
+            with open(path) as file:
+                return json.load(file)
+        except Exception as e:
+            print(f"Error loading {path}: {str(e)}")
+            return []
+
+    def preprocess_input(self, text):
+        """Prepare user input for prediction"""
+        sequence = self.tokenizer.texts_to_sequences([text])
+        return pad_sequences(sequence, maxlen=MAX_LEN, padding='post', truncating='post')
+
+    def predict_intent(self, text):
+        """Predict intent with confidence score"""
+        preprocessed = self.preprocess_input(text)
+        prediction = self.model.predict(preprocessed, verbose=0)
+        predicted_idx = np.argmax(prediction)
+        intent = self.label_encoder.classes_[predicted_idx]
+        confidence = float(np.max(prediction))
+        return intent, confidence
+
+    def handle_small_talk(self, user_input):
+        """Handle casual conversation with sentiment"""
+        sentiment = self.sentiment_analyzer.analyze_sentiment(user_input)
+        
+        for item in self.small_talk.get("patterns", []):
+            for pattern in item.get("triggers", []):
+                if pattern.lower() in user_input.lower():
+                    responses = item["responses"].get(sentiment, item["responses"].get("neutral", []))
+                    if responses:
+                        return random.choice(responses)
+        return None
+
+    def handle_faq(self, user_input):
+        """Answer from knowledge base"""
+        for item in self.faqs.get("questions", []):
+            for question in item.get("variations", []):
+                if question.lower() in user_input.lower():
+                    return item["answer"]
+        return None
+
+    def get_intent_response(self, intent):
+        """Get response for specific intent"""
+        for intent_data in self.intents:
+            if intent_data.get("tag") == intent:
+                return random.choice(intent_data.get("responses", []))
+        return None
+
+    def log_conversation(self, user_input, response):
+        """Record conversation history"""
+        self.conversation_history.append({
+            "timestamp": datetime.now().isoformat(),
+            "user": user_input,
+            "bot": response,
+            "user_id": self.current_user or "anonymous"
+        })
+
+    def load_user_profile(self, user_id):
+        """Load user profile from storage"""
+        try:
+            path = USER_PROFILE_DIR / f"{user_id}.json"
+            if path.exists():
+                with open(path) as f:
+                    return json.load(f)
+        except Exception as e:
+            print(f"Error loading profile: {str(e)}")
+        return None
+
+    def save_user_profile(self, user_id, data):
+        """Save user profile"""
+        try:
+            path = USER_PROFILE_DIR / f"{user_id}.json"
+            with open(path, 'w') as f:
+                json.dump(data, f, indent=2)
+            return True
+        except Exception as e:
+            print(f"Error saving profile: {str(e)}")
+            return False
+
+    def personalize_response(self, response):
+        """Add personalization if user is known"""
+        if not self.current_user:
+            return response
+        
+        profile = self.load_user_profile(self.current_user)
+        if profile and profile.get("name"):
+            return response + f", {profile['name']}"
+        return response
+
+    def process_user_input(self, user_input):
+        """Main processing pipeline"""
+        if not user_input.strip():
+            return "Please type something so I can respond."
+        
+        # Track conversation
+        self.log_conversation(user_input, "")
+        
+        # Try small talk first
+        small_talk_response = self.handle_small_talk(user_input)
+        if small_talk_response:
+            response = self.personalize_response(small_talk_response)
+            self.conversation_history[-1]["bot"] = response
+            return response
+        
+        # Check FAQ knowledge base
+        faq_response = self.handle_faq(user_input)
+        if faq_response:
+            response = self.personalize_response(faq_response)
+            self.conversation_history[-1]["bot"] = response
+            return response
+        
+        # Use ML model as fallback
+        intent, confidence = self.predict_intent(user_input)
+        if confidence > CONFIDENCE_THRESHOLD:
+            intent_response = self.get_intent_response(intent)
+            if intent_response:
+                response = self.personalize_response(intent_response)
+                self.conversation_history[-1]["bot"] = response
+                return response
+        
+        # Final fallback with sentiment consideration
+        sentiment = self.sentiment_analyzer.analyze_sentiment(user_input)
+        fallbacks = {
+            "positive": [
+                "That sounds great! Can you tell me more?",
+                "Wonderful! What else would you like to discuss?"
+            ],
+            "negative": [
+                "I'm sorry you're feeling this way. How can I help?",
+                "That sounds difficult. Would you like to talk about it?"
+            ],
+            "neutral": [
+                "I'm not sure I understand. Could you rephrase?",
+                "That's interesting. Tell me more.",
+                "I'm still learning. Could you ask something else?"
+            ]
+        }
+        response = random.choice(fallbacks.get(sentiment, fallbacks["neutral"]))
+        self.conversation_history[-1]["bot"] = response
+        return response
+
+    def chat_loop(self):
+        """Interactive chat interface"""
+        print("Enhanced Chatbot initialized. Type 'quit' to exit.")
+        
+        # User identification
+        while not self.current_user:
+            user_id = input("Enter your name or ID to continue: ").strip()
+            if user_id.lower() == 'quit':
+                return
+            if user_id:
+                self.current_user = user_id
+                profile = self.load_user_profile(user_id)
+                if not profile:
+                    print("Welcome new user! Let me get to know you.")
+                    name = input("What should I call you? ").strip()
+                    if name.lower() == 'quit':
+                        return
+                    self.save_user_profile(user_id, {
+                        "name": name, 
+                        "created": datetime.now().isoformat(),
+                        "preferences": {}
+                    })
+        
+        # Main chat loop
+        while True:
+            try:
+                user_input = input("You: ")
+                if user_input.lower() == 'quit':
+                    print("Goodbye! It was nice chatting with you.")
+                    break
+                
+                response = self.process_user_input(user_input)
+                print(f"Bot: {response}")
+                
+            except KeyboardInterrupt:
+                print("\nGoodbye!")
+                break
+            except Exception as e:
+                print(f"Error: {str(e)}")
+                continue
