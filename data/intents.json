@@ -11,15 +11,19 @@
       "Good afternoon",
       "Good evening",
       "Hey bot",
-      "Hi chatbot"
+      "Hi chatbot",
+      "Greetings",
+      "What's up",
+      "Howdy",
+      "Yo"
     ],
     "responses": [
       "Hello! How can I help you today?",
       "Hi there! What can I do for you?",
       "Greetings! How may I assist you?",
-      "Hello! What brings you here today?"
-    ],
-    "context": ""
+      "Hello! What brings you here today?",
+      "Welcome to ESOFT! How can I help?"
+    ]
   },
   {
     "tag": "goodbye",
@@ -33,15 +37,19 @@
       "Goodnight",
       "Talk to you later",
       "Signing off",
-      "Catch you later"
+      "Catch you later",
+      "Farewell",
+      "Bye bye",
+      "Take care",
+      "Until next time"
     ],
     "responses": [
       "Goodbye! Have a great day!",
       "See you soon! Come back anytime.",
       "Farewell! It was nice chatting with you.",
-      "Until next time! Take care."
-    ],
-    "context": ""
+      "Until next time! Take care.",
+      "Wishing you success in your studies! Goodbye!"
+    ]
   },
   {
     "tag": "thanks",
@@ -55,1989 +63,699 @@
       "Thanks for your help",
       "Thx",
       "Cheers",
-      "Awesome, thanks"
+      "Awesome, thanks",
+      "Grateful",
+      "Many thanks",
+      "Thanks a bunch",
+      "Thank you kindly"
     ],
     "responses": [
       "You're welcome!",
       "Happy to help!",
       "My pleasure!",
-      "Anytime! Let me know if you need anything else."
-    ],
-    "context": ""
+      "Anytime! Let me know if you need anything else.",
+      "Glad I could assist you!"
+    ]
   },
   {
-    "tag": "inquire_course_details",
+    "tag": "course_inquiry",
     "patterns": [
-      "Can you provide details about the BSc in Data Science?",
-      "Tell me more about the British IT Degree.",
-      "What does the BBM Hons Degree cover?",
-      "I'm interested in the Diploma in English"
+      "What courses do you offer?",
+      "List of programs",
+      "Available degrees",
+      "What can I study?",
+      "Course catalog",
+      "Program offerings",
+      "Academic programs",
+      "Diploma options",
+      "Degree programs",
+      "Study options",
+      "Available qualifications",
+      "What are my study choices?",
+      "Show me your courses",
+      "Educational programs"
     ],
     "responses": [
-      "The BSc (Hons) in Data Science is a top-up degree offered in partnership with London Metropolitan University, focusing on advanced data analysis and machine learning techniques.",
-      "Our British IT Degree offers 10 specializations, including Software Engineering and Cybersecurity, through the Pearson HND Programme.",
-      "The BBM Hons Degree is designed to prepare students for professional careers in business, emphasizing knowledge, skills, attitudes, and mindset development.",
-      "The Diploma in English aims to enhance your listening, speaking, reading, and writing skills using interactive sessions and the communicative approach."
-    ],
-    "context": ""
+      "ESOFT offers a wide range of programs including IT degrees, business management, engineering, and professional diplomas.",
+      "We provide undergraduate degrees, HND programs, professional certifications, and short courses in various fields.",
+      "You can explore our full course catalog at: https://esoft.lk/courses",
+      "Our programs include BSc in IT, BBM degrees, Pearson HNDs, and specialized diplomas in growing industries."
+    ]
   },
   {
-    "tag": "inquire_admission_process",
+    "tag": "admission_requirements",
     "patterns": [
-      "How do I apply for a course?",
-      "What's the admission process?",
-      "Steps to enroll at ESOFT?",
-      "Application requirements?"
+      "What are the entry requirements?",
+      "Admission criteria",
+      "How to qualify?",
+      "Eligibility for courses",
+      "What qualifications do I need?",
+      "Minimum requirements",
+      "Academic prerequisites",
+      "Entry qualifications",
+      "Do I qualify?",
+      "Required documents",
+      "Application prerequisites",
+      "What grades do I need?",
+      "Entry standards",
+      "Minimum qualifications"
     ],
     "responses": [
-      "To apply, you need to submit an application form along with relevant academic and professional qualifications. Specific requirements may vary by course.",
-      "The admission process involves submitting necessary documents, meeting entry requirements, and possibly attending an interview or assessment.",
-      "You can start your application online through our registration portal: https://register.esoft.lk"
-    ],
-    "context": ""
+      "Requirements vary by program. For degree programs, you typically need A/Ls or equivalent qualifications.",
+      "Most diploma programs require O/L qualifications. Some professional courses may have specific prerequisites.",
+      "You can check specific entry requirements for each program on our website or contact admissions."
+    ]
   },
   {
-    "tag": "inquire_fee_structure",
+    "tag": "application_process",
     "patterns": [
-      "What are the fees for the IT degree?",
-      "How much does the Business Management course cost?",
-      "Fee details for the English Diploma?",
-      "Are there any additional costs?"
+      "How do I apply?",
+      "Application steps",
+      "Enrollment process",
+      "Registration procedure",
+      "How to enroll?",
+      "Admission process",
+      "Steps to join",
+      "Application method",
+      "How to register?",
+      "Sign up process",
+      "Joining procedure",
+      "Getting started",
+      "Begin application",
+      "Start enrollment"
     ],
     "responses": [
-      "The total investment for the Bachelor of Information Technology Honours Degree is approximately LKR 1,200,000, including a registration fee of LKR 20,000.",
-      "Fees for other courses vary; please specify the course you're interested in for detailed information.",
-      "We offer flexible payment plans to make education more accessible."
-    ],
-    "context": ""
+      "You can apply online through our portal: https://apply.esoft.lk or visit any of our campuses.",
+      "The application process involves submitting documents, paying registration fees, and attending an orientation."
+    ]
   },
   {
-    "tag": "inquire_scholarships",
+    "tag": "fee_structure",
     "patterns": [
-      "Are scholarships available?",
-      "How can I apply for a scholarship?",
-      "Scholarship programs at ESOFT?",
-      "Eligibility for financial aid?"
+      "What are the fees?",
+      "Course costs",
+      "Tuition fees",
+      "Program prices",
+      "How much does it cost?",
+      "Payment amounts",
+      "Fee details",
+      "Price structure",
+      "Cost of study",
+      "Education fees",
+      "Program expenses",
+      "Study costs",
+      "Financial requirements",
+      "Payment information"
     ],
     "responses": [
-      "Yes, ESOFT offers scholarships, including merit-based ones. In 2025, we announced 1,000 merit-based scholarships to celebrate 25 years of excellence.",
-      "Eligibility criteria vary; please provide your academic background for more specific information.",
-      "You can find more details and apply through our scholarships page: https://esoft.lk/scholarships"
-    ],
-    "context": ""
+      "Fees vary by program and duration. Degree programs typically range from LKR 800,000 to 1,500,000.",
+      "You can request a detailed fee breakdown for your chosen program from our admissions office."
+    ]
   },
   {
-    "tag": "inquire_campus_locations",
+    "tag": "payment_options",
     "patterns": [
-      "Where are your campuses located?",
-      "Do you have a branch in Kandy?",
-      "ESOFT locations in Sri Lanka?",
-      "Nearest campus to me?"
+      "Payment methods",
+      "How can I pay?",
+      "Installment plans",
+      "Payment schemes",
+      "Fee payment options",
+      "Ways to pay",
+      "Bank transfer?",
+      "Credit card payments",
+      "Payment flexibility",
+      "Monthly installments",
+      "Deferred payment",
+      "Payment arrangements",
+      "Financial plans",
+      "Tuition payment methods"
     ],
     "responses": [
-      "ESOFT has over 40 branches across Sri Lanka, including campuses in Colombo, Kandy, Gampaha, and Jaffna.",
-      "You can find the full list of our campuses on our branch network page: https://esoft.lk/branch-network"
-    ],
-    "context": ""
+      "We accept bank transfers, credit/debit cards, and cash payments. Installment plans are available.",
+      "You can discuss customized payment plans with our finance department to suit your needs."
+    ]
   },
   {
-    "tag": "inquire_online_courses",
+    "tag": "scholarship_info",
     "patterns": [
-      "Do you offer online courses?",
-      "Can I study remotely?",
-      "Online learning options?",
-      "Distance education programs?"
+      "Scholarships available?",
+      "Financial aid",
+      "Discounts for students",
+      "Funding options",
+      "Study grants",
+      "Bursaries",
+      "Fee concessions",
+      "Merit scholarships",
+      "Need-based aid",
+      "Education funding",
+      "Tuition assistance",
+      "Scholarship programs",
+      "Financial support",
+      "Reduced fees"
     ],
     "responses": [
-      "Yes, ESOFT provides online courses through our ESOFT Online platform: https://esoft.lk/esoft-online-courses",
-      "We offer a range of programs online, ensuring flexibility and accessibility for all students."
-    ],
-    "context": ""
+      "ESOFT offers merit-based and need-based scholarships. Applications are open twice yearly.",
+      "You can check scholarship eligibility and apply through our financial aid office."
+    ]
   },
   {
-    "tag": "inquire_program_accreditation",
+    "tag": "campus_locations",
     "patterns": [
-      "Are your degrees recognized?",
-      "Accreditation details?",
-      "Validity of your programs?",
-      "Are your courses UGC approved?"
+      "Where are your campuses?",
+      "Branch locations",
+      "Study centers",
+      "Nearest campus",
+      "Colombo branches",
+      "Kandy location",
+      "Gampaha campus",
+      "Jaffna center",
+      "Regional campuses",
+      "Physical locations",
+      "Addresses",
+      "Contact locations",
+      "Study venues",
+      "Where are you located?"
     ],
     "responses": [
-      "ESOFT's programs are accredited and recognized both locally and internationally.",
-      "For example, the BBM Hons Degree is approved by the University Grants Commission (UGC) of Sri Lanka.",
-      "We partner with reputable institutions like London Metropolitan University and Kingston University."
-    ],
-    "context": ""
+      "We have over 40 campuses across Sri Lanka. Our main metro campus is in Colombo.",
+      "You can find our full branch network at: https://esoft.lk/locations"
+    ]
   },
   {
-    "tag": "inquire_student_support",
+    "tag": "online_learning",
     "patterns": [
-      "What support services do you offer?",
-      "Is there career guidance?",
-      "Do you provide counseling?",
-      "Student assistance programs?"
+      "Online courses?",
+      "Distance learning",
+      "Virtual classes",
+      "Study from home",
+      "Remote education",
+      "Digital learning",
+      "E-learning options",
+      "Online degrees",
+      "Web-based programs",
+      "Internet courses",
+      "Virtual education",
+      "Digital campus",
+      "Study online",
+      "Web learning"
     ],
     "responses": [
-      "We offer comprehensive student support services, including academic counseling, career guidance, and personal development workshops.",
-      "Our dedicated team is here to assist you throughout your educational journey."
-    ],
-    "context": ""
+      "Yes! We offer many programs through our ESOFT Online platform with flexible scheduling.",
+      "Our digital campus provides full online degrees with interactive virtual classrooms."
+    ]
   },
   {
-    "tag": "inquire_transfer_programs",
+    "tag": "accreditation",
     "patterns": [
-      "Can I transfer to a university abroad?",
-      "Do you have international transfer programs?",
-      "Study abroad options?",
-      "Credit transfer opportunities?"
+      "Is ESOFT accredited?",
+      "Recognized programs?",
+      "UGC approval",
+      "Valid degrees?",
+      "Quality assurance",
+      "Certified courses",
+      "Approved qualifications",
+      "Recognized certifications",
+      "Accreditation status",
+      "Government recognition",
+      "Valid diplomas?",
+      "Internationally accepted?",
+      "Education standards",
+      "Quality certifications"
     ],
     "responses": [
-      "Yes, ESOFT offers transfer programs that allow you to complete part of your studies in Sri Lanka and transfer to partner universities in the UK and Australia.",
-      "Our international placements provide global exposure and opportunities."
-    ],
-    "context": ""
+      "All ESOFT programs are accredited and recognized both locally and internationally.",
+      "We partner with leading universities and accreditation bodies to ensure quality education."
+    ]
   },
   {
-    "tag": "inquire_contact_information",
+    "tag": "student_support",
     "patterns": [
-      "How can I contact ESOFT?",
-      "Phone number and email?",
-      "Customer service details?",
-      "Need assistance contact info?"
+      "What support services?",
+      "Student help",
+      "Academic assistance",
+      "Counseling services",
+      "Mentorship programs",
+      "Learning support",
+      "Study help",
+      "Tutoring options",
+      "Guidance services",
+      "Student welfare",
+      "Help resources",
+      "Academic support",
+      "Education guidance",
+      "Student services"
     ],
     "responses": [
-      "You can reach us at +94 117 572 572 or email us at info@esoft.lk.",
-      "For more contact options, please visit our contact page: https://esoft.lk/contact-us"
-    ],
-    "context": ""
+      "We provide comprehensive support including counseling, career guidance, and academic assistance.",
+      "Our student success center offers tutoring, mentoring, and personal development programs."
+    ]
   },
   {
-    "tag": "program_duration",
+    "tag": "international_students",
     "patterns": [
-      "How long is the IT degree?",
-      "What’s the duration of the business diploma?",
-      "How many years is the BBM program?",
-      "Course length of the English diploma?"
+      "International admissions",
+      "Foreign student policy",
+      "Visa requirements",
+      "Study in Sri Lanka",
+      "Overseas applicants",
+      "International education",
+      "Global students",
+      "Foreign qualifications",
+      "English requirements",
+      "IELTS needed?",
+      "TOEFL acceptance",
+      "Immigration process",
+      "Study visa",
+      "International enrollment"
     ],
     "responses": [
-      "Most undergraduate degrees take 3–4 years to complete. Diplomas typically take 6–18 months.",
-      "The exact duration depends on the program level and structure. Please specify the course you’re asking about."
-    ],
-    "context": ""
+      "We welcome international students! Our international office assists with visas and accommodation.",
+      "Foreign qualifications are evaluated case by case. IELTS 6.0 or equivalent is typically required."
+    ]
   },
   {
-    "tag": "intake_schedule",
+    "tag": "career_opportunities",
     "patterns": [
-      "When do your courses start?",
-      "What are your intake dates?",
-      "Next admission period?",
-      "Are enrollments open now?"
+      "Job prospects",
+      "Career paths",
+      "Employment after graduation",
+      "Industry opportunities",
+      "Work placements",
+      "Graduate employment",
+      "Job market",
+      "Career outcomes",
+      "Professional prospects",
+      "Future careers",
+      "Work opportunities",
+      "Industry demand",
+      "Job potential",
+      "Career development"
     ],
     "responses": [
-      "Our main intakes are in January, May, and September. Some courses have rolling admissions.",
-      "Please let me know the program you're interested in, and I can give you the next available intake."
-    ],
-    "context": ""
+      "Our graduates enjoy excellent employment rates with career opportunities in growing industries.",
+      "We offer career counseling and industry placements to help launch your professional journey."
+    ]
   },
   {
-    "tag": "ask_language_medium",
+    "tag": "faculty_quality",
     "patterns": [
-      "What is the medium of instruction?",
-      "Are your programs taught in English?",
-      "Do you offer Sinhala medium classes?",
-      "Language used in classes?"
+      "Who are the lecturers?",
+      "Teacher qualifications",
+      "Faculty experience",
+      "Instructor quality",
+      "Teaching staff",
+      "Professor credentials",
+      "Academic team",
+      "Lecturer expertise",
+      "Faculty members",
+      "Teaching quality",
+      "Educator standards",
+      "Instructor background",
+      "Staff qualifications",
+      "Who teaches?"
     ],
     "responses": [
-      "Most programs are taught in English, especially higher education degrees and diplomas.",
-      "For selected foundation and diploma courses, Sinhala or bilingual options may be available."
-    ],
-    "context": ""
+      "Our faculty includes industry experts and highly qualified academics with advanced degrees.",
+      "Lecturers are selected for both academic excellence and real-world professional experience."
+    ]
   },
   {
-    "tag": "ask_career_paths",
+    "tag": "industry_connections",
     "patterns": [
-      "What jobs can I get with this degree?",
-      "Career opportunities after studying IT?",
-      "What’s the career path after BBM?",
-      "Will I be employable after the diploma?"
+      "Company partnerships",
+      "Industry links",
+      "Corporate relations",
+      "Business collaborations",
+      "Employer networks",
+      "Professional connections",
+      "Industry engagement",
+      "Corporate partnerships",
+      "Business alliances",
+      "Company ties",
+      "Industry relevance",
+      "Commercial links",
+      "Employer relations",
+      "Business networks"
     ],
     "responses": [
-      "Graduates go on to roles such as software developers, business analysts, project managers, engineers, and more depending on their specialization.",
-      "We offer career guidance services to help you navigate your path after graduation."
-    ],
-    "context": ""
+      "We maintain strong partnerships with leading companies for internships and graduate placements.",
+      "Our curriculum is developed with industry input to ensure career-relevant skills."
+    ]
   },
   {
-    "tag": "ask_lecturers_faculty",
+    "tag": "facilities",
     "patterns": [
-      "Who teaches the courses?",
-      "Are your lecturers qualified?",
-      "Tell me about your faculty members.",
-      "Who are the instructors?"
+      "Campus facilities",
+      "What resources are available?",
+      "Study spaces",
+      "Computer labs",
+      "Library resources",
+      "Learning spaces",
+      "Classroom quality",
+      "Technical facilities",
+      "Education resources",
+      "Study environment",
+      "Campus amenities",
+      "Learning infrastructure",
+      "Academic facilities",
+      "Campus resources"
     ],
     "responses": [
-      "Our lecturers are industry professionals and certified educators with local and international experience.",
-      "Many of our faculty hold postgraduate qualifications and bring hands-on expertise to the classroom."
-    ],
-    "context": ""
+      "Our campuses feature modern labs, libraries, study lounges, and high-tech classrooms.",
+      "Students enjoy access to cutting-edge technology and comfortable learning spaces."
+    ]
   },
   {
-    "tag": "ask_industry_links",
+    "tag": "housing",
     "patterns": [
-      "Do you work with companies?",
-      "Industry partnerships?",
-      "Practical experience opportunities?",
-      "Internships available?"
+      "Student accommodation",
+      "Hostel facilities",
+      "Living options",
+      "Residence halls",
+      "Dormitories",
+      "Housing services",
+      "Where to stay?",
+      "Accommodation help",
+      "Student housing",
+      "Living arrangements",
+      "Residential options",
+      "Hostel availability",
+      "Dorm facilities",
+      "Campus living"
     ],
     "responses": [
-      "Yes, we partner with leading companies for internships, industrial training, and guest lectures.",
-      "Many programs include industry projects or placements to give you real-world experience."
-    ],
-    "context": ""
+      "We offer hostel facilities near major campuses and can recommend approved housing options.",
+      "Our accommodation office assists students in finding safe and convenient living arrangements."
+    ]
   },
   {
-    "tag": "ask_hostel_facilities",
+    "tag": "alumni",
     "patterns": [
-      "Do you provide hostel accommodation?",
-      "Is there student housing?",
-      "Where can I stay if I study in Colombo?",
-      "Hostel for students?"
+      "Graduate success",
+      "Alumni achievements",
+      "Where do graduates work?",
+      "Success stories",
+      "Graduate outcomes",
+      "Former students",
+      "Alumni network",
+      "Graduate careers",
+      "Past students",
+      "Alumni success",
+      "Graduate destinations",
+      "Career progression",
+      "Ex-student achievements",
+      "Where are alumni now?"
     ],
     "responses": [
-      "Yes, we provide hostel facilities near several major campuses including Colombo.",
-      "Let me know your study location, and I’ll share available accommodation options."
-    ],
-    "context": ""
+      "Our alumni work at top companies worldwide and maintain an active professional network.",
+      "Many graduates have launched successful careers or continued to advanced studies."
+    ]
   },
   {
-    "tag": "ask_alumni_success",
-    "patterns": [
-      "Do you have successful alumni?",
-      "Can you tell me about graduates?",
-      "What have ESOFT graduates achieved?",
-      "Alumni stories?"
-    ],
-    "responses": [
-      "Yes, our alumni work in top tech firms, multinational companies, and government sectors both in Sri Lanka and abroad.",
-      "Visit our website for success stories from ESOFT graduates."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_certification",
+    "tag": "certification",
     "patterns": [
       "Will I get a certificate?",
-      "What qualification do I receive?",
-      "Is there a diploma awarded?",
-      "Is the certificate recognized?"
-    ],
-    "responses": [
-      "Yes, you will receive a certificate, diploma, or degree depending on your program. These are accredited and recognized.",
-      "For internationally partnered programs, you’ll receive a certificate from the awarding body as well."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_student_activities",
-    "patterns": [
-      "What clubs or societies are available?",
-      "Do you have extracurricular activities?",
-      "Student life at ESOFT?",
-      "Can I join a club?"
-    ],
-    "responses": [
-      "Yes! ESOFT offers clubs, events, and student societies ranging from IT and business to art, debate, and volunteering.",
-      "We encourage all students to participate in extracurriculars to enhance their skills and network."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_international_students",
-    "patterns": [
-      "Do you accept international students?",
-      "Can foreign students apply?",
-      "I'm from another country, can I study at ESOFT?",
-      "Are your programs open to international applicants?"
-    ],
-    "responses": [
-      "Yes, ESOFT welcomes international students. We provide visa guidance, online options, and support throughout your stay.",
-      "Many of our programs are accessible globally. Contact our international admissions office at international@esoft.lk for help."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_education_partners",
-    "patterns": [
-      "Which universities do you partner with?",
-      "Education partners of ESOFT?",
-      "Do you offer foreign university programs?",
-      "What are your affiliated institutions?"
-    ],
-    "responses": [
-      "We partner with institutions like London Metropolitan University, Kingston University, and Pearson (UK) for higher education delivery.",
-      "These collaborations ensure international quality standards and recognized certifications."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_course_mode",
-    "patterns": [
-      "Is this course full-time or part-time?",
-      "Do you offer weekend classes?",
-      "Flexible study options available?",
-      "Evening class availability?"
-    ],
-    "responses": [
-      "We offer full-time, part-time, and weekend/evening class options for many programs, depending on availability and location.",
-      "Let me know which course you're interested in to provide accurate mode options."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_exam_structure",
-    "patterns": [
-      "How are the exams conducted?",
-      "What's the exam format?",
-      "Do I need to take final exams?",
-      "Are there assignments or exams?"
-    ],
-    "responses": [
-      "Most programs use a mix of assignments, project work, and final examinations. Assessment types vary by course.",
-      "We’ll guide you on the specific assessment plan during orientation or after enrollment."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_refund_policy",
-    "patterns": [
-      "Can I get a refund if I withdraw?",
-      "What is the refund policy?",
-      "Do you offer money-back on cancellations?",
-      "What if I change my mind after enrolling?"
-    ],
-    "responses": [
-      "Refunds are subject to our policy. If you withdraw early, partial refunds may be possible depending on the timeline and course.",
-      "Please contact our admissions office for the most accurate refund procedures."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_transport_facility",
-    "patterns": [
-      "Do you provide transportation?",
-      "Are there bus services for students?",
-      "How do students travel to campus?",
-      "Any shuttle or transport options?"
-    ],
-    "responses": [
-      "Some ESOFT campuses provide transport arrangements or assistance finding local travel options.",
-      "Availability depends on the location — we can help you find the most convenient route."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_disability_support",
-    "patterns": [
-      "Do you support students with disabilities?",
-      "Are your campuses accessible?",
-      "I need special assistance — is that available?",
-      "Facilities for differently abled students?"
-    ],
-    "responses": [
-      "Yes, ESOFT is committed to providing inclusive education. Selected campuses have facilities and support for students with disabilities.",
-      "Please contact our support team for tailored arrangements or accessibility options."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_library_facilities",
-    "patterns": [
-      "Do you have a library?",
-      "Can I access study materials?",
-      "Library hours and resources?",
-      "Are digital resources available?"
-    ],
-    "responses": [
-      "Yes, our campuses have libraries with academic books, journals, and digital learning tools.",
-      "Library access and hours vary by campus. Online resources are also available for registered students."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_language_requirements",
-    "patterns": [
-      "Do I need English proficiency?",
-      "Is IELTS required?",
-      "Language requirements for international programs?",
-      "Can I apply without English qualifications?"
-    ],
-    "responses": [
-      "Some programs may require English proficiency such as IELTS or equivalent. Others offer internal assessments or foundation courses.",
-      "Let me know which course you're applying for to confirm specific language requirements."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_technical_support",
-    "patterns": [
-      "I’m having trouble with the registration portal.",
-      "How do I reset my student login?",
-      "Where can I get technical support?",
-      "The website isn't working — what should I do?"
-    ],
-    "responses": [
-      "You can reach our technical support team at support@esoft.lk or call +94 117 572 572 for assistance.",
-      "For login issues, try resetting your password or clearing your browser cache before retrying."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_online_learning",
-    "patterns": [
-      "Can I study online?",
-      "Do you offer distance learning?",
-      "Is remote learning available?",
-      "Are classes conducted online?"
-    ],
-    "responses": [
-      "Yes, ESOFT offers fully online and hybrid learning options for selected programs.",
-      "Let me know the course you're interested in, and I’ll confirm the available learning modes."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_fees_breakdown",
-    "patterns": [
-      "Can I get a breakdown of the fees?",
-      "What are the tuition and other costs?",
-      "Detailed course fee structure?",
-      "How much do I pay per semester?"
-    ],
-    "responses": [
-      "The fee structure varies by course, level, and location. You can request a detailed breakdown from our admissions office.",
-      "Please provide the course name, and we’ll send you the full fee breakdown."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_transfer_programs",
-    "patterns": [
-      "Can I transfer to a university abroad?",
-      "Do you offer credit transfers?",
-      "Transfer options for international study?",
-      "Can I study 2 years here and finish abroad?"
-    ],
-    "responses": [
-      "Yes, selected programs offer transfer pathways to universities in the UK, Australia, and other countries.",
-      "Let us know your target country or university to check transfer eligibility."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_mature_students",
-    "patterns": [
-      "I’m over 30, can I apply?",
-      "Do you accept mature students?",
-      "Is there an age limit to join ESOFT?",
-      "Can adults take these courses?"
-    ],
-    "responses": [
-      "Yes, ESOFT welcomes mature students for both academic and professional programs.",
-      "There’s no age barrier to education — you're very welcome to join."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_payment_methods",
-    "patterns": [
-      "How can I pay the fees?",
-      "Do you accept card payments?",
-      "Can I pay in installments?",
-      "What are the available payment options?"
-    ],
-    "responses": [
-      "You can pay via bank transfer, credit/debit card, cash deposit, or online gateway. Installment plans are available for some programs.",
-      "Visit the finance office or email finance@esoft.lk for payment instructions."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_scholarship_availability",
-    "patterns": [
-      "Are there any scholarships?",
-      "Do you offer financial aid?",
-      "How can I apply for a scholarship?",
-      "Discounts for students?"
-    ],
-    "responses": [
-      "Yes, ESOFT offers merit-based and need-based scholarships for selected programs.",
-      "Check our website or contact admissions for eligibility and application procedures."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_parent_queries",
-    "patterns": [
-      "I'm a parent, can I get course info?",
-      "Can parents visit the campus?",
-      "I want to talk to someone about my child’s admission.",
-      "I want to support my child's education — what can I do?"
-    ],
-    "responses": [
-      "Absolutely! Parents are welcome to inquire, visit, or contact our counselors for information.",
-      "You can email info@esoft.lk or visit your nearest campus with your child for detailed guidance."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_certificate_delivery",
-    "patterns": [
-      "How will I receive my certificate?",
-      "Can the diploma be mailed?",
-      "When will I get my certificate?",
-      "Is the certificate available online?"
-    ],
-    "responses": [
-      "Certificates are issued after course completion and can be collected from the campus or mailed upon request.",
-      "We’ll notify you once your documents are ready. International delivery is also available."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_language_courses",
-    "patterns": [
-      "Do you offer English courses?",
-      "I want to improve my English skills.",
-      "Any spoken English classes?",
-      "Communication skills courses available?"
-    ],
-    "responses": [
-      "Yes, we offer English for Academic Purposes, Spoken English, and IELTS preparation courses.",
-      "These programs help you boost communication and prepare for higher studies or work."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_whatsapp_contact",
-    "patterns": [
-      "Do you have a WhatsApp number?",
-      "Can I contact via WhatsApp?",
-      "Chat with ESOFT on WhatsApp?",
-      "What’s your WhatsApp support line?"
-    ],
-    "responses": [
-      "Yes, you can reach us via WhatsApp at +94 77 123 4567. Our counselors are ready to assist you.",
-      "Just drop us a message on WhatsApp and we'll get back to you shortly."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_campus_facilities",
-    "patterns": [
-      "What facilities are available on campus?",
-      "Do you have a canteen and Wi-Fi?",
-      "Are there study areas and labs?",
-      "Tell me about ESOFT’s infrastructure"
-    ],
-    "responses": [
-      "Our campuses offer modern classrooms, computer labs, Wi-Fi, libraries, canteens, and common study areas.",
-      "Facilities may vary slightly by location — visit your nearest campus to explore."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_student_clubs",
-    "patterns": [
-      "Do you have any student clubs?",
-      "Are there extracurricular activities?",
-      "Can I join societies or clubs?",
-      "What about non-academic programs?"
-    ],
-    "responses": [
-      "Yes, ESOFT encourages student engagement through tech clubs, language clubs, innovation teams, and more.",
-      "You can join during orientation or ask your campus coordinator."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_hostel_availability",
-    "patterns": [
-      "Do you offer hostels?",
-      "Accommodation options for students?",
-      "Where can I stay during my studies?",
-      "Are there nearby hostels or rooms?"
-    ],
-    "responses": [
-      "Some ESOFT campuses assist with hostel arrangements or recommend nearby lodging.",
-      "Please check with your preferred campus for availability and assistance."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_industry_partnerships",
-    "patterns": [
-      "Do you collaborate with companies?",
-      "Are your programs industry-aligned?",
-      "Internships and job placement partners?",
-      "Any corporate partnerships?"
-    ],
-    "responses": [
-      "Yes, ESOFT partners with leading companies for internships, projects, and career placement.",
-      "Our curriculum is designed to meet real-world industry needs."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_certification_recognition",
-    "patterns": [
-      "Are your certifications recognized?",
-      "Are ESOFT diplomas valid abroad?",
-      "Are these certificates government approved?",
-      "Is your qualification accepted globally?"
-    ],
-    "responses": [
-      "Our programs are accredited locally and internationally, depending on the course.",
-      "We partner with bodies like TVEC, Pearson UK, and recognized universities to ensure quality and recognition."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_orientation_details",
-    "patterns": [
-      "When is the orientation session?",
-      "Do you have an induction program?",
-      "New student orientation details?",
-      "What happens before classes start?"
-    ],
-    "responses": [
-      "All new students attend an orientation session before classes begin. Details will be emailed after registration.",
-      "Orientation includes campus tour, academic briefing, and system access instructions."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_graduation_ceremony",
-    "patterns": [
-      "Do you conduct a graduation ceremony?",
-      "When is the convocation?",
-      "How do I attend graduation?",
-      "Where is the degree ceremony held?"
-    ],
-    "responses": [
-      "Yes, ESOFT hosts graduation ceremonies annually. Eligible students will be notified in advance.",
-      "Details on attire, location, and guests are shared closer to the event."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_exam_resit_policy",
-    "patterns": [
-      "Can I resit an exam if I fail?",
-      "What’s the retake policy?",
-      "Do I have to pay for resits?",
-      "How do resits work?"
-    ],
-    "responses": [
-      "Yes, resits are allowed based on the exam policy. Additional fees may apply.",
-      "You’ll be guided by your faculty coordinator regarding resit schedules and preparation."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_language_medium",
-    "patterns": [
-      "What language are classes taught in?",
-      "Are courses in English?",
-      "Can I study in Sinhala or Tamil?",
-      "Is there bilingual instruction?"
-    ],
-    "responses": [
-      "Most higher education programs are conducted in English. Some certificate and diploma programs are available in Sinhala or Tamil.",
-      "Please ask about your specific course for language options."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_career_guidance",
-    "patterns": [
-      "Do you provide career guidance?",
-      "Help with choosing the right course?",
-      "Can I speak to a counselor for advice?",
-      "Career support services?"
-    ],
-    "responses": [
-      "Yes, ESOFT offers one-on-one career counseling to help you choose the right path.",
-      "Book a session with one of our academic advisors or visit the career support desk on campus."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_alumni_network",
-    "patterns": [
-      "Do you have an alumni network?",
-      "How can I connect with ESOFT graduates?",
-      "Are there alumni events?",
-      "Can I contact past students?"
-    ],
-    "responses": [
-      "Yes, ESOFT has an active alumni network. We host events and maintain professional connections for graduates.",
-      "You can contact the student services office to learn more about alumni programs."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_disabled_support",
-    "patterns": [
-      "Do you support students with disabilities?",
-      "Facilities for differently-abled students?",
-      "Is the campus accessible?",
-      "Do you offer learning support?"
-    ],
-    "responses": [
-      "Yes, we offer support services and accessible facilities for students with disabilities. Please contact student support for personalized arrangements.",
-      "ESOFT is committed to inclusive education. Let us know your needs so we can assist you better."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_late_registration",
-    "patterns": [
-      "Can I register after the deadline?",
-      "Is late registration possible?",
-      "What if I missed the application date?",
-      "Can I join late?"
-    ],
-    "responses": [
-      "Late registrations may be considered on a case-by-case basis. Please contact admissions immediately.",
-      "It’s best to apply as soon as possible, but we may be able to help if the course hasn’t started yet."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_certificate_verification",
-    "patterns": [
-      "How do I verify a certificate?",
-      "Can employers check my qualification?",
-      "How to confirm authenticity of a diploma?",
-      "Certificate verification process?"
-    ],
-    "responses": [
-      "We offer verification services for academic records. Third parties can contact registry@esoft.lk with details.",
-      "Each certificate includes verification details. For help, email our academic records team."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_exam_timetable",
-    "patterns": [
-      "When are the exams?",
-      "Can I get the exam timetable?",
-      "Where can I find my exam schedule?",
-      "Exam dates for this semester?"
-    ],
-    "responses": [
-      "Exam timetables are shared by the academic office before each session. Log in to your student portal for details.",
-      "You’ll receive a notification when your personal timetable is released."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_course_deferral",
-    "patterns": [
-      "Can I defer my course?",
-      "I want to pause my studies.",
-      "Is course deferral allowed?",
-      "How to postpone my intake?"
-    ],
-    "responses": [
-      "Course deferral is possible under valid circumstances. Submit a written request to the registrar’s office.",
-      "Deferral policies depend on your program and intake. Contact student services for guidance."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_exam_format",
-    "patterns": [
-      "Are exams online or offline?",
-      "What’s the exam format?",
-      "Written or computer-based exams?",
-      "Exam structure details?"
-    ],
-    "responses": [
-      "Exams may be written, computer-based, or project-based depending on the course. Details will be shared by your lecturer.",
-      "Check your course outline or contact the academic department for the specific exam format."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_library_access",
-    "patterns": [
-      "Do you have a library?",
-      "Can students use the library?",
-      "Are e-books available?",
-      "How to access study resources?"
-    ],
-    "responses": [
-      "Yes, students have access to on-campus libraries and digital learning materials.",
-      "You can also use the ESOFT learning portal to access online academic resources."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_certificate_duration",
-    "patterns": [
-      "How long does it take to get a certificate?",
-      "When will I receive my diploma?",
-      "Certificate issuing time?",
-      "How soon after exams is the certificate ready?"
-    ],
-    "responses": [
-      "Certificates are typically issued 4–6 weeks after final results are released.",
-      "We'll notify you via SMS or email when your certificate is ready for collection."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_program_comparison",
-    "patterns": [
-      "What’s the difference between HND and Degree?",
-      "Compare diploma and degree programs",
-      "Which is better: HND or BSc?",
-      "Help me choose between diploma and degree"
-    ],
-    "responses": [
-      "Diplomas are shorter and career-focused, while degrees offer deeper academic and theoretical knowledge.",
-      "We recommend speaking with a counselor to decide which suits your goals best."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_esoft_history",
-    "patterns": [
-      "What is the history of ESOFT?",
-      "When was ESOFT established?",
-      "Tell me about ESOFT’s background",
-      "Who founded ESOFT?"
-    ],
-    "responses": [
-      "ESOFT was founded in 2000 and has grown into one of Sri Lanka’s leading private education providers.",
-      "We have a strong track record in IT, business, engineering, and more, with international affiliations."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_part_time_programs",
-    "patterns": [
-      "Do you offer part-time courses?",
-      "Can I study while working?",
-      "Evening or weekend classes?",
-      "Are flexible schedules available?"
-    ],
-    "responses": [
-      "Yes, ESOFT offers part-time, weekend, and evening programs to suit working professionals.",
-      "Please contact admissions to find out which courses offer flexible study options."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_online_programs",
-    "patterns": [
-      "Do you offer online courses?",
-      "Can I study remotely?",
-      "Distance learning options?",
-      "Online degree programs?"
-    ],
-    "responses": [
-      "Yes, ESOFT offers fully online and blended learning programs for selected courses.",
-      "Check with our admissions team to find out if your preferred course is available online."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_application_status",
-    "patterns": [
-      "What is the status of my application?",
-      "Has my admission been confirmed?",
-      "How do I check my application?",
-      "Did I get accepted?"
-    ],
-    "responses": [
-      "To check your application status, please log in to the student portal or contact the admissions team directly.",
-      "If you applied online, you will receive an update via email or SMS shortly."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_language_support",
-    "patterns": [
-      "Is language support available?",
-      "Can I get help with English?",
-      "Are there language classes?",
-      "Support for non-native English speakers?"
-    ],
-    "responses": [
-      "Yes, we offer English language support classes to help you with academic and professional communication.",
-      "Ask your course coordinator or visit the student support center to learn more."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_result_delay",
-    "patterns": [
-      "Why are my results delayed?",
-      "Results are not released yet",
-      "Delay in exam results?",
-      "When will I get my marks?"
-    ],
-    "responses": [
-      "Results are usually released within 4–6 weeks. Any delay may be due to moderation or verification processes.",
-      "Contact the academic office for specific updates about your course results."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_transfer_between_campuses",
-    "patterns": [
-      "Can I transfer to another campus?",
-      "I want to change my study location",
-      "Transfer from Colombo to Kandy campus?",
-      "How to switch campuses?"
-    ],
-    "responses": [
-      "Yes, campus transfers are possible based on seat availability and approval from the academic office.",
-      "Submit a formal transfer request and discuss with your campus administrator."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_attendance_requirement",
-    "patterns": [
-      "Is attendance compulsory?",
-      "Minimum attendance required?",
-      "Can I skip classes?",
-      "What happens if I miss lectures?"
-    ],
-    "responses": [
-      "Most programs require a minimum of 80% attendance. Low attendance can affect exam eligibility.",
-      "You are advised to maintain regular attendance to avoid academic penalties."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_guest_lectures",
-    "patterns": [
-      "Do you invite industry experts?",
-      "Are there guest lectures?",
-      "Can I attend professional seminars?",
-      "Events with external speakers?"
-    ],
-    "responses": [
-      "Yes, we regularly organize guest lectures, industry panels, and career talks with experts.",
-      "Watch your email and notice board for announcements of upcoming events."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_language_of_certificates",
-    "patterns": [
-      "What language is the certificate in?",
-      "Are certificates in English?",
-      "Can I get Sinhala or Tamil versions?",
-      "Do you issue bilingual certificates?"
-    ],
-    "responses": [
-      "Certificates are issued in English. If you need a translated version, you can request one from the registrar’s office.",
-      "Please allow a few extra days for processing of translated documents."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_parent_involvement",
-    "patterns": [
-      "Can parents meet with counselors?",
-      "How involved can parents be?",
-      "Do you host parent meetings?",
-      "Can my parents speak to staff?"
-    ],
-    "responses": [
-      "Yes, we encourage parent involvement. Parents can request meetings with counselors or academic staff.",
-      "Parent consultations are available upon request through the student services department."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_timetable_change",
-    "patterns": [
-      "Can I change my class timetable?",
-      "How to reschedule my lectures?",
-      "I want to shift my class time",
-      "Timetable adjustment request"
-    ],
-    "responses": [
-      "Timetable changes may be possible within the first two weeks. Please contact the academic coordinator.",
-      "Subject to availability and approval, timetable changes can be requested through your department office."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_health_services",
-    "patterns": [
-      "Do you have medical services?",
-      "What if I get sick on campus?",
-      "Health center on site?",
-      "Can I get medical help?"
-    ],
-    "responses": [
-      "Yes, basic first-aid and health support services are available on campus. For emergencies, we work with local clinics.",
-      "Student welfare staff can guide you to nearby medical facilities if needed."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_plagiarism_policy",
-    "patterns": [
-      "What is your plagiarism policy?",
-      "Can I get in trouble for copying?",
-      "Rules about academic honesty?",
-      "How is cheating handled?"
-    ],
-    "responses": [
-      "ESOFT has a strict zero-tolerance policy on plagiarism. All work must be original and properly referenced.",
-      "Violations of academic integrity can lead to penalties including disqualification. Always cite your sources."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_internship_abroad",
-    "patterns": [
-      "Can I do an internship abroad?",
-      "Overseas internship opportunities?",
-      "International placement options?",
-      "Work experience outside Sri Lanka?"
-    ],
-    "responses": [
-      "Some programs offer global internship pathways in partnership with foreign institutions. Please check with your department.",
-      "International internships depend on course eligibility and partnerships. Contact the placement office for guidance."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_dropout_support",
-    "patterns": [
-      "I’m thinking of dropping out",
-      "What if I can't continue my studies?",
-      "Help for students in crisis",
-      "Support for students who want to quit"
-    ],
-    "responses": [
-      "We understand challenges may arise. Please meet with a counselor or academic advisor before making any decisions.",
-      "Support services are available for students facing difficulties. We're here to help you explore your options."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_dual_programs",
-    "patterns": [
-      "Can I do two courses at once?",
-      "Is it possible to do dual programs?",
-      "Double major or dual degree?",
-      "Can I enroll in two diplomas?"
-    ],
-    "responses": [
-      "Dual enrolment may be possible with approval. Time management and course compatibility are key.",
-      "Please consult academic advising to check if your combination of programs is allowed."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_guest_student_policy",
-    "patterns": [
-      "Can guest students attend classes?",
-      "What is your guest student policy?",
-      "I'm visiting, can I sit in a class?",
-      "Can non-students attend lectures?"
-    ],
-    "responses": [
-      "Guest student access is limited and by prior approval only. Please contact the administration office.",
-      "Trial classes or academic visits can be arranged on a case-by-case basis."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_certificate_translation",
-    "patterns": [
-      "Can I get my certificate translated?",
-      "Do you provide certificate in other languages?",
-      "Translation service for academic documents?",
-      "I need a Sinhala or Tamil version"
-    ],
-    "responses": [
-      "Yes, we offer official translation services for academic documents. Processing may take a few days.",
-      "You can request a translated version from the registrar’s office, subject to verification."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_on_campus_employment",
-    "patterns": [
-      "Can students work on campus?",
-      "Are there jobs at ESOFT for students?",
-      "Student employment opportunities?",
-      "How can I work while studying?"
-    ],
-    "responses": [
-      "Some campuses offer part-time roles for students, such as lab assistants or peer tutors.",
-      "Check with the student affairs office for current opportunities and eligibility."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_transport_facilities",
-    "patterns": [
-      "Do you provide transport facilities?",
-      "Is there a bus service for students?",
-      "Can I get transport to campus?",
-      "How do I travel to ESOFT?"
-    ],
-    "responses": [
-      "Transport services may be available depending on the campus location. Please check with the campus admin office.",
-      "Some campuses coordinate student transport through local providers. Contact your campus directly for details."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_research_opportunities",
-    "patterns": [
-      "Can I do research at ESOFT?",
-      "Are there student research programs?",
-      "Undergraduate research opportunities?",
-      "How can I get involved in research?"
-    ],
-    "responses": [
-      "Yes, students can engage in research projects based on their field and program level.",
-      "Please consult your academic coordinator or department head for research involvement procedures."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_scholarship_deadline",
-    "patterns": [
-      "What is the scholarship deadline?",
-      "When should I apply for scholarships?",
-      "Closing date for financial aid applications?",
-      "Scholarship application schedule?"
-    ],
-    "responses": [
-      "Scholarship deadlines vary by program. Check the official ESOFT website or contact admissions for updated dates.",
-      "It’s best to apply as early as possible. Some scholarships are awarded on a first-come, first-served basis."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_exchange_programs",
-    "patterns": [
-      "Do you offer student exchange programs?",
-      "Can I study in another country?",
-      "International exchange options?",
-      "Partner universities abroad?"
-    ],
-    "responses": [
-      "Yes, ESOFT has partnerships that allow eligible students to join exchange or transfer programs.",
-      "Contact your department or the international office for current exchange opportunities."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_resit_policy",
-    "patterns": [
-      "Can I resit an exam?",
-      "What if I fail a subject?",
-      "How many times can I retake?",
-      "Resit exam procedure?"
-    ],
-    "responses": [
-      "Yes, resits are allowed for most modules based on academic policy. You may need to pay a resit fee.",
-      "Contact your academic department for specific resit rules and deadlines."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_alumni_network",
-    "patterns": [
-      "Do you have an alumni network?",
-      "How can I join ESOFT alumni?",
-      "Alumni events or benefits?",
-      "Stay connected after graduation?"
-    ],
-    "responses": [
-      "Yes, ESOFT has an active alumni network that supports networking, career opportunities, and events.",
-      "Graduates can register on our alumni portal or contact the student affairs office for more info."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_program_duration",
-    "patterns": [
-      "How long is the course?",
-      "What is the duration of this program?",
-      "Course length details?",
-      "Program timeline?"
-    ],
-    "responses": [
-      "Program durations vary. Diplomas are usually 1–2 years, degrees 3–4 years. Please check your specific program.",
-      "Visit the course detail page on esoft.lk or speak with admissions for exact timelines."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_accommodation_rules",
-    "patterns": [
-      "What are the hostel rules?",
-      "Accommodation guidelines for students?",
-      "Rules for living on campus?",
-      "Hostel policy details?"
-    ],
-    "responses": [
-      "Accommodation rules include curfews, visitor policies, and conduct guidelines. These are provided upon check-in.",
-      "Please contact the housing office for a full list of hostel policies and expectations."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_sports_facilities",
-    "patterns": [
-      "Do you have sports facilities?",
-      "Can I join sports teams?",
-      "What sports are offered?",
-      "Extracurricular sports options?"
-    ],
-    "responses": [
-      "Yes, ESOFT encourages sports and recreation. We offer various facilities and inter-campus tournaments.",
-      "You can join sports clubs or speak to the student activities coordinator for more info."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_environmental_initiatives",
-    "patterns": [
-      "Do you promote sustainability?",
-      "Are there environmental clubs?",
-      "Eco-friendly campus initiatives?",
-      "Green practices at ESOFT?"
-    ],
-    "responses": [
-      "Yes, ESOFT is committed to sustainability through student clubs, paperless processes, and green events.",
-      "Join our eco clubs or attend sustainability awareness programs on campus."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_disability_support",
-    "patterns": [
-      "Do you support students with disabilities?",
-      "I have a disability, can I study here?",
-      "Accessibility services available?",
-      "Help for students with special needs?"
-    ],
-    "responses": [
-      "Yes, ESOFT provides support for students with disabilities. Please contact the student welfare office for personalized assistance.",
-      "We are committed to inclusive education. Let us know your needs so we can accommodate you appropriately."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_certificate_collection",
-    "patterns": [
-      "How do I collect my certificate?",
-      "When can I pick up my diploma?",
-      "Where do I collect my graduation documents?",
-      "Certificate collection procedure?"
-    ],
-    "responses": [
-      "Certificates are usually available a few weeks after graduation. You'll be notified via email or SMS.",
-      "Please visit the registrar’s office during working hours to collect your certificate. Bring your student ID."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_social_media_channels",
-    "patterns": [
-      "Where can I follow ESOFT online?",
-      "Do you have social media accounts?",
-      "Facebook or Instagram page?",
-      "How do I stay updated online?"
-    ],
-    "responses": [
-      "You can follow us on Facebook, Instagram, LinkedIn, and YouTube. Just search for 'ESOFT Metro Campus'.",
-      "Visit our website footer or search 'ESOFT' on your preferred platform to stay informed."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_faculty_contact",
-    "patterns": [
-      "How can I contact my lecturer?",
-      "I want to speak with my teacher",
-      "Can I email a faculty member?",
-      "Lecturer contact details?"
-    ],
-    "responses": [
-      "Faculty contact details are available through the student portal or by requesting from your department.",
-      "You can email your lecturer using the official email format: [firstname].[lastname]@esoft.lk."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_virtual_tour",
-    "patterns": [
-      "Can I take a virtual campus tour?",
-      "Is there an online tour available?",
-      "Can I explore ESOFT virtually?",
-      "Show me the campus online"
-    ],
-    "responses": [
-      "Yes, we offer virtual campus tours on our website and YouTube channel. Visit esoft.lk for access.",
-      "Check our social media or website for scheduled live or recorded virtual tours."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_attendance_policy",
-    "patterns": [
-      "What is the attendance requirement?",
-      "How much attendance is compulsory?",
-      "Do I need to attend all classes?",
-      "Minimum attendance percentage?"
-    ],
-    "responses": [
-      "You must maintain at least 80% attendance to be eligible for exams and certifications.",
-      "Regular attendance is mandatory. Exceptions require valid documentation and approval."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_project_submission",
-    "patterns": [
-      "When do I submit my project?",
-      "Final project deadline?",
-      "Where do I upload my assignment?",
-      "Project submission portal?"
-    ],
-    "responses": [
-      "Submission dates are announced by your department. Use the LMS to upload your project on time.",
-      "Late submissions may result in penalties. Always check with your course coordinator for timelines."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_lms_help",
-    "patterns": [
-      "I need help using the LMS",
-      "LMS login issue",
-      "How do I access online learning?",
-      "LMS support contact?"
-    ],
-    "responses": [
-      "For LMS issues, please contact the IT helpdesk or visit lms.esoft.lk and use the 'Forgot Password' option.",
-      "You can reach LMS support via email or call the IT department during business hours."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_mobile_app",
-    "patterns": [
-      "Does ESOFT have a mobile app?",
-      "Where can I download your app?",
-      "Can I access ESOFT on mobile?",
-      "App for students?"
-    ],
-    "responses": [
-      "Yes, the ESOFT mobile app is available on the Play Store and App Store. Search 'ESOFT Student App'.",
-      "You can use the app to view your timetable, results, and notifications on the go."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_disciplinary_policy",
-    "patterns": [
-      "What is your disciplinary policy?",
-      "Rules about student behavior?",
-      "Code of conduct at ESOFT?",
-      "Misconduct consequences?"
-    ],
-    "responses": [
-      "ESOFT enforces a strict code of conduct. Misconduct can lead to warnings, suspension, or expulsion.",
-      "All students must adhere to behavioral policies as outlined in the student handbook."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_career_guidance",
-    "patterns": [
-      "Can I get career guidance?",
-      "Help me choose a career path",
-      "Career support at ESOFT?",
-      "Who can I talk to for career advice?"
-    ],
-    "responses": [
-      "Yes, our Career Services Center offers personalized counseling to help you choose the right path.",
-      "You can book a session with a career counselor through the student portal or contact student affairs."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_english_language_support",
-    "patterns": [
-      "Do you offer English support classes?",
-      "Help with English language?",
-      "I need to improve my English",
-      "English learning support at ESOFT?"
-    ],
-    "responses": [
-      "Yes, ESOFT provides English language enhancement programs for students who need support.",
-      "You can enroll in our foundation or supplemental English courses depending on your program."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_part_time_jobs",
-    "patterns": [
-      "Can I get a part-time job while studying?",
-      "Are there student job opportunities?",
-      "Work while studying at ESOFT?",
-      "Part-time employment support?"
-    ],
-    "responses": [
-      "Yes, we help students find part-time work through our career services and partner networks.",
-      "Check the student portal or visit our Career Center for current openings."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_placement_assistance",
-    "patterns": [
-      "Do you offer placement after graduation?",
-      "Help with job placements?",
-      "Placement support at ESOFT?",
-      "Graduate employment services?"
-    ],
-    "responses": [
-      "Yes, we provide job placement assistance through industry partnerships and campus recruitment events.",
-      "Our placement team will guide you in preparing your CV, interview practice, and job applications."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_student_union",
-    "patterns": [
-      "What is the student union?",
-      "How can I join the student council?",
-      "Student leadership opportunities?",
-      "Student body participation?"
-    ],
-    "responses": [
-      "The student union represents student interests and organizes events. Elections are held annually.",
-      "To participate, contact the student affairs office or check the campus notice board for announcements."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_course_materials",
-    "patterns": [
-      "How do I access course materials?",
-      "Where can I download lecture notes?",
-      "Study materials availability?",
-      "Are materials available online?"
-    ],
-    "responses": [
-      "All course materials are available on the LMS or provided by your lecturer during class.",
-      "Use your student credentials to log into the LMS and access subject-specific content."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_lab_facilities",
-    "patterns": [
-      "What labs are available?",
-      "Do you have computer labs?",
-      "Can I use lab facilities?",
-      "Lab access times?"
-    ],
-    "responses": [
-      "ESOFT has well-equipped labs for computing, networking, engineering, and more, depending on your course.",
-      "Lab hours are posted at each campus. You can reserve lab time through your department if required."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_library_facilities",
-    "patterns": [
-      "Do you have a library?",
-      "Can I borrow books?",
-      "Library membership for students?",
-      "Library hours at ESOFT?"
-    ],
-    "responses": [
-      "Yes, our campuses have libraries with textbooks, reference materials, and digital access.",
-      "Students can borrow materials with their ID card. Library hours vary by location."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_parent_inquiries",
-    "patterns": [
-      "Can parents talk to staff?",
-      "How can parents contact lecturers?",
-      "Parent meeting procedures?",
-      "Can my guardian visit the campus?"
-    ],
-    "responses": [
-      "Yes, parents/guardians can request meetings through the student affairs office.",
-      "For academic matters, appointments with faculty can be arranged with the student's consent."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_medical_facilities",
-    "patterns": [
-      "Is there a medical facility on campus?",
-      "What if I get sick at ESOFT?",
-      "Health services for students?",
-      "First aid support at ESOFT?"
-    ],
-    "responses": [
-      "Yes, basic medical and first aid services are available on campus. In emergencies, we coordinate with nearby hospitals.",
-      "Inform the campus administration immediately if you need medical help."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_academic_calendar",
-    "patterns": [
-      "Where can I find the academic calendar?",
-      "Term dates at ESOFT?",
-      "When does the semester start?",
-      "Exam and vacation schedule?"
-    ],
-    "responses": [
-      "The academic calendar is available on our website and through the student portal.",
-      "Please refer to your faculty or department notice board for key semester dates."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_class_schedule_change",
-    "patterns": [
-      "Can I change my class schedule?",
-      "I want to switch lecture groups",
-      "How do I request timetable changes?",
-      "Changing my class time?"
-    ],
-    "responses": [
-      "Class schedule changes are handled by the academic coordinator. Submit a formal request through your department.",
-      "Subject to availability, schedule changes may be approved within the add/drop period."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_exam_resit",
-    "patterns": [
-      "Can I retake an exam?",
-      "What if I fail an exam?",
-      "Re-sit exam procedure?",
-      "Exam retake policy?"
-    ],
-    "responses": [
-      "Yes, resit exams are available for failed subjects. Check with your faculty for the application and fee deadlines.",
-      "You'll need to apply for the resit within the timeline set by the examination department."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_international_students",
-    "patterns": [
-      "Do you accept international students?",
-      "How can a foreign student apply?",
-      "International student application?",
-      "Visa support for students?"
-    ],
-    "responses": [
-      "Yes, we welcome international students. Application can be made online and our team will assist with visa and accommodation.",
-      "Visit our international admissions section on the website for detailed guidelines."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_internship_opportunities",
-    "patterns": [
-      "Are internships provided?",
-      "Can I get an internship through ESOFT?",
-      "Internship help for students?",
-      "Do I need to find my own internship?"
-    ],
-    "responses": [
-      "Yes, we offer internship placements through industry partnerships. Check with your program coordinator for options.",
-      "Internship support is part of most diploma and degree programs. We'll guide you through the process."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_technical_certifications",
-    "patterns": [
-      "Can I earn Microsoft or Cisco certifications?",
-      "Do you offer technical certifications?",
-      "IT certifications available?",
-      "Professional certification courses?"
-    ],
-    "responses": [
-      "Yes, ESOFT is an authorized training provider for Microsoft, Cisco, CompTIA, and more.",
-      "You can enroll in certification tracks separately or as part of your IT program."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_program_comparison",
-    "patterns": [
-      "Which course is better for IT?",
-      "What’s the difference between HND and Degree?",
-      "Compare your business courses",
-      "Help me choose between programs"
-    ],
-    "responses": [
-      "Each program has different outcomes. A counselor can help compare based on your goals and career plans.",
-      "We recommend booking a free consultation to discuss your best fit in detail."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_online_exam_info",
-    "patterns": [
-      "Are exams conducted online?",
-      "Do I have to come to campus for exams?",
-      "Online exam instructions?",
-      "Remote assessment policy?"
-    ],
-    "responses": [
-      "Some assessments are online, while others are in person, depending on the program and module.",
-      "You'll receive instructions via LMS or email before any online exam session."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_feedback_process",
-    "patterns": [
-      "How can I give feedback?",
-      "Student feedback system?",
-      "Where can I report issues or suggestions?",
-      "I want to submit a complaint"
-    ],
-    "responses": [
-      "You can submit feedback anonymously through the student portal or directly via the feedback form at reception.",
-      "We value student feedback to improve our services. Feel free to contact student affairs as well."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_payment_receipt",
-    "patterns": [
-      "How do I get my payment receipt?",
-      "Can I download my fee receipt?",
-      "Proof of payment request?",
-      "Fee receipt for my records?"
-    ],
-    "responses": [
-      "Payment receipts are available through the finance office or can be downloaded from the student portal.",
-      "If you paid online, a digital receipt is sent to your registered email."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_transport_facilities",
-    "patterns": [
-      "Do you offer transport facilities?",
-      "Is there a student shuttle?",
-      "How can I get to campus?",
-      "Any transport options available?"
-    ],
-    "responses": [
-      "Yes, transport facilities are available for certain campuses. Please contact the administration for availability and routes.",
-      "You can also check with your local campus coordinator for more details about student shuttle services."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_hostel_facilities",
-    "patterns": [
-      "Do you provide hostels?",
-      "Accommodation for outstation students?",
-      "Is hostel available at ESOFT?",
-      "Where can I stay while studying?"
-    ],
-    "responses": [
-      "Yes, we provide hostel facilities for students at selected campuses. Availability may vary.",
-      "Contact the student services office for details about accommodation options and registration."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_language_of_instruction",
-    "patterns": [
-      "What language are the courses taught in?",
-      "Do you teach in English?",
-      "Are courses in Sinhala or Tamil?",
-      "Medium of instruction?"
-    ],
-    "responses": [
-      "Most programs are conducted in English. Some courses may offer support in Sinhala or Tamil where applicable.",
-      "You can check with the admissions team for the language used in your preferred program."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_lecture_attendance_policy",
-    "patterns": [
-      "Is attendance compulsory?",
-      "What is the attendance requirement?",
-      "Minimum attendance percentage?",
-      "Can I skip lectures?"
-    ],
-    "responses": [
-      "Yes, attendance is compulsory for most programs. A minimum of 80% is typically required.",
-      "Failing to meet attendance requirements may affect your eligibility to sit for exams."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_lecture_recordings",
-    "patterns": [
-      "Are lectures recorded?",
-      "Can I access lecture recordings?",
-      "What if I miss a class?",
-      "Recorded classes available?"
-    ],
-    "responses": [
-      "Some lectures are recorded and uploaded to the LMS. Availability depends on the lecturer and program.",
-      "You can request access to recordings or slides via your course coordinator or the LMS."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_study_mode_flexibility",
-    "patterns": [
-      "Can I switch from full-time to part-time?",
-      "Can I change my study mode?",
-      "Flexible study options?",
-      "Part-time study available?"
-    ],
-    "responses": [
-      "Yes, subject to approval, you may switch between full-time and part-time modes.",
-      "Please contact your academic advisor or coordinator to initiate a request for study mode change."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_alumni_network",
-    "patterns": [
-      "Do you have an alumni network?",
-      "How do I join the alumni group?",
-      "Alumni benefits at ESOFT?",
-      "Can graduates stay connected?"
-    ],
-    "responses": [
-      "Yes, ESOFT has a growing alumni network. You can join after graduation through our alumni registration portal.",
-      "Alumni are invited to events, networking sessions, and mentorship programs."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_payment_installments",
-    "patterns": [
-      "Can I pay fees in installments?",
-      "Do you offer payment plans?",
-      "How can I split my payments?",
-      "Is full payment required upfront?"
-    ],
-    "responses": [
-      "Yes, we offer flexible installment options for most programs. Contact the finance office for details.",
-      "Payment plans must be arranged before the start of the semester to avoid late fees."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_students_with_disabilities",
-    "patterns": [
-      "Do you support students with disabilities?",
-      "Accessibility services at ESOFT?",
-      "Facilities for special needs students?",
-      "Can disabled students study here?"
-    ],
-    "responses": [
-      "Yes, we are committed to providing an inclusive environment. Please contact student affairs for assistance and arrangements.",
-      "Accessibility support is available on request, and we encourage students to communicate their needs early."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_parent_orientation",
-    "patterns": [
-      "Do you have parent orientation sessions?",
-      "Can parents attend information sessions?",
-      "Is there a briefing for parents?",
-      "Orientation for guardians?"
-    ],
-    "responses": [
-      "Yes, parent and guardian orientation sessions are conducted at the beginning of each academic intake.",
-      "Details are sent via email or available from the admissions office prior to the start date."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_diploma_vs_certificate",
-    "patterns": [
-      "What's the difference between a diploma and a certificate?",
-      "Should I take a certificate or diploma course?",
-      "Diploma course vs certificate course?",
-      "Which one is better, diploma or certificate?"
-    ],
-    "responses": [
-      "Diplomas are typically longer and more in-depth than certificates. They often include practical components and may lead to further study.",
-      "Certificates are usually short-term and skill-focused. A counselor can help you choose based on your goals."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_result_release_date",
-    "patterns": [
-      "When will exam results be released?",
-      "Exam result announcement date?",
-      "How do I check my results?",
-      "Release date for exam marks?"
-    ],
-    "responses": [
-      "Results are typically released within 4 to 6 weeks after the exam. Check your student portal or contact your department for updates.",
-      "Notifications will be sent by email or posted on the LMS when results are ready."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_program_accreditation",
-    "patterns": [
-      "Is this program accredited?",
-      "Is the degree UGC recognized?",
-      "Are your qualifications valid abroad?",
-      "Does this course have international recognition?"
-    ],
-    "responses": [
-      "Yes, our programs are accredited by local and international bodies. For specifics, please refer to the program details.",
-      "Many of our qualifications are recognized globally, especially those awarded by partner universities."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_exam_absence_policy",
-    "patterns": [
-      "What if I miss an exam?",
-      "I was sick on exam day, what should I do?",
-      "Can I reschedule an exam?",
-      "Missed my exam accidentally"
-    ],
-    "responses": [
-      "If you miss an exam due to valid reasons like illness, you must submit a formal excuse with supporting documents.",
-      "You may be eligible for a deferred exam. Contact the exam department as soon as possible."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_lab_facilities",
-    "patterns": [
-      "Do you have computer labs?",
-      "Are there practical sessions?",
-      "Can I access the lab after hours?",
-      "Lab facilities for IT students?"
-    ],
-    "responses": [
-      "Yes, ESOFT provides fully equipped labs for IT, engineering, and science programs.",
-      "Lab access policies vary by campus. Check with your coordinator for schedules."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_lms_access",
-    "patterns": [
-      "How do I log in to the LMS?",
-      "I can't access my student portal",
-      "Where is the LMS link?",
-      "Login issues with LMS"
-    ],
-    "responses": [
-      "You can access the LMS through our website using your student credentials. If you're having trouble, contact IT support.",
-      "Login details are sent via email upon enrollment. Check your spam folder or visit the helpdesk for assistance."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_project_guidelines",
-    "patterns": [
-      "What are the final year project requirements?",
-      "Project submission guidelines?",
-      "Can you explain the research project format?",
-      "When is the project due?"
-    ],
-    "responses": [
-      "Final year project guidelines vary by program. You’ll receive a handbook and be assigned a supervisor to guide you.",
-      "Deadlines and formats are communicated through the LMS or department emails."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_student_id_card",
-    "patterns": [
-      "How do I get my student ID card?",
-      "When will I receive my ID?",
-      "Lost my student ID",
-      "Student ID card collection"
-    ],
-    "responses": [
-      "Student ID cards are issued within the first two weeks of enrollment. Collect yours from the student services desk.",
-      "If you've lost your ID, report it immediately. A replacement fee may apply."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_short_courses",
-    "patterns": [
-      "Do you offer short-term courses?",
-      "Can I take a weekend class?",
-      "What are your short course options?",
-      "Available part-time or evening courses?"
-    ],
-    "responses": [
-      "Yes, we offer short-term and weekend programs in IT, business, English, and more. Check the Short Courses section on our site.",
-      "You can enroll in flexible short courses that fit your schedule. Contact admissions for the upcoming schedule."
-    ],
-    "context": ""
-  },
-  {
-    "tag": "ask_scholarship_status",
-    "patterns": [
-      "How do I check my scholarship status?",
-      "Did I get the scholarship?",
-      "Scholarship selection results?",
-      "Who do I ask about my scholarship?"
-    ],
-    "responses": [
-      "You can check your scholarship application status via the student portal or contact the scholarships desk directly.",
-      "If you've been selected, you'll be notified via email and your portal will reflect the award."
-    ],
-    "context": ""
+      "Awarded qualifications",
+      "Diploma certification",
+      "Degree recognition",
+      "Graduation documents",
+      "Academic credentials",
+      "Certification process",
+      "Qualification award",
+      "Education certification",
+      "Program completion",
+      "Graduation papers",
+      "Certified programs",
+      "Academic awards",
+      "Study certification"
+    ],
+    "responses": [
+      "Upon successful completion, you'll receive accredited certification recognized by employers.",
+      "All programs lead to formal qualifications - certificates, diplomas or degrees as applicable."
+    ]
+  },
+  {
+    "tag": "extracurriculars",
+    "patterns": [
+      "Student activities",
+      "Clubs and societies",
+      "Non-academic programs",
+      "Student organizations",
+      "Campus life",
+      "Social activities",
+      "Student groups",
+      "Recreational options",
+      "After-class activities",
+      "Student community",
+      "Campus events",
+      "Social life",
+      "Student engagement",
+      "College experience"
+    ],
+    "responses": [
+      "We offer diverse clubs from tech to arts, plus sports teams and leadership programs.",
+      "Student life includes competitions, cultural events, and professional development activities."
+    ]
+  },
+  {
+    "tag": "timetable",
+    "patterns": [
+      "Class schedules",
+      "Timetable information",
+      "When are classes?",
+      "Lecture times",
+      "Academic calendar",
+      "Schedule details",
+      "Program timetable",
+      "Course schedule",
+      "Class hours",
+      "Study timetable",
+      "Time management",
+      "Daily schedule",
+      "Weekly timetable",
+      "Session times"
+    ],
+    "responses": [
+      "Timetables vary by program and are shared during orientation and via student portal.",
+      "Most full-time programs run weekdays 9am-4pm with some evening/weekend options available."
+    ]
+  },
+  {
+    "tag": "assessment",
+    "patterns": [
+      "How are exams conducted?",
+      "Assessment methods",
+      "Grading system",
+      "Evaluation process",
+      "Testing procedures",
+      "Exam format",
+      "Academic evaluation",
+      "Performance assessment",
+      "Course grading",
+      "Examination details",
+      "Testing format",
+      "Evaluation criteria",
+      "Assessment structure",
+      "How are we graded?"
+    ],
+    "responses": [
+      "Assessment includes exams, projects, presentations and continuous evaluation methods.",
+      "Grading varies by course but typically combines exams (60%) and coursework (40%)."
+    ]
+  },
+  {
+    "tag": "technology",
+    "patterns": [
+      "What tech is used?",
+      "Digital tools",
+      "Learning platforms",
+      "Online resources",
+      "Education technology",
+      "Tech requirements",
+      "Digital campus",
+      "E-learning tools",
+      "Software used",
+      "Technical needs",
+      "Computer requirements",
+      "IT infrastructure",
+      "Digital resources",
+      "Tech in education"
+    ],
+    "responses": [
+      "We use cutting-edge learning platforms, virtual labs, and industry-standard software.",
+      "Students access our LMS, video lectures, and digital library resources."
+    ]
+  },
+  {
+    "tag": "language_support",
+    "patterns": [
+      "English language help",
+      "Language assistance",
+      "Communication support",
+      "ESL services",
+      "Language development",
+      "English proficiency",
+      "Language courses",
+      "Speaking help",
+      "Writing support",
+      "Language improvement",
+      "Communication skills",
+      "English support",
+      "Language tutoring",
+      "Academic English"
+    ],
+    "responses": [
+      "We offer English language support programs to help students succeed academically.",
+      "Language labs and tutoring are available to improve communication skills."
+    ]
+  },
+  {
+    "tag": "disability_support",
+    "patterns": [
+      "Accessibility services",
+      "Disability accommodations",
+      "Special needs support",
+      "Learning differences",
+      "Accessible education",
+      "Inclusive learning",
+      "Disability resources",
+      "Physical accessibility",
+      "Special assistance",
+      "Learning support",
+      "Disability services",
+      "Access needs",
+      "Inclusive environment",
+      "Accommodation services"
+    ],
+    "responses": [
+      "We provide comprehensive support for students with disabilities - contact our accessibility office.",
+      "Our campuses are designed to be inclusive with tailored learning accommodations available."
+    ]
+  },
+  {
+    "tag": "international_transfer",
+    "patterns": [
+      "Study abroad options",
+      "Foreign university transfers",
+      "International pathways",
+      "Global education",
+      "Overseas study",
+      "Foreign degree options",
+      "Study overseas",
+      "International programs",
+      "Global campuses",
+      "Foreign transfers",
+      "Study internationally",
+      "Abroad opportunities",
+      "Overseas education",
+      "Foreign study"
+    ],
+    "responses": [
+      "We offer transfer pathways to partner universities in the UK, Australia and other countries.",
+      "Many programs allow you to start at ESOFT and complete abroad - ask about articulation agreements."
+    ]
+  },
+  {
+    "tag": "contact_info",
+    "patterns": [
+      "How to contact?",
+      "Phone number",
+      "Email address",
+      "WhatsApp contact",
+      "Social media",
+      "Help desk",
+      "Support contact",
+      "Information desk",
+      "Admissions contact",
+      "Enquiry line",
+      "Call center",
+      "Hotline number",
+      "Contact details",
+      "Where to call?"
+    ],
+    "responses": [
+      "Call us at +94 117 572 572, email info@esoft.lk, or message on WhatsApp +94 77 123 4567.",
+      "Visit https://esoft.lk/contact for all contact options and campus locations."
+    ]
+  },
+  {
+    "tag": "emergency",
+    "patterns": [
+      "Emergency contact",
+      "Urgent help",
+      "Crisis situation",
+      "Immediate assistance",
+      "Critical help",
+      "Emergency support",
+      "Urgent query",
+      "Critical situation",
+      "Emergency number",
+      "Help now",
+      "Urgent matter",
+      "Emergency services",
+      "Critical assistance",
+      "Immediate help"
+    ],
+    "responses": [
+      "For emergencies, call campus security at +94 117 572 599 or local emergency services.",
+      "Contact the student welfare office immediately for urgent assistance during office hours."
+    ]
+  },
+  {
+    "tag": "feedback",
+    "patterns": [
+      "Give feedback",
+      "Submit complaint",
+      "Make suggestion",
+      "Voice concern",
+      "Share experience",
+      "Provide input",
+      "Offer comments",
+      "Student feedback",
+      "Evaluation comments",
+      "Quality feedback",
+      "Service comments",
+      "Complaint process",
+      "Suggest improvement",
+      "Share opinion"
+    ],
+    "responses": [
+      "We value your feedback! Submit via our online form or email feedback@esoft.lk.",
+      "All feedback is reviewed and helps us improve - thank you for sharing your thoughts."
+    ]
+  },
+  {
+    "tag": "faq",
+    "patterns": [
+      "Frequently asked questions",
+      "Common queries",
+      "FAQ",
+      "Popular questions",
+      "General information",
+      "Basic questions",
+      "Standard inquiries",
+      "Common concerns",
+      "Regular questions",
+      "Typical queries",
+      "Often asked",
+      "General queries",
+      "Common doubts",
+      "Standard questions"
+    ],
+    "responses": [
+      "You can browse our comprehensive FAQ section at: https://esoft.lk/faq",
+      "For quick answers to common questions, visit our help center online."
+    ]
   },
   {
     "tag": "fallback",
     "patterns": [],
     "responses": [
-      "I'm sorry, I didn't understand that. Could you please rephrase?",
-      "Can you clarify your question?",
-      "I'm not sure I got that. Let me help you if you can ask in a different way."
+      "I'm sorry, I didn't understand that. Could you rephrase your question?",
+      "I want to help! Can you ask that in a different way?",
+      "I'm still learning. Could you try asking differently?",
+      "Let me connect you to a human advisor who can help with that.",
+      "I didn't catch that. Try asking about admissions, courses, or fees."
     ]
   }
 ]
