@@ -15,6 +15,86 @@
         "how can you help"
       ],
       "answer": "I can chat with you, answer questions, and help with various topics. Ask me anything!"
+    },
+    {
+      "variations": [
+        "what courses do you offer",
+        "what programs are available",
+        "what can I study at ESOFT"
+      ],
+      "answer": "ESOFT offers a wide range of programs including IT, Business, Engineering, English, and Foundation courses. Visit https://esoft.lk/programmes for full details."
+    },
+    {
+      "variations": [
+        "how do I apply",
+        "what is the admission process",
+        "how can I enroll"
+      ],
+      "answer": "You can apply online through the ESOFT website or visit a nearby branch. The admission team will guide you through the process."
+    },
+    {
+      "variations": [
+        "what are the entry requirements",
+        "what qualifications do I need to join",
+        "who can apply"
+      ],
+      "answer": "Entry requirements vary by program. Most diplomas require O/L or A/L passes. Contact admissions for specific criteria."
+    },
+    {
+      "variations": [
+        "how much are the fees",
+        "what is the course fee",
+        "do you have installment plans"
+      ],
+      "answer": "Fees depend on the course and duration. Flexible installment plans are available. Please contact our finance office or nearest branch for details."
+    },
+    {
+      "variations": [
+        "are your programs recognized",
+        "is the degree valid",
+        "is ESOFT UGC approved"
+      ],
+      "answer": "Yes, ESOFT programs are recognized both locally and internationally. We partner with universities from the UK, Australia, and more."
+    },
+    {
+      "variations": [
+        "do you offer online classes",
+        "can I study remotely",
+        "is there distance learning"
+      ],
+      "answer": "Yes, many programs offer online and blended learning options through our virtual learning environment."
+    },
+    {
+      "variations": [
+        "do you offer scholarships",
+        "can I get a discount",
+        "any financial aid available"
+      ],
+      "answer": "Yes, we offer scholarships based on academic merit and need. Contact the scholarship desk for application details."
+    },
+    {
+      "variations": [
+        "where are your campuses",
+        "is there a branch near me",
+        "ESOFT branch locations"
+      ],
+      "answer": "ESOFT has over 40 branches across Sri Lanka. Visit https://esoft.lk/locations to find the one nearest to you."
+    },
+    {
+      "variations": [
+        "what is the medium of instruction",
+        "what language are classes in",
+        "do you teach in English"
+      ],
+      "answer": "Most programs are taught in English. Some support is available in Sinhala or Tamil based on the course and campus."
+    },
+    {
+      "variations": [
+        "how long is the course",
+        "what is the duration of the program",
+        "how many months does it take"
+      ],
+      "answer": "Program durations vary: short courses may take a few months, while diplomas and degrees can range from 1 to 4 years."
     }
   ]
 }
