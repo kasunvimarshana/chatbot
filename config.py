@@ -1,16 +1,32 @@
 import os
+from dotenv import load_dotenv
 from pathlib import Path
+from pydantic import BaseSettings
 
-BASE_DIR = Path(__file__).parent
-DATA_DIR = BASE_DIR / "data"
+# Load environment variables from .env file
+load_dotenv()
 
-MAX_LEN = 20
-CONFIDENCE_THRESHOLD = 0.6
-MODEL_PATH = DATA_DIR / "model.h5"
-TOKENIZER_PATH = DATA_DIR / "tokenizer.pickle"
-LABEL_ENCODER_PATH = DATA_DIR / "label_encoder.pickle"
-USER_PROFILE_DIR = DATA_DIR / "user_profiles"
+class Settings(BaseSettings):
+    # Model paths
+    MODEL_PATH: Path = Path(os.getenv("MODEL_PATH", "models/intent_model.pkl")) # Trained model file path
+    VECTORIZER_PATH: Path = Path(os.getenv("VECTORIZER_PATH", "models/tfidf_vectorizer.pkl")) # Vectorizer file path
+    
+    # Chatbot parameters
+    DEFAULT_RESPONSE = os.getenv("DEFAULT_RESPONSE", "I didn't understand that. Could you rephrase?") # Fallback response
+    CONFIDENCE_THRESHOLD = float(os.getenv("CONFIDENCE_THRESHOLD", 0.05)) # Minimum prediction confidence (0-1)
+    CACHE_SIZE = int(os.getenv("CACHE_SIZE", 1024)) # LRU cache size for predictions
+    
+    # File paths
+    INTENT_FILE: Path = Path(os.getenv("INTENT_FILE", "data/intents.json")) # Intent definitions JSON path
+    TRAINING_DATA: Path = Path(os.getenv("TRAINING_DATA", "data/training_data.csv")) # Training data CSV path
+    REPORTS_DIR: Path = Path(os.getenv("REPORTS_DIR", "reports")) # Output directory for reports
+    
+    # Performance
+    MAX_WORKERS = int(os.getenv("MAX_WORKERS", 4)) # Max parallel worker threads
 
-# Create directories if they don't exist
-os.makedirs(USER_PROFILE_DIR, exist_ok=True)
-os.makedirs(DATA_DIR, exist_ok=True)
+    class Config:
+        env_file = ".env"
+        case_sensitive = True
+
+# Initialize settings instance
+settings = Settings()

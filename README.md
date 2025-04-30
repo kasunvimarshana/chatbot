@@ -45,6 +45,7 @@ python -m venv .venv
 ```bash
 # install the dependencies
 pip install -r requirements.txt
+python -m spacy download en_core_web_sm
 ```
 
 <a id="usage"></a>
@@ -52,7 +53,7 @@ pip install -r requirements.txt
 
 ```bash
 # Train the Model
-python app.py --train
+python train.py
 ```
 
 ```bash

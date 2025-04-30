@@ -1,0 +1,1253 @@
+text,intent
+Hi,greeting
+Hello,greeting
+Hey,greeting
+Hi there,greeting
+Hello there,greeting
+Good morning,greeting
+Good afternoon,greeting
+Good evening,greeting
+Hey bot,greeting
+Hi chatbot,greeting
+Greetings,greeting
+What's up,greeting
+Howdy,greeting
+Yo,greeting
+Hiya,greeting
+Good day,greeting
+Morning,greeting
+Afternoon,greeting
+Evening,greeting
+Hello friend,greeting
+Hi assistant,greeting
+Hey there,greeting
+Hi ESOFT,greeting
+Hello ESOFT,greeting
+Hey ESOFT,greeting
+Hi admissions,greeting
+Hello admissions,greeting
+Hey admissions,greeting
+Hi support,greeting
+Hello support,greeting
+Hey support,greeting
+Greetings ESOFT,greeting
+Hello ESOFT bot,greeting
+Hi education advisor,greeting
+Good day ESOFT,greeting
+Hey study assistant,greeting
+Hello college bot,greeting
+Hi academic helper,greeting
+Hey enrollment bot,greeting
+Hello university assistant,greeting
+Bye,goodbye
+Goodbye,goodbye
+See you later,goodbye
+See ya,goodbye
+I'm leaving,goodbye
+Have a good day,goodbye
+Goodnight,goodbye
+Talk to you later,goodbye
+Signing off,goodbye
+Catch you later,goodbye
+Farewell,goodbye
+Bye bye,goodbye
+Take care,goodbye
+Until next time,goodbye
+That's all,goodbye
+I'm done,goodbye
+End chat,goodbye
+Close conversation,goodbye
+Exit,goodbye
+Quit,goodbye
+Stop,goodbye
+That'll be all,goodbye
+No more questions,goodbye
+Finished,goodbye
+Complete,goodbye
+Terminate,goodbye
+End session,goodbye
+Log out,goodbye
+Sign out,goodbye
+Disconnect,goodbye
+Thanks,thanks
+Thank you,thanks
+Thanks a lot,thanks
+Thank you very much,thanks
+Much appreciated,thanks
+I appreciate it,thanks
+Thanks for your help,thanks
+Thx,thanks
+Cheers,thanks
+"Awesome, thanks",thanks
+Grateful,thanks
+Many thanks,thanks
+Thanks a bunch,thanks
+Thank you kindly,thanks
+Thanks a ton,thanks
+Thanks a million,thanks
+Thank you so much,thanks
+Appreciate it,thanks
+Thanks for that,thanks
+Thanks for everything,thanks
+Thank you for your time,thanks
+Thanks for the info,thanks
+Thanks for answering,thanks
+Thanks for clarifying,thanks
+Thanks for explaining,thanks
+Thanks for your assistance,thanks
+Thanks for your support,thanks
+Thanks for your guidance,thanks
+Thanks for the help,thanks
+Thanks for being helpful,thanks
+What programs are available?,course_inquiry
+List your academic offerings,course_inquiry
+Show me degree options,course_inquiry
+What can I study at ESOFT?,course_inquiry
+Available courses,course_inquiry
+Program catalog,course_inquiry
+Academic pathways,course_inquiry
+Diploma programs,course_inquiry
+Undergraduate degrees,course_inquiry
+Study fields available,course_inquiry
+Qualifications offered,course_inquiry
+Learning options,course_inquiry
+Display your courses,course_inquiry
+Educational programs list,course_inquiry
+What majors exist?,course_inquiry
+Fields of study,course_inquiry
+Disciplines available,course_inquiry
+Specialization options,course_inquiry
+Technical programs,course_inquiry
+Professional courses,course_inquiry
+Vocational training,course_inquiry
+Higher education options,course_inquiry
+Certificate programs,course_inquiry
+Short course offerings,course_inquiry
+Postgraduate options,course_inquiry
+Evening study programs,course_inquiry
+Weekend courses,course_inquiry
+Online learning options,course_inquiry
+Hybrid programs,course_inquiry
+Accelerated degrees,course_inquiry
+Part-time study options,course_inquiry
+Full-time programs,course_inquiry
+International programs,course_inquiry
+British degree pathways,course_inquiry
+Pearson qualifications,course_inquiry
+University transfer options,course_inquiry
+What courses do you offer?,course_inquiry
+List of programs,course_inquiry
+Available degrees,course_inquiry
+What can I study?,course_inquiry
+Course catalog,course_inquiry
+Program offerings,course_inquiry
+Academic programs,course_inquiry
+Diploma options,course_inquiry
+Degree programs,course_inquiry
+Study options,course_inquiry
+Available qualifications,course_inquiry
+What are my study choices?,course_inquiry
+Show me your courses,course_inquiry
+Educational programs,course_inquiry
+Programs available,course_inquiry
+Courses provided,course_inquiry
+What degrees are offered?,course_inquiry
+What diplomas are available?,course_inquiry
+What certificates do you have?,course_inquiry
+What can I enroll in?,course_inquiry
+What are the study programs?,course_inquiry
+What academic options exist?,course_inquiry
+What educational paths are there?,course_inquiry
+What qualifications can I earn?,course_inquiry
+What learning programs exist?,course_inquiry
+What subjects can I take?,course_inquiry
+What fields of study?,course_inquiry
+What disciplines are covered?,course_inquiry
+What majors are available?,course_inquiry
+What specializations exist?,course_inquiry
+What are the entry requirements?,admission_requirements
+Admission criteria,admission_requirements
+How to qualify?,admission_requirements
+Eligibility for courses,admission_requirements
+What qualifications do I need?,admission_requirements
+Minimum requirements,admission_requirements
+Academic prerequisites,admission_requirements
+Entry qualifications,admission_requirements
+Do I qualify?,admission_requirements
+Required documents,admission_requirements
+Application prerequisites,admission_requirements
+What grades do I need?,admission_requirements
+Entry standards,admission_requirements
+Minimum qualifications,admission_requirements
+What are the admission standards?,admission_requirements
+What are the enrollment requirements?,admission_requirements
+What do I need to apply?,admission_requirements
+What are the acceptance criteria?,admission_requirements
+What are the minimum qualifications?,admission_requirements
+What are the entry conditions?,admission_requirements
+What are the admission prerequisites?,admission_requirements
+What are the eligibility conditions?,admission_requirements
+What are the application requirements?,admission_requirements
+What documents are needed?,admission_requirements
+What are the academic requirements?,admission_requirements
+What are the educational prerequisites?,admission_requirements
+What qualifications must I have?,admission_requirements
+What are the minimum grades?,admission_requirements
+What are the basic requirements?,admission_requirements
+What are the necessary qualifications?,admission_requirements
+O/L requirements,admission_requirements
+A/L requirements,admission_requirements
+English proficiency needed?,admission_requirements
+Work experience requirements,admission_requirements
+Prior learning recognition,admission_requirements
+Mature student entry,admission_requirements
+International entry standards,admission_requirements
+Transfer student requirements,admission_requirements
+Special entry provisions,admission_requirements
+Alternative qualifications accepted,admission_requirements
+How do I apply?,application_process
+Application steps,application_process
+Enrollment process,application_process
+Registration procedure,application_process
+How to enroll?,application_process
+Admission process,application_process
+Steps to join,application_process
+Application method,application_process
+How to register?,application_process
+Sign up process,application_process
+Joining procedure,application_process
+Getting started,application_process
+Begin application,application_process
+Start enrollment,application_process
+What is the application procedure?,application_process
+How does one apply?,application_process
+What are the application steps?,application_process
+How to get enrolled?,application_process
+What is the registration process?,application_process
+How to become a student?,application_process
+How to sign up for courses?,application_process
+What is the admission procedure?,application_process
+How to join ESOFT?,application_process
+How to become an ESOFT student?,application_process
+What is the enrollment method?,application_process
+How does admission work?,application_process
+What is the signup process?,application_process
+How to get admitted?,application_process
+What are the registration steps?,application_process
+How does one enroll?,application_process
+Online application,application_process
+In-person application,application_process
+Application deadlines,application_process
+Required application materials,application_process
+Application review process,application_process
+Application confirmation,application_process
+Application tracking,application_process
+Application status check,application_process
+Application assistance,application_process
+Application troubleshooting,application_process
+What are the fees?,fee_structure
+Course costs,fee_structure
+Tuition fees,fee_structure
+Program prices,fee_structure
+How much does it cost?,fee_structure
+Payment amounts,fee_structure
+Fee details,fee_structure
+Price structure,fee_structure
+Cost of study,fee_structure
+Education fees,fee_structure
+Program expenses,fee_structure
+Study costs,fee_structure
+Financial requirements,fee_structure
+Payment information,fee_structure
+What are the tuition fees?,fee_structure
+How much are the courses?,fee_structure
+What is the program cost?,fee_structure
+What are the education expenses?,fee_structure
+What are the study fees?,fee_structure
+How much for the degree?,fee_structure
+What is the diploma fee?,fee_structure
+What are the certificate costs?,fee_structure
+How much does education cost?,fee_structure
+What are the academic fees?,fee_structure
+What is the price of courses?,fee_structure
+How much must I pay?,fee_structure
+What are the financial obligations?,fee_structure
+What are the payment amounts?,fee_structure
+What are the cost details?,fee_structure
+How much are the programs?,fee_structure
+Payment methods,payment_options
+How can I pay?,payment_options
+Installment plans,payment_options
+Payment schemes,payment_options
+Fee payment options,payment_options
+Ways to pay,payment_options
+Bank transfer?,payment_options
+Credit card payments,payment_options
+Payment flexibility,payment_options
+Monthly installments,payment_options
+Deferred payment,payment_options
+Payment arrangements,payment_options
+Financial plans,payment_options
+Tuition payment methods,payment_options
+What payment options exist?,payment_options
+How can fees be paid?,payment_options
+What are the payment methods?,payment_options
+Do you accept installments?,payment_options
+Can I pay monthly?,payment_options
+What are the payment choices?,payment_options
+How to make payments?,payment_options
+What payment plans exist?,payment_options
+Can I pay in parts?,payment_options
+What are the financial options?,payment_options
+How flexible are payments?,payment_options
+What are the installment options?,payment_options
+Can I pay by card?,payment_options
+Do you accept bank transfers?,payment_options
+What are the payment terms?,payment_options
+How are fees collected?,payment_options
+Scholarships available?,scholarship_info
+Financial aid,scholarship_info
+Discounts for students,scholarship_info
+Funding options,scholarship_info
+Study grants,scholarship_info
+Bursaries,scholarship_info
+Fee concessions,scholarship_info
+Merit scholarships,scholarship_info
+Need-based aid,scholarship_info
+Education funding,scholarship_info
+Tuition assistance,scholarship_info
+Scholarship programs,scholarship_info
+Financial support,scholarship_info
+Reduced fees,scholarship_info
+Are there scholarships?,scholarship_info
+What financial aid exists?,scholarship_info
+How to get a scholarship?,scholarship_info
+What funding is available?,scholarship_info
+Are there study grants?,scholarship_info
+Can I get financial help?,scholarship_info
+What bursaries exist?,scholarship_info
+Are there fee discounts?,scholarship_info
+How to reduce tuition?,scholarship_info
+What assistance programs exist?,scholarship_info
+How to get funding?,scholarship_info
+What are the scholarship options?,scholarship_info
+How to qualify for aid?,scholarship_info
+What are the financial support options?,scholarship_info
+Are there tuition waivers?,scholarship_info
+How to get study funding?,scholarship_info
+What facilities are available on campus?,campus_facilities
+What amenities do you have?,campus_facilities
+Tell me about campus resources,campus_facilities
+What student facilities exist?,campus_facilities
+Describe your campus infrastructure,campus_facilities
+What services are offered on campus?,campus_facilities
+What learning resources are available?,campus_facilities
+Do you have computer labs?,campus_facilities
+Is there a library?,campus_facilities
+Are there study spaces?,campus_facilities
+What recreational facilities exist?,campus_facilities
+Do you have sports facilities?,campus_facilities
+Is there a cafeteria?,campus_facilities
+What technology is available?,campus_facilities
+Describe your classrooms,campus_facilities
+Are there meeting rooms?,campus_facilities
+Do you have auditoriums?,campus_facilities
+What student support facilities exist?,campus_facilities
+Are there prayer rooms?,campus_facilities
+Do you have medical facilities?,campus_facilities
+Is there parking available?,campus_facilities
+Are the facilities wheelchair accessible?,campus_facilities
+What IT resources are available?,campus_facilities
+Do you have science labs?,campus_facilities
+Are there group study areas?,campus_facilities
+What kind of learning spaces exist?,campus_facilities
+Do you have presentation equipment?,campus_facilities
+Are there printing facilities?,campus_facilities
+What student lounge areas exist?,campus_facilities
+Describe your campus environment,campus_facilities
+Do you accept international students?,international_students
+Visa requirements,international_students
+English test scores needed,international_students
+IELTS requirements,international_students
+TOEFL acceptance,international_students
+Documents for foreign applicants,international_students
+How to apply from abroad?,international_students
+International student fees,international_students
+Health insurance requirements,international_students
+Accommodation for internationals,international_students
+Airport pickup service,international_students
+Orientation for foreigners,international_students
+Support for internationals,international_students
+Work rights while studying,international_students
+Post-study visa options,international_students
+International student policies,international_students
+Cultural adaptation support,international_students
+Language assistance,international_students
+Bank account help,international_students
+SIM card assistance,international_students
+International student community,international_students
+Foreign qualification recognition,international_students
+International testimonials,international_students
+Global alumni network,international_students
+Exchange programs,international_students
+International success stories,international_students
+Country-specific requirements,international_students
+International FAQs,international_students
+Support for foreign students,international_students
+Study permit process,international_students
+Visa extension help,international_students
+Financial proof requirements,international_students
+International payment options,international_students
+Home country documentation,international_students
+International student discounts,international_students
+Tax information,international_students
+Cross-cultural programs,international_students
+International student events,international_students
+Emergency support for foreigners,international_students
+Translation services,international_students
+What career support do you offer?,career_services
+Do you help with job placement?,career_services
+Career guidance services,career_services
+Internship opportunities,career_services
+Industry placements,career_services
+Resume writing help,career_services
+Interview preparation,career_services
+Job search support,career_services
+Career counseling,career_services
+Employer connections,career_services
+Job fair information,career_services
+Alumni career support,career_services
+Professional development,career_services
+Work readiness programs,career_services
+Industry networking,career_services
+Mentorship programs,career_services
+Graduate employment rates,career_services
+Career workshop schedule,career_services
+Employability skills training,career_services
+Company recruitment events,career_services
+Career pathway guidance,career_services
+Job market information,career_services
+Salary expectation advice,career_services
+Career assessment tools,career_services
+Professional portfolio help,career_services
+LinkedIn profile assistance,career_services
+Cover letter writing,career_services
+Job application support,career_services
+Mock interview services,career_services
+Career planning resources,career_services
+Do you offer online courses?,online_learning
+Distance learning options,online_learning
+Virtual classroom information,online_learning
+How does online study work?,online_learning
+Digital learning platform,online_learning
+E-learning system details,online_learning
+Online degree programs,online_learning
+Remote study options,online_learning
+Blended learning programs,online_learning
+How to access online classes?,online_learning
+Technical requirements for online study,online_learning
+Online student support,online_learning
+Digital resources availability,online_learning
+Online examination process,online_learning
+Virtual library access,online_learning
+Interaction with online lecturers,online_learning
+Online discussion forums,online_learning
+Submission of digital assignments,online_learning
+Recording of online lectures,online_learning
+Flexible study schedules,online_learning
+Online student community,online_learning
+Digital certification,online_learning
+Quality of online education,online_learning
+Comparing online vs on-campus,online_learning
+Support for online learners,online_learning
+Technology training for students,online_learning
+Accessibility of online materials,online_learning
+Mobile learning options,online_learning
+Online academic advising,online_learning
+Success rates for online students,online_learning
+When does the semester start?,academic_calendar
+Academic year schedule,academic_calendar
+Important dates and deadlines,academic_calendar
+Holiday calendar,academic_calendar
+Examination periods,academic_calendar
+Registration deadlines,academic_calendar
+Orientation week dates,academic_calendar
+Term break information,academic_calendar
+Graduation ceremony dates,academic_calendar
+Add/drop period dates,academic_calendar
+Mid-term break schedule,academic_calendar
+Final exam schedule,academic_calendar
+Course withdrawal deadlines,academic_calendar
+Semester end dates,academic_calendar
+Program commencement dates,academic_calendar
+Public holiday closures,academic_calendar
+Special event calendar,academic_calendar
+Academic planning timeline,academic_calendar
+Key academic dates,academic_calendar
+Student vacation periods,academic_calendar
+Intersession dates,academic_calendar
+Thesis submission deadlines,academic_calendar
+Project presentation dates,academic_calendar
+Academic advising periods,academic_calendar
+Scholarship application dates,academic_calendar
+Fee payment deadlines,academic_calendar
+Course evaluation periods,academic_calendar
+Library closure dates,academic_calendar
+Make-up class schedule,academic_calendar
+Academic calendar PDF,academic_calendar
+What is student life like?,student_life
+Extracurricular activities,student_life
+Student clubs and societies,student_life
+Sports teams information,student_life
+Cultural events calendar,student_life
+Leadership opportunities,student_life
+Volunteer programs,student_life
+Student government,student_life
+Social activities,student_life
+Campus events,student_life
+Networking opportunities,student_life
+Student competitions,student_life
+Hackathons and challenges,student_life
+Field trip information,student_life
+Community service programs,student_life
+Student publications,student_life
+Debate teams,student_life
+Art and music clubs,student_life
+Entrepreneurship programs,student_life
+Professional associations,student_life
+International student groups,student_life
+Religious organizations,student_life
+Alumni mentorship,student_life
+Study abroad programs,student_life
+Student discounts,student_life
+Campus traditions,student_life
+Recreational facilities,student_life
+Student wellness programs,student_life
+Peer support networks,student_life
+Campus safety information,student_life
+What library resources are available?,library_services
+Library hours,library_services
+How to access digital resources?,library_services
+Book borrowing policies,library_services
+Research databases,library_services
+Study room reservations,library_services
+Interlibrary loans,library_services
+Library workshops,library_services
+Reference services,library_services
+Thesis archives,library_services
+E-book access,library_services
+Journal subscriptions,library_services
+Plagiarism checking,library_services
+Citation help,library_services
+Research assistance,library_services
+Library orientation,library_services
+Special collections,library_services
+Printing and copying,library_services
+Library staff support,library_services
+Quiet study zones,library_services
+Group study areas,library_services
+Late return policies,library_services
+Library fines,library_services
+Lost book procedures,library_services
+New acquisitions,library_services
+Subject librarians,library_services
+Library technology,library_services
+Access for disabled students,library_services
+Library events,library_services
+Mobile app features,library_services
+Services for disabled students,disability_support
+Accessibility accommodations,disability_support
+Learning disability support,disability_support
+Physical disability assistance,disability_support
+Special needs services,disability_support
+Wheelchair accessibility,disability_support
+Hearing impairment support,disability_support
+Visual impairment resources,disability_support
+Neurodiversity accommodations,disability_support
+Mental health support,disability_support
+Accessible learning materials,disability_support
+Exam accommodations,disability_support
+Note-taking assistance,disability_support
+Sign language interpreters,disability_support
+Assistive technology,disability_support
+Campus accessibility map,disability_support
+Disability counseling,disability_support
+Inclusive education policies,disability_support
+Accessible transportation,disability_support
+Adaptive equipment,disability_support
+Disability awareness programs,disability_support
+Confidentiality policies,disability_support
+Temporary injury support,disability_support
+Service animal policies,disability_support
+Accessible housing options,disability_support
+Disability scholarships,disability_support
+Peer mentoring,disability_support
+Faculty training,disability_support
+Disability rights information,disability_support
+Success stories,disability_support
+How to connect with alumni?,alumni_network
+Alumni benefits,alumni_network
+Graduate success stories,alumni_network
+Alumni mentorship program,alumni_network
+Career networking opportunities,alumni_network
+Alumni events calendar,alumni_network
+How to join alumni association?,alumni_network
+Alumni discounts,alumni_network
+Continuing education benefits,alumni_network
+Alumni job board,alumni_network
+Giving back opportunities,alumni_network
+Alumni directory access,alumni_network
+Class reunions,alumni_network
+Alumni achievements,alumni_network
+Professional networking,alumni_network
+Alumni business directory,alumni_network
+Mentorship opportunities,alumni_network
+Alumni publications,alumni_network
+Career advice from graduates,alumni_network
+Alumni social media groups,alumni_network
+Volunteer opportunities,alumni_network
+Alumni awards,alumni_network
+Guest speaker opportunities,alumni_network
+Alumni advisory board,alumni_network
+Industry connections,alumni_network
+Graduate surveys,alumni_network
+Alumni testimonials,alumni_network
+Success metrics,alumni_network
+Employer partnerships,alumni_network
+Lifelong learning options,alumni_network
+Current COVID policies,covid_measures
+Health and safety measures,covid_measures
+Mask requirements,covid_measures
+Vaccination policies,covid_measures
+Social distancing rules,covid_measures
+Sanitization procedures,covid_measures
+Online learning options,covid_measures
+Illness reporting,covid_measures
+Quarantine policies,covid_measures
+Contact tracing,covid_measures
+Campus cleaning protocols,covid_measures
+Ventilation improvements,covid_measures
+Health screening,covid_measures
+High-risk student support,covid_measures
+Mental health resources,covid_measures
+Flexible attendance,covid_measures
+Hybrid learning options,covid_measures
+Travel restrictions,covid_measures
+Visitor policies,covid_measures
+Event restrictions,covid_measures
+Dining hall safety,covid_measures
+Residence hall safety,covid_measures
+Testing availability,covid_measures
+Vaccination clinics,covid_measures
+Emergency protocols,covid_measures
+Policy updates,covid_measures
+Faculty safety training,covid_measures
+Student responsibilities,covid_measures
+Government guidelines,covid_measures
+Wellbeing support,covid_measures
+Can I transfer credits?,transfer_credits
+Credit transfer policy,transfer_credits
+How to transfer courses?,transfer_credits
+Will my previous studies count?,transfer_credits
+Recognition of prior learning,transfer_credits
+Advanced standing options,transfer_credits
+Exemption from courses,transfer_credits
+Credit for work experience,transfer_credits
+Transferring from another institution,transfer_credits
+Articulation agreements,transfer_credits
+Cross-institutional credit,transfer_credits
+International credit transfer,transfer_credits
+Maximum transferable credits,transfer_credits
+Transcript evaluation,transfer_credits
+Credit transfer process,transfer_credits
+Equivalent course recognition,transfer_credits
+Transfer credit deadline,transfer_credits
+Appealing credit decisions,transfer_credits
+Military credit transfer,transfer_credits
+Professional certification credit,transfer_credits
+Vocational education transfer,transfer_credits
+Diploma to degree pathway,transfer_credits
+Certificate credit transfer,transfer_credits
+Online course transferability,transfer_credits
+Study abroad credit transfer,transfer_credits
+Non-traditional credit,transfer_credits
+Portfolio assessment,transfer_credits
+Challenge exams,transfer_credits
+Transfer credit fees,transfer_credits
+Credit transfer counseling,transfer_credits
+Part-time study options,part_time_study
+Evening classes availability,part_time_study
+Weekend programs,part_time_study
+Flexible study schedules,part_time_study
+Balancing work and study,part_time_study
+Part-time degree programs,part_time_study
+Accelerated courses,part_time_study
+Modular study options,part_time_study
+Self-paced learning,part_time_study
+Extended program duration,part_time_study
+Part-time enrollment process,part_time_study
+Part-time student benefits,part_time_study
+Part-time tuition fees,part_time_study
+Part-time class schedules,part_time_study
+Hybrid learning options,part_time_study
+Part-time student support,part_time_study
+Part-time graduation requirements,part_time_study
+Part-time student resources,part_time_study
+Part-time academic advising,part_time_study
+Part-time student community,part_time_study
+Part-time study workload,part_time_study
+Part-time financial aid,part_time_study
+Part-time international students,part_time_study
+Part-time library access,part_time_study
+Part-time career services,part_time_study
+Part-time alumni benefits,part_time_study
+Part-time student discounts,part_time_study
+Part-time networking opportunities,part_time_study
+Part-time study success tips,part_time_study
+Converting to full-time status,part_time_study
+Student visa requirements,student_visa
+How to get a study visa?,student_visa
+Visa application process,student_visa
+Documents for student visa,student_visa
+Visa interview preparation,student_visa
+Visa processing time,student_visa
+Visa extension procedures,student_visa
+Visa renewal requirements,student_visa
+Visa compliance rules,student_visa
+Working on student visa,student_visa
+Visa health requirements,student_visa
+Visa financial proof,student_visa
+Visa rejection appeals,student_visa
+Visa status changes,student_visa
+Dependent visa options,student_visa
+Visa fee payment,student_visa
+Visa medical insurance,student_visa
+Visa accommodation proof,student_visa
+Visa sponsorship letters,student_visa
+Visa expiration reminders,student_visa
+Visa travel restrictions,student_visa
+Visa academic progress requirements,student_visa
+Visa violation consequences,student_visa
+Post-study visa options,student_visa
+Visa conversion to work visa,student_visa
+Visa interview experiences,student_visa
+Visa document checklist,student_visa
+Visa application tracking,student_visa
+Visa consultancy services,student_visa
+Visa success rates,student_visa
+What's needed to graduate?,graduation_requirements
+Degree completion requirements,graduation_requirements
+Minimum GPA for graduation,graduation_requirements
+Credit hour requirements,graduation_requirements
+Thesis/dissertation rules,graduation_requirements
+Capstone project guidelines,graduation_requirements
+Internship requirements,graduation_requirements
+Community service hours,graduation_requirements
+Language proficiency for graduation,graduation_requirements
+Comprehensive exam details,graduation_requirements
+Graduation application process,graduation_requirements
+Graduation deadlines,graduation_requirements
+Graduation fee information,graduation_requirements
+Honors degree requirements,graduation_requirements
+Double major rules,graduation_requirements
+Minor requirements,graduation_requirements
+Academic standing for graduation,graduation_requirements
+Transfer credit limits,graduation_requirements
+Time limit for completion,graduation_requirements
+Graduation with distinction,graduation_requirements
+Posthumous degree policy,graduation_requirements
+Graduation ceremony participation,graduation_requirements
+Diploma collection options,graduation_requirements
+Graduation verification,graduation_requirements
+Transcript release after graduation,graduation_requirements
+Graduation appeals process,graduation_requirements
+Incomplete grade resolution,graduation_requirements
+Academic probation and graduation,graduation_requirements
+Graduation clearance process,graduation_requirements
+Graduation checklist,graduation_requirements
+Undergraduate research options,research_opportunities
+How to get research experience?,research_opportunities
+Faculty research projects,research_opportunities
+Research assistant positions,research_opportunities
+Student research grants,research_opportunities
+Research methodology courses,research_opportunities
+Thesis supervision,research_opportunities
+Publication opportunities,research_opportunities
+Research conferences,research_opportunities
+Summer research programs,research_opportunities
+Independent study options,research_opportunities
+Honors research track,research_opportunities
+Interdisciplinary research,research_opportunities
+Community-based research,research_opportunities
+International research collaborations,research_opportunities
+Research ethics training,research_opportunities
+Research equipment access,research_opportunities
+Data analysis support,research_opportunities
+Research presentation skills,research_opportunities
+Research award competitions,research_opportunities
+Research skill workshops,research_opportunities
+Finding research mentors,research_opportunities
+Research credit options,research_opportunities
+Research internship combinations,research_opportunities
+Industry research partnerships,research_opportunities
+Undergraduate research journal,research_opportunities
+Research symposium dates,research_opportunities
+Research travel grants,research_opportunities
+Research publication guidelines,research_opportunities
+Research impact measurement,research_opportunities
+How to file a complaint?,student_complaints
+Grievance procedures,student_complaints
+Academic appeals process,student_complaints
+Grade dispute resolution,student_complaints
+Harassment reporting,student_complaints
+Discrimination complaints,student_complaints
+Faculty complaint process,student_complaints
+Staff complaint procedure,student_complaints
+Facilities issues reporting,student_complaints
+Safety concerns reporting,student_complaints
+Academic integrity violations,student_complaints
+Ethics violation reporting,student_complaints
+Complaint confidentiality,student_complaints
+Complaint investigation process,student_complaints
+Complaint resolution timeline,student_complaints
+Appealing decisions,student_complaints
+Ombudsman services,student_complaints
+Student rights protection,student_complaints
+Anonymous reporting options,student_complaints
+Whistleblower protection,student_complaints
+Classroom concerns,student_complaints
+Administrative complaints,student_complaints
+Financial aid disputes,student_complaints
+Registration problems,student_complaints
+Housing complaints,student_complaints
+Cafeteria quality issues,student_complaints
+Library service complaints,student_complaints
+IT support complaints,student_complaints
+Transportation issues,student_complaints
+Student organization concerns,student_complaints
+Campus health services,health_services
+Medical clinic information,health_services
+Counseling services,health_services
+Mental health support,health_services
+Health insurance options,health_services
+Immunization requirements,health_services
+First aid availability,health_services
+Emergency medical procedures,health_services
+Health education programs,health_services
+Nutrition counseling,health_services
+Disability health services,health_services
+Women's health services,health_services
+Men's health services,health_services
+Sexual health resources,health_services
+Substance abuse support,health_services
+Stress management programs,health_services
+Sleep health resources,health_services
+Chronic condition support,health_services
+Allergy accommodations,health_services
+Prescription services,health_services
+Health screening programs,health_services
+Vaccination clinics,health_services
+Health promotion events,health_services
+Telehealth options,health_services
+After-hours health support,health_services
+Health service fees,health_services
+Confidentiality policies,health_services
+Health referral services,health_services
+Crisis intervention,health_services
+Wellness workshops,health_services
+Student housing options,housing_options
+Dormitory information,housing_options
+On-campus housing,housing_options
+Off-campus housing help,housing_options
+Hostel facilities,housing_options
+Housing application process,housing_options
+Housing costs,housing_options
+Room types available,housing_options
+Housing contracts,housing_options
+Move-in dates,housing_options
+Housing deposits,housing_options
+Roommate matching,housing_options
+Housing rules,housing_options
+Guest policies,housing_options
+Housing amenities,housing_options
+Laundry facilities,housing_options
+Kitchen access,housing_options
+Security measures,housing_options
+Housing maintenance,housing_options
+Parking for residents,housing_options
+Housing for international students,housing_options
+Disability housing accommodations,housing_options
+Summer housing options,housing_options
+Housing cancellation policy,housing_options
+Housing waitlist,housing_options
+Housing tours,housing_options
+Housing FAQs,housing_options
+Housing community events,housing_options
+Housing staff contact,housing_options
+Housing neighborhood information,housing_options
+Campus transportation options,transportation
+Public transport routes,transportation
+Bus schedules,transportation
+Train access,transportation
+Shuttle services,transportation
+Parking permits,transportation
+Bike facilities,transportation
+Car pooling,transportation
+Transportation costs,transportation
+Disabled student transport,transportation
+Late night transport,transportation
+Weekend transport,transportation
+Holiday transport,transportation
+Transportation safety,transportation
+Parking fees,transportation
+Electric vehicle charging,transportation
+Motorcycle parking,transportation
+Bicycle rental,transportation
+Transportation maps,transportation
+Transportation discounts,transportation
+Emergency rides,transportation
+Transportation for events,transportation
+Airport transportation,transportation
+International student transport,transportation
+Transportation complaints,transportation
+Transportation apps,transportation
+Weather-related transport,transportation
+Transportation policies,transportation
+Sustainable transport options,transportation
+Transportation suggestions,transportation
+What discounts are available?,student_discounts
+Student ID benefits,student_discounts
+Local business discounts,student_discounts
+Transportation discounts,student_discounts
+Software discounts,student_discounts
+Technology deals,student_discounts
+Bookstore discounts,student_discounts
+Gym membership deals,student_discounts
+Entertainment discounts,student_discounts
+Travel discounts,student_discounts
+Banking benefits,student_discounts
+Insurance discounts,student_discounts
+Health service discounts,student_discounts
+Restaurant deals,student_discounts
+Retail discounts,student_discounts
+Subscription discounts,student_discounts
+Conference fee reductions,student_discounts
+Professional membership deals,student_discounts
+Exam discount vouchers,student_discounts
+Alumni discount programs,student_discounts
+International student deals,student_discounts
+Seasonal promotions,student_discounts
+Online shopping codes,student_discounts
+Student coupon book,student_discounts
+Discount eligibility,student_discounts
+How to access discounts,student_discounts
+Discount verification,student_discounts
+Temporary discounts,student_discounts
+Partner business list,student_discounts
+Discount program updates,student_discounts
+Where are your campuses?,campus_locations
+Branch locations,campus_locations
+Study centers,campus_locations
+Nearest campus,campus_locations
+Colombo branches,campus_locations
+Kandy location,campus_locations
+Gampaha campus,campus_locations
+Jaffna center,campus_locations
+Regional campuses,campus_locations
+Physical locations,campus_locations
+Addresses,campus_locations
+Contact locations,campus_locations
+Study venues,campus_locations
+Where are you located?,campus_locations
+Is ESOFT accredited?,accreditation
+Recognized programs?,accreditation
+UGC approval,accreditation
+Valid degrees?,accreditation
+Quality assurance,accreditation
+Certified courses,accreditation
+Approved qualifications,accreditation
+Recognized certifications,accreditation
+Accreditation status,accreditation
+Government recognition,accreditation
+Valid diplomas?,accreditation
+Internationally accepted?,accreditation
+Education standards,accreditation
+Quality certifications,accreditation
+What support services?,student_support
+Student help,student_support
+Academic assistance,student_support
+Counseling services,student_support
+Mentorship programs,student_support
+Learning support,student_support
+Study help,student_support
+Tutoring options,student_support
+Guidance services,student_support
+Student welfare,student_support
+Help resources,student_support
+Academic support,student_support
+Education guidance,student_support
+Student services,student_support
+Job prospects,career_opportunities
+Career paths,career_opportunities
+Employment after graduation,career_opportunities
+Industry opportunities,career_opportunities
+Work placements,career_opportunities
+Graduate employment,career_opportunities
+Job market,career_opportunities
+Career outcomes,career_opportunities
+Professional prospects,career_opportunities
+Future careers,career_opportunities
+Work opportunities,career_opportunities
+Industry demand,career_opportunities
+Job potential,career_opportunities
+Career development,career_opportunities
+Who are the lecturers?,faculty_quality
+Teacher qualifications,faculty_quality
+Faculty experience,faculty_quality
+Instructor quality,faculty_quality
+Teaching staff,faculty_quality
+Professor credentials,faculty_quality
+Academic team,faculty_quality
+Lecturer expertise,faculty_quality
+Faculty members,faculty_quality
+Teaching quality,faculty_quality
+Educator standards,faculty_quality
+Instructor background,faculty_quality
+Staff qualifications,faculty_quality
+Who teaches?,faculty_quality
+Company partnerships,industry_connections
+Industry links,industry_connections
+Corporate relations,industry_connections
+Business collaborations,industry_connections
+Employer networks,industry_connections
+Professional connections,industry_connections
+Industry engagement,industry_connections
+Corporate partnerships,industry_connections
+Business alliances,industry_connections
+Company ties,industry_connections
+Industry relevance,industry_connections
+Commercial links,industry_connections
+Employer relations,industry_connections
+Business networks,industry_connections
+Campus facilities,facilities
+What resources are available?,facilities
+Study spaces,facilities
+Computer labs,facilities
+Library resources,facilities
+Learning spaces,facilities
+Classroom quality,facilities
+Technical facilities,facilities
+Education resources,facilities
+Study environment,facilities
+Campus amenities,facilities
+Learning infrastructure,facilities
+Academic facilities,facilities
+Campus resources,facilities
+What campus facilities exist?,facilities
+Student housing options,facilities
+Available technology,facilities
+Transport services,facilities
+Computer labs,facilities
+Dormitory information,facilities
+Student accommodation,housing
+Hostel facilities,housing
+Living options,housing
+Residence halls,housing
+Dormitories,housing
+Housing services,housing
+Where to stay?,housing
+Accommodation help,housing
+Student housing,housing
+Living arrangements,housing
+Residential options,housing
+Hostel availability,housing
+Dorm facilities,housing
+Campus living,housing
+Graduate success,alumni
+Alumni achievements,alumni
+Where do graduates work?,alumni
+Success stories,alumni
+Graduate outcomes,alumni
+Former students,alumni
+Alumni network,alumni
+Graduate careers,alumni
+Past students,alumni
+Alumni success,alumni
+Graduate destinations,alumni
+Career progression,alumni
+Ex-student achievements,alumni
+Where are alumni now?,alumni
+Will I get a certificate?,certification
+Awarded qualifications,certification
+Diploma certification,certification
+Degree recognition,certification
+Graduation documents,certification
+Academic credentials,certification
+Certification process,certification
+Qualification award,certification
+Education certification,certification
+Program completion,certification
+Graduation papers,certification
+Certified programs,certification
+Academic awards,certification
+Study certification,certification
+Student activities,extracurriculars
+Clubs and societies,extracurriculars
+Non-academic programs,extracurriculars
+Student organizations,extracurriculars
+Campus life,extracurriculars
+Social activities,extracurriculars
+Student groups,extracurriculars
+Recreational options,extracurriculars
+After-class activities,extracurriculars
+Student community,extracurriculars
+Campus events,extracurriculars
+Social life,extracurriculars
+Student engagement,extracurriculars
+College experience,extracurriculars
+Class schedules,timetable
+Timetable information,timetable
+When are classes?,timetable
+Lecture times,timetable
+Academic calendar,timetable
+Schedule details,timetable
+Program timetable,timetable
+Course schedule,timetable
+Class hours,timetable
+Study timetable,timetable
+Time management,timetable
+Daily schedule,timetable
+Weekly timetable,timetable
+Session times,timetable
+How are exams conducted?,assessment
+Assessment methods,assessment
+Grading system,assessment
+Evaluation process,assessment
+Testing procedures,assessment
+Exam format,assessment
+Academic evaluation,assessment
+Performance assessment,assessment
+Course grading,assessment
+Examination details,assessment
+Testing format,assessment
+Evaluation criteria,assessment
+Assessment structure,assessment
+How are we graded?,assessment
+What tech is used?,technology
+Digital tools,technology
+Learning platforms,technology
+Online resources,technology
+Education technology,technology
+Tech requirements,technology
+Digital campus,technology
+E-learning tools,technology
+Software used,technology
+Technical needs,technology
+Computer requirements,technology
+IT infrastructure,technology
+Digital resources,technology
+Tech in education,technology
+English language help,language_support
+Language assistance,language_support
+Communication support,language_support
+ESL services,language_support
+Language development,language_support
+English proficiency,language_support
+Language courses,language_support
+Speaking help,language_support
+Writing support,language_support
+Language improvement,language_support
+Communication skills,language_support
+English support,language_support
+Language tutoring,language_support
+Academic English,language_support
+Study abroad options,international_transfer
+Foreign university transfers,international_transfer
+International pathways,international_transfer
+Global education,international_transfer
+Overseas study,international_transfer
+Foreign degree options,international_transfer
+Study overseas,international_transfer
+International programs,international_transfer
+Global campuses,international_transfer
+Foreign transfers,international_transfer
+Study internationally,international_transfer
+Abroad opportunities,international_transfer
+Overseas education,international_transfer
+Foreign study,international_transfer
+How to contact?,contact_info
+Phone number,contact_info
+Email address,contact_info
+WhatsApp contact,contact_info
+Social media,contact_info
+Help desk,contact_info
+Support contact,contact_info
+Information desk,contact_info
+Admissions contact,contact_info
+Enquiry line,contact_info
+Call center,contact_info
+Hotline number,contact_info
+Contact details,contact_info
+Where to call?,contact_info
+Emergency contact,emergency
+Urgent help,emergency
+Crisis situation,emergency
+Immediate assistance,emergency
+Critical help,emergency
+Emergency support,emergency
+Urgent query,emergency
+Critical situation,emergency
+Emergency number,emergency
+Help now,emergency
+Urgent matter,emergency
+Emergency services,emergency
+Critical assistance,emergency
+Immediate help,emergency
+Give feedback,feedback
+Submit complaint,feedback
+Make suggestion,feedback
+Voice concern,feedback
+Share experience,feedback
+Provide input,feedback
+Offer comments,feedback
+Student feedback,feedback
+Evaluation comments,feedback
+Quality feedback,feedback
+Service comments,feedback
+Complaint process,feedback
+Suggest improvement,feedback
+Share opinion,feedback
+Frequently asked questions,faq
+Common queries,faq
+FAQ,faq
+Popular questions,faq
+General information,faq
+Basic questions,faq
+Standard inquiries,faq
+Common concerns,faq
+Regular questions,faq
+Typical queries,faq
+Often asked,faq
+General queries,faq
+Common doubts,faq
+Standard questions,faq
+When does the semester start?,academic_info
+Important academic dates,academic_info
+Graduation requirements,academic_info
+Exam schedule,academic_info
+Class timetable,academic_info
+Add/drop deadlines,academic_info
+When will I graduate?,academic_info
+Degree completion rules,academic_info
+What support services exist?,student_services
+Mental health resources,student_services
+Disability accommodations,student_services
+Library access,student_services
+Counseling services,student_services
+Academic assistance,student_services
+Tuition fees,financial
+Payment methods,financial
+Scholarships available?,financial
+Student discounts,financial
+Installment plans,financial
+Financial aid,financial

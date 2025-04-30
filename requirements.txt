@@ -1,7 +1,48 @@
-tensorflow==2.15.0
-numpy==1.26.4
-scikit-learn==1.4.0
-transformers==4.36.2
-keras==2.15.0
-python-dotenv==1.0.0
-pytz==2023.3.post1
+# ------------------------------------------
+# Core Web Framework & ASGI Server
+# ------------------------------------------
+fastapi==0.95.0             # FastAPI: A modern, fast (high-performance), web framework for building APIs with Python 3.7+.
+                            # Known for its simplicity, async support, and automatic OpenAPI documentation generation.
+uvicorn==0.21.1             # Uvicorn: A fast ASGI server that serves FastAPI applications.
+                            # It is asynchronous, non-blocking, and highly performant, ideal for serving APIs.
+
+# ------------------------------------------
+# Machine Learning & Data Handling
+# ------------------------------------------
+scikit-learn==1.2.2         # scikit-learn: A comprehensive library for machine learning algorithms (classification, regression, clustering, etc.).
+                            # It also provides utilities for model selection, evaluation, and preprocessing.
+pandas==1.5.3               # Pandas: Data manipulation library that provides fast, flexible, and expressive data structures (like DataFrame).
+                            # Primarily used for cleaning, transforming, and analyzing structured data (e.g., CSV, Excel files).
+numpy==1.24.3               # NumPy: Fundamental package for numerical computing in Python.
+                            # Provides efficient support for multi-dimensional arrays and matrices, as well as mathematical functions.
+
+# ------------------------------------------
+# Natural Language Processing (NLP)
+# ------------------------------------------
+spacy==3.5.0                # spaCy: Advanced Natural Language Processing (NLP) library that supports tokenization, dependency parsing, named entity recognition, etc.
+                            # Optimized for performance and ease of use for production pipelines.
+en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.5.0/en_core_web_sm-3.5.0.tar.gz
+                            # English language model (small version): pre-trained model used by spaCy for NLP tasks like POS tagging, NER, etc.
+                            # Useful for applications that process English text, such as chatbots or information extraction systems.
+nlpaug==1.1.10              # NLPAug: A Python library for textual data augmentation.
+                            # Provides various augmentation techniques like synonym replacement, word insertion, word swapping, etc.
+                            # Particularly useful for increasing training data diversity in NLP tasks with limited datasets.
+nltk==3.8.1                 # NLTK: Natural Language Toolkit for NLP tasks.
+                            # Provides access to WordNet and other lexical resources needed for text augmentation.
+
+# ------------------------------------------
+# Data Visualization
+# ------------------------------------------
+matplotlib==3.7.1           # Matplotlib: Powerful plotting library for creating static, animated, and interactive visualizations.
+                            # Supports many plot types such as line charts, bar graphs, scatter plots, histograms, etc.
+seaborn==0.12.2             # Seaborn: Built on top of Matplotlib, it simplifies the process of creating beautiful and informative statistical graphics.
+                            # Useful for creating complex visualizations with minimal code, including heatmaps, violin plots, and pair plots.
+
+# ------------------------------------------
+# Configuration & Environment Management
+# ------------------------------------------
+python-dotenv==0.19.0       # python-dotenv: Library to load environment variables from a `.env` file into the environment.
+                            # Helps manage sensitive information (like database credentials or API keys) in a secure and clean way.
+pydantic==1.10.7            # Pydantic: Data validation and settings management library based on Python type annotations.
+                            # Used in FastAPI to validate and parse data in requests and responses, ensuring type safety and integrity.
+

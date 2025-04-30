@@ -8,3 +8,6 @@ __pycache__/
 .vscode/
 
 data/user_profiles/
+reports/
+
+chatbot.log
