@@ -1,0 +1,47 @@
+@startuml
+
+' === Config Layer ===
+class ConfigManager {
+    +load_config(): dict
+    +get_param(key: str): any
+}
+
+' === Data Layer ===
+class DataLoader {
+    +load_intents(file_path: str): dict
+    +load_responses(file_path: str): dict
+}
+
+' === Preprocessing Layer ===
+class TextPreprocessor {
+    +tokenize(text: str): list
+    +stem(text: str): str
+    +lemmatize(text: str): str
+    +clean_text(text: str): str
+}
+
+' === Model Layer ===
+class ChatbotModel {
+    -model: keras.Model
+    +train(data: dict, labels: list): void
+    +predict(input_text: str): str
+    +save_model(file_path: str): void
+    +load_model(file_path: str): void
+}
+
+class Trainer {
+    +execute_training(): void
+}
+
+class Predictor {
+    +predict_response(user_input: str): str
+}
+
+' === Relationships ===
+ConfigManager --> DataLoader : provides config
+DataLoader --> TextPreprocessor : feeds raw data
+TextPreprocessor --> ChatbotModel : preprocesses for training
+ChatbotModel <|-- Trainer
+ChatbotModel <|-- Predictor
+
+@enduml

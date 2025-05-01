@@ -1,0 +1,37 @@
+@startuml
+' External modules
+class process_input <<external>> 
+class recognize_intent <<external>>
+class generate_response <<external>>
+class settings <<external>>
+
+' ChatContext dataclass
+class ChatContext {
+    - last_input: str
+    - last_intent: str
+    - last_response: str
+    - timestamp: float
+    - custom_data: Optional[dict]
+}
+
+' ChatBot class
+class ChatBot {
+    - context: ChatContext
+    + __init__()
+    + get_response(message: str, context: Optional[dict])
+    + _process_message(user_input: str): str
+    + _cached_response(user_input: str): str
+    + _update_context(user_input: str, intent: dict, response: str)
+    + _update_from_external_context(external_context: dict)
+    + get_current_context(): dict
+    + clear_cache()
+}
+
+' Relationships
+ChatBot --> ChatContext : uses
+ChatBot --> process_input : calls
+ChatBot --> recognize_intent : calls
+ChatBot --> generate_response : calls
+ChatBot --> settings : uses
+
+@enduml
