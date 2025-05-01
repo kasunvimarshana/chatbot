@@ -100,6 +100,48 @@ def plot_feature_importance(model, vectorizer, top_n=30):
     plt.savefig(REPORTS_DIR / "feature_importance.png")
     plt.close()
 
+def plot_tfidf_heatmap(vectorizer, X, y, max_docs=50, max_terms=50):
+    """Plot a heatmap of TF-IDF scores for a sample of documents and terms"""
+    # Get feature names
+    feature_names = vectorizer.get_feature_names_out()
+    
+    # Convert sparse matrix to dense array for the sample
+    dense_X = X[:max_docs].toarray()
+    
+    # Get most frequent terms across the sample
+    term_counts = dense_X.sum(axis=0)
+    top_term_indices = np.argsort(term_counts)[-max_terms:][::-1]
+    top_terms = feature_names[top_term_indices]
+    
+    # Get the subset of the matrix for our sample
+    subset_X = dense_X[:max_docs, top_term_indices]
+    
+    # Get the corresponding labels
+    subset_y = y[:max_docs].values
+    
+    # Create dataframe for better labeling
+    df = pd.DataFrame(subset_X, columns=top_terms, index=subset_y)
+    df.index.name = 'Intent'
+    
+    # Plot heatmap
+    plt.figure(figsize=(20, 12))
+    sns.heatmap(
+        df,
+        cmap="YlGnBu",
+        cbar_kws={'label': 'TF-IDF Score'},
+        yticklabels=True
+    )
+    
+    plt.title(f"TF-IDF Scores for Top {max_terms} Terms in First {max_docs} Documents")
+    plt.xlabel("Terms")
+    plt.ylabel("Document Intent")
+    plt.xticks(rotation=90)
+    plt.yticks(rotation=0)
+    plt.tight_layout()
+    
+    plt.savefig(REPORTS_DIR / "tfidf_heatmap.png")
+    plt.close()
+
 def save_classification_report(report_str, report_df):
     """Save classification reports to text and CSV files"""
     # Save text report
@@ -183,6 +225,7 @@ def train_model():
         plot_metrics(report_df)
         plot_confusion_matrix(y_test, y_pred, sorted(y.unique()))
         plot_feature_importance(model, vectorizer)
+        plot_tfidf_heatmap(vectorizer, X, y)
 
         # Save trained artifacts
         model_path = settings.MODEL_PATH
