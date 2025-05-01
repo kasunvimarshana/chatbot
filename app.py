@@ -9,6 +9,10 @@ import logging
 from config import settings
 import time
 import uvicorn
+from pyngrok import ngrok, conf
+import os
+from datetime import datetime
+import threading
 
 # Configure logging
 logging.basicConfig(
@@ -32,6 +36,7 @@ class ChatResponse(BaseModel):
     processing_time: str = Field(..., example="0.045s", description="Time taken to process the request")
     status: str = Field(..., example="success", description="Request status")
 
+# Initialize FastAPI app
 app = FastAPI(
     title="Chatbot API",
     version="1.0.0",
@@ -44,8 +49,8 @@ app = FastAPI(
         "name": "MIT",
         "url": "https://opensource.org/licenses/MIT"
     },
-    docs_url="/docs",  # Explicitly enable Swagger at /docs
-    redoc_url="/redoc" # Also enable ReDoc alternative
+    docs_url="/docs",
+    redoc_url="/redoc"
 )
 
 # Custom OpenAPI schema
@@ -77,6 +82,46 @@ app.add_middleware(
 # Initialize chatbot
 chatbot = ChatBot()
 
+# Ngrok configuration
+class NgrokManager:
+    def __init__(self):
+        self.public_url = None
+        self.tunnel = None
+        # Configure ngrok
+        conf.get_default().region = "eu"  # or "us", "eu", "ap", "au", "sa"
+        # Set your auth token if available
+        if hasattr(settings, 'NGROK_AUTH_TOKEN'):
+            ngrok.set_auth_token(settings.NGROK_AUTH_TOKEN)
+
+    def start_tunnel(self, port=8000):
+        try:
+            self.tunnel = ngrok.connect(
+                port,
+                proto="http",
+                bind_tls=True,
+                # For paid accounts you can add:
+                # subdomain="your-subdomain",
+                # hostname="your-custom-domain.com",
+                # auth="username:password",
+            )
+            self.public_url = self.tunnel.public_url
+            logger.info(f"Ngrok tunnel created: {self.public_url}")
+            return self.public_url
+        except Exception as e:
+            logger.error(f"Failed to create ngrok tunnel: {str(e)}")
+            raise
+
+    def close_tunnel(self):
+        if self.tunnel:
+            ngrok.disconnect(self.tunnel.public_url)
+            logger.info("Ngrok tunnel closed")
+
+    def get_public_url(self):
+        return self.public_url
+
+# Initialize ngrok manager
+ngrok_manager = NgrokManager()
+
 @app.post(
     "/chat",
     response_model=ChatResponse,
@@ -104,16 +149,19 @@ async def chat_endpoint(request: ChatRequest):
     - Request status
     """
     try:
-        # data = await request.json()
-        # message = data.get("message", "").strip()
-        message = request.message
+        start_time = time.perf_counter()
+        message = request.message.strip()
+        context = request.context or {}
         
         if not message:
             raise HTTPException(status_code=400, detail="Empty message")
         
-        start_time = time.perf_counter()
-        response = chatbot.get_response(message)
+        # Process the message
+        response = chatbot.get_response(message, context)
         processing_time = time.perf_counter() - start_time
+        
+        # Log the interaction
+        logger.info(f"Processed message: '{message}' in {processing_time:.3f}s")
         
         return {
             "response": response,
@@ -137,8 +185,50 @@ async def chat_endpoint(request: ChatRequest):
 @app.get("/health", include_in_schema=False)
 async def health_check():
     """Health check endpoint for monitoring"""
-    return {"status": "healthy"}
+    return {
+        "status": "healthy",
+        "timestamp": datetime.utcnow().isoformat(),
+        "uptime": time.time() - app.startup_time
+    }
+
+@app.get("/ngrok-info", include_in_schema=False)
+async def get_ngrok_info():
+    """Get ngrok tunnel information"""
+    return {
+        "public_url": ngrok_manager.get_public_url(),
+        "tunnels": [str(t) for t in ngrok.get_tunnels()]
+    }
+
+# Add startup and shutdown events
+@app.on_event("startup")
+async def startup_event():
+    app.startup_time = time.time()
+    # Start ngrok in a separate thread to not block the application
+    threading.Thread(target=start_ngrok_tunnel).start()
+
+@app.on_event("shutdown")
+async def shutdown_event():
+    ngrok_manager.close_tunnel()
+    logger.info("Application shutdown complete")
+
+def start_ngrok_tunnel():
+    try:
+        public_url = ngrok_manager.start_tunnel(8000)
+        # Update OpenAPI servers
+        app.servers = [{"url": public_url, "description": "ngrok tunnel"}]
+        logger.info(f"Swagger UI available at: {public_url}/docs")
+    except Exception as e:
+        logger.error(f"Failed to start ngrok: {str(e)}")
 
 if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    # Start Uvicorn server
+    uvicorn.run(
+        app,
+        host="0.0.0.0",
+        port=8000,
+        log_level="info",
+        access_log=True,
+        reload=False,
+        workers=1
+    )
+

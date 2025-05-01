@@ -1,6 +1,6 @@
 import pickle
 import numpy as np
-from typing import Dict, Any
+from typing import Optional, Dict, Any
 from config import settings
 import logging
 
@@ -8,7 +8,7 @@ import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-def recognize_intent(text: str, context: Dict[str, Any]) -> Dict[str, Any]:
+def recognize_intent(text: str, context: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
     """Recognize intent from processed text"""
     try:
         # Load models

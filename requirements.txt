@@ -46,3 +46,13 @@ python-dotenv==0.19.0       # python-dotenv: Library to load environment variabl
 pydantic==1.10.7            # Pydantic: Data validation and settings management library based on Python type annotations.
                             # Used in FastAPI to validate and parse data in requests and responses, ensuring type safety and integrity.
 
+# ------------------------------------------
+# Deployment & Tunneling
+# ------------------------------------------
+pyngrok==6.0.0              # pyngrok: Python wrapper for ngrok that programmatically manages ngrok tunnels.
+                            # Enables secure public URLs to localhost servers, ideal for testing webhooks, APIs, and services.
+                            # Features include:
+                            # - Programmatic tunnel management
+                            # - Automatic tunnel cleanup
+                            # - Support for all ngrok features (authentication, regions, etc.)
+                            # - Integration with Python applications
