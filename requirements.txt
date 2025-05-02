@@ -37,6 +37,13 @@ matplotlib==3.7.1           # Matplotlib: Powerful plotting library for creating
                             # Supports many plot types such as line charts, bar graphs, scatter plots, histograms, etc.
 seaborn==0.12.2             # Seaborn: Built on top of Matplotlib, it simplifies the process of creating beautiful and informative statistical graphics.
                             # Useful for creating complex visualizations with minimal code, including heatmaps, violin plots, and pair plots.
+graphviz==0.20.1            # Graphviz: Python interface to the Graphviz graph visualization software.
+                            # Essential for visualizing decision trees and other graph structures from machine learning models.
+                            # Features include:
+                            # - Generation of graph visualizations in various formats (PNG, PDF, SVG)
+                            # - Integration with scikit-learn for decision tree visualization
+                            # - Support for custom node and edge attributes
+                            # Note: Requires Graphviz binaries to be installed separately on the system
 
 # ------------------------------------------
 # Configuration & Environment Management

@@ -6,10 +6,12 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report, confusion_matrix
+from sklearn.tree import plot_tree, export_graphviz
 import pickle
 from datetime import datetime
 from pathlib import Path
 import logging
+import graphviz
 from config import settings
 
 # Configure logging
@@ -32,9 +34,8 @@ def plot_class_distribution(y):
     for p in ax.patches:
         ax.annotate(str(p.get_height()), (p.get_x() * 1.005, p.get_height() * 1.005))
     plt.tight_layout()
-    plt.savefig(REPORTS_DIR / "class_distribution.png")
+    plt.savefig(REPORTS_DIR / "class_distribution.png", dpi=300, bbox_inches='tight')
     plt.close()
-
 
 def plot_confusion_matrix(y_true, y_pred, classes):
     """Plot normalized confusion matrix with class labels"""
@@ -54,9 +55,8 @@ def plot_confusion_matrix(y_true, y_pred, classes):
     plt.xticks(rotation=90)
     plt.yticks(rotation=0)
     plt.tight_layout()
-    plt.savefig(REPORTS_DIR / "confusion_matrix.png")
+    plt.savefig(REPORTS_DIR / "confusion_matrix.png", dpi=300, bbox_inches='tight')
     plt.close()
-
 
 def plot_metrics(report_df):
     """Plot precision, recall, and f1-scores in separate subplots"""
@@ -79,7 +79,7 @@ def plot_metrics(report_df):
     plt.xticks(rotation=90)  # Show class names only on bottom plot
 
     plt.tight_layout()
-    plt.savefig(REPORTS_DIR / "metrics_comparison.png")
+    plt.savefig(REPORTS_DIR / "metrics_comparison.png", dpi=300, bbox_inches='tight')
     plt.close()
 
 def plot_feature_importance(model, vectorizer, top_n=30):
@@ -97,7 +97,7 @@ def plot_feature_importance(model, vectorizer, top_n=30):
     plt.barh(range(top_n), importances[indices], align='center')
     plt.yticks(range(top_n), [feature_names[i] for i in indices])
     plt.tight_layout()
-    plt.savefig(REPORTS_DIR / "feature_importance.png")
+    plt.savefig(REPORTS_DIR / "feature_importance.png", dpi=300, bbox_inches='tight')
     plt.close()
 
 def plot_tfidf_heatmap(vectorizer, X, y, max_docs=50, max_terms=50):
@@ -138,9 +138,160 @@ def plot_tfidf_heatmap(vectorizer, X, y, max_docs=50, max_terms=50):
     plt.xticks(rotation=90)
     plt.yticks(rotation=0)
     plt.tight_layout()
-    
-    plt.savefig(REPORTS_DIR / "tfidf_heatmap.png")
+    plt.savefig(REPORTS_DIR / "tfidf_heatmap.png", dpi=300, bbox_inches='tight')
     plt.close()
+
+def plot_random_forest_structure(model):
+    """
+    Visualize the structure of the Random Forest classifier.
+    Includes depth distribution, node count, and sample tree visualization.
+    """
+    try:
+        if not isinstance(model, RandomForestClassifier):
+            logger.warning("Input is not a RandomForestClassifier")
+            return
+            
+        if not hasattr(model, 'estimators_'):
+            logger.warning("Model hasn't been trained yet - no estimators available")
+            return
+            
+        plt.figure(figsize=(18, 12))
+        
+        # Plot 1: Tree depth distribution
+        plt.subplot(2, 2, 1)
+        depths = [tree.tree_.max_depth for tree in model.estimators_]
+        sns.histplot(depths, bins=30, kde=True)
+        plt.title('Distribution of Tree Depths')
+        plt.xlabel('Tree Depth')
+        plt.ylabel('Count')
+        
+        # Plot 2: Number of nodes distribution
+        plt.subplot(2, 2, 2)
+        nodes = [tree.tree_.node_count for tree in model.estimators_]
+        sns.histplot(nodes, bins=30, kde=True)
+        plt.title('Distribution of Node Counts')
+        plt.xlabel('Number of Nodes')
+        plt.ylabel('Count')
+        
+        # Plot 3: Leaf node samples distribution
+        plt.subplot(2, 2, 3)
+        leaf_samples = [tree.tree_.n_node_samples[-1] for tree in model.estimators_]
+        sns.histplot(leaf_samples, bins=30, kde=True)
+        plt.title('Distribution of Samples in Leaf Nodes')
+        plt.xlabel('Samples in Leaf Nodes')
+        plt.ylabel('Count')
+        
+        # Plot 4: Feature importance consistency
+        plt.subplot(2, 2, 4)
+        importances = np.array([tree.feature_importances_ for tree in model.estimators_])
+        sns.heatmap(importances, cmap="viridis", cbar_kws={'label': 'Feature Importance'})
+        plt.title('Feature Importance Across Trees')
+        plt.xlabel('Feature Index')
+        plt.ylabel('Tree Index')
+        
+        plt.tight_layout()
+        plt.savefig(REPORTS_DIR / "random_forest_structure.png", dpi=300, bbox_inches='tight')
+        plt.close()
+        
+        # Log statistics
+        stats = {
+            'avg_depth': np.mean(depths),
+            'avg_nodes': np.mean(nodes),
+            'avg_leaf_samples': np.mean(leaf_samples),
+            'importance_std': np.std(importances, axis=0).mean()
+        }
+        logger.info(f"Random Forest stats: {stats}")
+        
+    except Exception as e:
+        logger.exception(f"Error in plot_random_forest_structure: {str(e)}")
+
+def export_interactive_tree(model, vectorizer, tree_index=0):
+    """
+    Export a decision tree as an interactive Graphviz visualization.
+    Returns the Graphviz object and saves as DOT file.
+    """
+    try:
+        dot_data = export_graphviz(
+            model.estimators_[tree_index],
+            out_file=None,
+            feature_names=vectorizer.get_feature_names_out(),
+            class_names=model.classes_,
+            filled=True,
+            rounded=True,
+            special_characters=True,
+            proportion=True,
+            impurity=False
+        )
+        
+        graph = graphviz.Source(dot_data)
+        dot_path = REPORTS_DIR / f"decision_tree_{tree_index}.dot"
+        graph.save(dot_path.as_posix())
+        
+        return graph
+        
+    except Exception as e:
+        logger.exception(f"Error exporting interactive tree {tree_index}: {str(e)}")
+        return None
+
+def plot_single_tree(model, vectorizer, tree_index=0, max_depth=3, figsize=(25, 12), dpi=200):
+    """
+    Visualize a single decision tree with enhanced formatting.
+    Saves both PNG and PDF versions for different use cases.
+    """
+    try:
+        # Set the backend to Agg (non-interactive) before importing pyplot
+        import matplotlib
+        matplotlib.use('Agg')  # Set the backend to Agg before importing pyplot
+        import matplotlib.pyplot as plt
+        
+        if tree_index >= len(model.estimators_):
+            logger.warning(f"Tree index {tree_index} out of range")
+            return
+            
+        if len(vectorizer.get_feature_names_out()) > 1000:
+            logger.warning("Too many features for clear tree visualization")
+            return
+            
+        plt.figure(figsize=figsize, dpi=dpi)
+        plot_tree(
+            model.estimators_[tree_index],
+            feature_names=vectorizer.get_feature_names_out(),
+            class_names=model.classes_,
+            filled=True,
+            max_depth=max_depth,
+            fontsize=8,
+            rounded=True,
+            proportion=True,
+            impurity=False
+        )
+        plt.title(f"Decision Tree {tree_index} (Max Depth Shown: {max_depth})")
+        plt.tight_layout()
+        
+        base_path = REPORTS_DIR / f"decision_tree_{tree_index}"
+        plt.savefig(f"{base_path}.png", dpi=dpi, bbox_inches='tight')
+        plt.savefig(f"{base_path}.pdf", bbox_inches='tight')
+        plt.close()
+        
+    except Exception as e:
+        logger.exception(f"Error plotting tree {tree_index}: {str(e)}")
+
+def plot_multiple_trees(model, vectorizer, n_trees=3, max_depth=3):
+    """
+    Plot multiple trees sequentially (modified from parallel version)
+    """
+    try:
+        n_trees = min(n_trees, len(model.estimators_))
+        
+        # Plot trees sequentially
+        for i in range(n_trees):
+            plot_single_tree(model, vectorizer, i, max_depth)
+            
+            # Export interactive version if feature count is reasonable
+            if len(vectorizer.get_feature_names_out()) <= 100:
+                export_interactive_tree(model, vectorizer, i)
+                
+    except Exception as e:
+        logger.exception(f"Error in plot_multiple_trees: {str(e)}")
 
 def save_classification_report(report_str, report_df):
     """Save classification reports to text and CSV files"""
@@ -149,7 +300,7 @@ def save_classification_report(report_str, report_df):
         f.write(report_str)
     
     # Save metrics dataframe
-    report_df.to_csv(REPORTS_DIR / "classification_metrics.csv")
+    report_df.to_csv(REPORTS_DIR / "classification_metrics.csv", index=True)
 
 
 def train_model():
@@ -209,6 +360,8 @@ def train_model():
         plot_confusion_matrix(y_test, y_pred, sorted(y.unique()))
         plot_feature_importance(model, vectorizer)
         plot_tfidf_heatmap(vectorizer, X, y)
+        plot_random_forest_structure(model)
+        plot_multiple_trees(model, vectorizer, n_trees=3, max_depth=3)
 
         # Save trained artifacts
         model_path = settings.MODEL_PATH

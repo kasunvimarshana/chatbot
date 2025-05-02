@@ -1,0 +1,425 @@
+text,intent
+hello,greeting
+hi,greeting
+hey,greeting
+good morning,greeting
+good afternoon,greeting
+good evening,greeting
+greetings,greeting
+hi there,greeting
+hello there,greeting
+good day,greeting
+yo,greeting
+hiya,greeting
+what's up,greeting
+sup,greeting
+goodbye,closing
+bye,closing
+see you,closing
+thank you,closing
+thanks,closing
+thanks a lot,closing
+cheers,closing
+much appreciated,closing
+ok thanks,closing
+alright thank you,closing
+about us,about_dealership
+who are you,about_dealership
+about ks auto,about_dealership
+tell me about the dealership,about_dealership
+what is ks auto-sale,about_dealership
+what is this place,about_dealership
+who owns this place,about_founders
+who started ks auto,about_founders
+tell me about the founders,about_founders
+who are the owners,about_founders
+founders of ks auto,about_founders
+who owns this,about_founders
+founders,about_founders
+what brands do you have,inventory_brands
+do you sell honda,inventory_brands
+do you sell toyota,inventory_brands
+available brands,inventory_brands
+what cars do you sell,inventory_brands
+which vehicle brands,inventory_brands
+what models available,inventory_brands
+do you have nissan,inventory_brands
+what vehicles in stock,inventory_brands
+what cars do you have,inventory_brands
+do you have honda,inventory_brands
+available car brands,inventory_brands
+what makes of cars do you stock,inventory_brands
+brands available,inventory_brands
+car brands you offer,inventory_brands
+do you have any Nissan cars,inventory_brands
+tell me the brands you have in stock,inventory_brands
+what are the vehicle brands at your dealership,inventory_brands
+how much for a car,pricing_generic
+price range,pricing_generic
+what are your prices,pricing_generic
+how much do cars cost,pricing_generic
+price of vehicles,pricing_generic
+cost of cars,pricing_generic
+what's the cheapest car,pricing_generic
+what's the most expensive,pricing_generic
+opening hours,operations_hours
+when are you open,operations_hours
+business hours,operations_hours
+what time do you close,operations_hours
+working hours,operations_hours
+are you open now,operations_hours
+when do you open,operations_hours
+what are your hours,operations_hours
+when are you open,operations_hours
+opening times,operations_hours
+what time do you open,operations_hours
+business hours,operations_hours
+are you open today,operations_hours
+what are your operating hours,operations_hours
+when can I visit,operations_hours
+tell me your schedule,operations_hours
+where are you located,operations_location
+address,operations_location
+location,operations_location
+how to find you,operations_location
+where is ks auto,operations_location
+directions,operations_location
+map,operations_location
+showroom location,operations_location
+what is your address,operations_location
+where can I find you,operations_location
+how to get to your dealership,operations_location
+directions to KS Auto-Sale,operations_location
+your physical address,operations_location
+where in Nittambuwa are you,operations_location
+site of your business,operations_location
+can you tell me where you are situated,operations_location
+test drive,services_test_drives
+can i test a car,services_test_drives
+try before buy,services_test_drives
+drive before purchase,services_test_drives
+test vehicles,services_test_drives
+trade in,services_trade_ins
+exchange my car,services_trade_ins
+sell my old car,services_trade_ins
+vehicle exchange,services_trade_ins
+trade in value,services_trade_ins
+swap my car,services_trade_ins
+contact,contact_info
+phone,contact_info
+how to reach you,contact_info
+phone number,contact_info
+address,contact_info
+where are you,contact_info
+location,contact_info
+how much are cars,pricing_general
+price range,pricing_general
+are your cars expensive,pricing_general
+what are your prices like,pricing_general
+how much do your cars cost,pricing_general
+tell me about pricing,pricing_general
+can you give me a price range,pricing_general
+what's the general cost of your vehicles,pricing_general
+price inquiries,pricing_general
+cost of cars,pricing_general
+how much are the vehicles you have,pricing_general
+what is your pricing structure,pricing_general
+tell me about your car prices,pricing_general
+when are you open,business_hours
+business hours,business_hours
+opening times,business_hours
+opening hours,business_hours
+when are you open,business_hours
+what time do you close,business_hours
+working hours,business_hours
+are you open now,business_hours
+when do you open,business_hours
+what are your hours,business_hours
+are you open today,business_hours
+what are your operating hours,business_hours
+when can I visit,business_hours
+what time do you open,business_hours
+what time do you close,business_hours
+can I come now,business_hours
+test drive,test_drives
+can I drive a car,test_drives
+try before buy,test_drives
+do you buy cars,trade_ins
+trade ins,trade_ins
+sell my car,trade_ins
+who are you,about_us
+about ks auto,about_us
+tell me about this place,about_us
+who owns this,about_us
+founders,about_us
+tell me about KS Auto-Sale,about_us
+what is KS Auto-Sale,about_us
+about your company,about_us
+about KS Auto-Sale,about_us
+describe KS Auto-Sale,about_us
+what do you do,about_us
+what kind of business is KS Auto-Sale,about_us
+what does KS Auto-Sale sell,about_us
+what services do you provide,about_us
+about us,about_us
+tell me about ks auto sale,about_us
+what is ks auto sale,about_us
+describe your business,about_us
+what company is this,about_us
+tell me about your dealership,about_us
+who owns ks auto,about_us
+who are the owners,about_us
+who started ks auto,about_us
+founders of ks auto,about_us
+who runs this dealership,about_us
+who are the founders,about_us
+what cars do you have,inventory
+available vehicles,inventory
+show me cars,inventory
+stock,inventory
+what brands do you have,inventory
+available brands,inventory
+which brands do you sell,inventory
+what cars do you sell,inventory
+which vehicle brands,inventory
+available car brands,inventory
+car brands you offer,inventory
+what vehicles in stock,inventory
+what makes of cars do you stock,inventory
+brands available,inventory
+do you have toyota,inventory
+do you sell toyota,inventory
+do you have honda,inventory
+do you sell honda,inventory
+do you have nissan,inventory
+do you sell nissan,inventory
+do you have suzuki,inventory
+do you sell suzuki,inventory
+do you have any japanese cars,inventory
+what models available,inventory
+tell me the brands you have in stock,inventory
+what are the vehicle brands at your dealership,inventory
+do you have luxury cars,inventory
+show me your car brands,inventory
+which car brands are available,inventory
+prices,price_general
+how much are your cars,price_general
+car prices,price_general
+are your cars expensive,price_general
+when are you open,hours
+business hours,hours
+opening times,hours
+what are your opening hours,hours
+test drive,test_drive
+can I drive a car,test_drive
+try before buy,test_drive
+what do you offer,services
+services,services
+do you buy cars,services
+trade ins,services
+bye,goodbye
+goodbye,goodbye
+thank you,goodbye
+thanks,goodbye
+see you later,goodbye
+farewell,goodbye
+have a good day,goodbye
+take care,goodbye
+cheers,goodbye
+adios,goodbye
+tell me about you,dealership_info_about
+who are you,dealership_info_about
+what is KS Auto-Sale,dealership_info_about
+about us,dealership_info_about
+what can you tell me about this dealership,dealership_info_about
+information about KS Auto-Sale,dealership_info_about
+could you tell me more about KS Auto-Sale,dealership_info_about
+what's the story of KS Auto-Sale,dealership_info_about
+how would you describe KS Auto-Sale,dealership_info_about
+can you give me some background on KS Auto-Sale,dealership_info_about
+who founded you,dealership_info_founders
+who are the founders,dealership_info_founders
+who owns KS Auto-Sale,dealership_info_founders
+who started this dealership,dealership_info_founders
+who established KS Auto-Sale,dealership_info_founders
+tell me about the people behind KS Auto-Sale,dealership_info_founders
+who are the key people at KS Auto-Sale,dealership_info_founders
+who are the creators of KS Auto-Sale,dealership_info_founders
+who were the initiators of KS Auto-Sale,dealership_info_founders
+can you tell me about the ownership of KS Auto-Sale,dealership_info_founders
+can i test drive a car,services_test_drive
+test drive availability,services_test_drive
+can i schedule a test drive,services_test_drive
+are test drives possible,services_test_drive
+how can i book a test drive,services_test_drive
+can i try out a vehicle,services_test_drive
+do you offer test drives,services_test_drive
+test driving options,services_test_drive
+can i take a car for a spin,services_test_drive
+arranging a test drive,services_test_drive
+do you accept trade-ins,services_trade_in
+can i trade in my car,services_trade_in
+trade-in options,services_trade_in
+do you take used cars as trade-in,services_trade_in
+can i exchange my old car for a new one,services_trade_in
+trade in value,services_trade_in
+selling my car to you,services_trade_in
+can i trade my vehicle,services_trade_in
+do you offer car trade-in services,services_trade_in
+what's your trade-in policy,services_trade_in
+do you offer financing,unsupported
+what are the loan rates,unsupported
+can i get an installment plan,unsupported
+about car loans,unsupported
+financing options,unsupported
+loan inquiries,unsupported
+installment plans,unsupported
+car financing details,unsupported
+financial assistance for car purchase,unsupported
+can you help with vehicle loans,unsupported
+who owns KS Auto-Sale,founders
+who are the founders of KS Auto-Sale,founders
+who started KS Auto-Sale,founders
+who is the owner of KS Auto-Sale,founders
+who established KS Auto-Sale,founders
+who founded KS Auto-Sale,founders
+who are the owners of KS Auto-Sale,founders
+founders of KS Auto-Sale,founders
+KS Auto-Sale founders,founders
+how much are your cars,pricing
+what are your prices,pricing
+price of cars,pricing
+car prices,pricing
+how much for a car,pricing
+price range,pricing
+how much do cars cost,pricing
+price of vehicles,pricing
+cost of cars,pricing
+what's the cheapest car,pricing
+what's the most expensive,pricing
+are your cars expensive,pricing
+can you give me a price range,pricing
+tell me about pricing,pricing
+how much are the vehicles you have,pricing
+what is your pricing structure,pricing
+how much do your cars cost on average,pricing
+are the prices negotiable,pricing
+can I get a discount,pricing
+where are you located,location
+address of KS Auto-Sale,location
+location of dealership,location
+address,location
+location,location
+how to find you,location
+where is ks auto,location
+directions,location
+showroom location,location
+what is your address,location
+where can I find you,location
+how to get to your dealership,location
+directions to ks auto-sale,location
+your physical address,location
+where in Nittambuwa are you,location
+site of your business,location
+can you tell me where you are situated,location
+send me your address,location
+do you offer financing,financing_options
+how can I finance a car,financing_options
+payment plans,financing_options
+installment options,financing_options
+car loan options,financing_options
+can I pay monthly,financing_options
+vehicle financing available,financing_options
+financing details,financing_options
+do you have hire purchase,financing_options
+what financing options do you offer,financing_options
+do cars come with warranty,warranty_info
+vehicle warranty,warranty_info
+car warranty details,warranty_info
+warranty available,warranty_info
+do you provide warranty,warranty_info
+warranty coverage,warranty_info
+do used cars have warranty,warranty_info
+what warranty do I get,warranty_info
+are cars under warranty,warranty_info
+how long is the warranty,warranty_info
+are cars new,vehicle_condition
+do you sell used cars,vehicle_condition
+are vehicles brand new,vehicle_condition
+used or new cars,vehicle_condition
+condition of vehicles,vehicle_condition
+do you sell reconditioned vehicles,vehicle_condition
+are your cars second hand,vehicle_condition
+vehicle condition details,vehicle_condition
+what condition are the cars in,vehicle_condition
+pre-owned cars,vehicle_condition
+can I order a car,import_orders
+special orders,import_orders
+import a vehicle,import_orders
+order a car from japan,import_orders
+vehicle import options,import_orders
+can you import cars,import_orders
+special import,import_orders
+how to order a vehicle,import_orders
+do you do custom orders,import_orders
+ordering vehicles,import_orders
+do you provide insurance,vehicle_insurance
+vehicle insurance,vehicle_insurance
+can I get insurance here,vehicle_insurance
+car insurance assistance,vehicle_insurance
+insurance options,vehicle_insurance
+do you offer insurance with purchase,vehicle_insurance
+insurance support,vehicle_insurance
+help with insurance,vehicle_insurance
+can I insure my car through you,vehicle_insurance
+insurance services,vehicle_insurance
+after sales support,after_sales_service
+do you provide servicing,after_sales_service
+post sale service,after_sales_service
+car maintenance,after_sales_service
+can you service my car,after_sales_service
+after sale care,after_sales_service
+vehicle service options,after_sales_service
+do you offer servicing,after_sales_service
+maintenance support,after_sales_service
+service after buying,after_sales_service
+can I reserve a car,reservation_policy
+reservation policy,reservation_policy
+how to book a car,reservation_policy
+can I hold a car,reservation_policy
+vehicle reservation,reservation_policy
+how long can I reserve,reservation_policy
+booking a car,reservation_policy
+car reservation,reservation_policy
+reservation terms,reservation_policy
+can I pay a deposit,reservation_policy
+do you export cars,export_services
+car export,export_services
+export vehicles,export_services
+can you ship overseas,export_services
+export services,export_services
+can you export to another country,export_services
+vehicle shipping,export_services
+can you send cars abroad,export_services
+exporting cars,export_services
+export car process,export_services
+do you handle registration,vehicle_registration
+vehicle registration help,vehicle_registration
+can you register the car for me,vehicle_registration
+registration services,vehicle_registration
+registering my car,vehicle_registration
+do you assist with vehicle registration,vehicle_registration
+car registration process,vehicle_registration
+can you arrange registration,vehicle_registration
+register car after purchase,vehicle_registration
+registration included,vehicle_registration
+what is your refund policy,refund_policy
+can I get a refund,refund_policy
+returning a car,refund_policy
+refund options,refund_policy
+is refund possible,refund_policy
+vehicle return policy,refund_policy
+can I return the vehicle,refund_policy
+money back policy,refund_policy
+refund conditions,refund_policy
+can I cancel purchase,refund_policy
