@@ -43,7 +43,7 @@ def plot_confusion_matrix(y_true, y_pred, classes):
     sns.heatmap(
         cm,
         annot=True,
-        fmt=".2f",  # Show 2 decimal places
+        fmt=".2f",
         cmap="Blues",
         xticklabels=classes,
         yticklabels=classes,
@@ -172,38 +172,21 @@ def train_model():
         logger.info(f"Class distribution:\n{class_dist.to_string()}")
 
         # Create TF-IDF vectorizer with n-grams
-        vectorizer = TfidfVectorizer(
-            max_features=15000,   # Limit vocabulary size
-            ngram_range=(1, 3),   # Include unigrams, bigrams and trigrams
-            stop_words="english", # Remove common English words
-            min_df=3,             # Ignore terms that appear in fewer than 5 docs
-            max_df=0.7,           # Ignore terms that appear in more than 80% of docs
-            sublinear_tf=True     # Use sublinear tf scaling
-        )
+        vectorizer = TfidfVectorizer()
 
         X = vectorizer.fit_transform(data["text"])
         y = data["intent"]
 
         # Split data with stratification to maintain class distribution
         X_train, X_test, y_train, y_test = train_test_split(
-            X, y, test_size=0.2, random_state=42, stratify=y
+            X, y, test_size=0.1, random_state=42, stratify=y
         )
         logger.info(
             f"Train samples: {X_train.shape[0]}, Test samples: {X_test.shape[0]}"
         )
 
         # Initialize Random Forest classifier with balanced class weights
-        model = RandomForestClassifier(
-            n_estimators=500,                   # Number of trees in forest
-            max_depth=30,                       # Maximum tree depth
-            random_state=42,                    # For reproducibility
-            class_weight="balanced_subsample",  # Handle class imbalance
-            min_samples_split=5,               # Minimum samples to split node
-            min_samples_leaf=2,                 # Minimum samples at leaf node
-            max_features='log2',                # Number of features to consider at each split
-            n_jobs=-1,                          # Use all available cores
-            verbose=1                           # Show training progress
-        )
+        model = RandomForestClassifier()
 
         logger.info("Training model...")
         model.fit(X_train, y_train)

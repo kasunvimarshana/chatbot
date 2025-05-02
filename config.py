@@ -24,7 +24,7 @@ class Settings(BaseSettings):
     # Performance
     MAX_WORKERS = int(os.getenv("MAX_WORKERS", 4)) # Max parallel worker threads
 
-    NGROK_AUTH_TOKEN = "************************************"
+    NGROK_AUTH_TOKEN = os.getenv("NGROK_AUTH_TOKEN", "") # auth token
 
     class Config:
         env_file = ".env"
